@@ -2178,6 +2178,15 @@ randomButton.addEventListener('click', () => {
   lastPick = pool[Math.floor(Math.random() * pool.length)];
   randomPick.replaceChildren(songRow(lastPick));
   randomPick.hidden = false;
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const die = randomButton.querySelector('.song-die');
+    for (const animation of die.getAnimations()) animation.cancel();
+    die.animate([
+      {transform: 'rotate(-10deg)'},
+      {transform: 'translateY(-7px) rotate(14deg)'},
+      {transform: 'rotate(-10deg)'}
+    ], {duration: 300, easing: 'ease-out'});
+  }
 });
 renderSongs();
 

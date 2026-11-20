@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Музыкальная вечеринка 27 ноября в лофте ОПЕРА на Красном Октябре. Живые гитары, песни, караоке и танцы.">
 <title>Живой звук — Лофт ОПЕРА</title>
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=13">
 <script defer src="site.js"></script>
-<script defer src="karaoke.js?v=12"></script>
+<script defer src="karaoke.js?v=13"></script>
 </head>
 <body>
 <header class="bar">
@@ -110,7 +110,10 @@
 </details>
 <div id="song-suggestions" class="song-suggestions" role="group" aria-label="Подсказки поиска" hidden></div>
 <div class="song-random">
-<button type="button" id="song-random" class="cta"><span aria-hidden="true">🎲</span> Случайная песня из всего каталога</button>
+<button type="button" id="song-random" aria-label="Случайная песня из всего каталога">
+<span class="song-die" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+<span class="cta song-random-label">Случайная песня</span>
+</button>
 <ul id="song-random-pick" class="song-list" aria-live="polite" aria-label="Случайная песня" hidden></ul>
 </div>
 <p id="song-count" role="status"></p>
