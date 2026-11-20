@@ -86,3 +86,24 @@ body .hero h1.battle-title{font-size:clamp(1.45rem,7vw,6.4rem);line-height:1.04;
 .pizza-links .cta{padding:11px 14px}
 
 .sound h2{display:flex;align-items:center;gap:.36em}.sound-hours{flex:none;color:var(--accent);font-size:2.45em;line-height:.85;font-variant-numeric:lining-nums}
+
+:root[data-theme=comic]{--bg:#13101d;--panel:#242035;--ink:#fff5d9;--muted:#eadcbf;--line:#79649b;--accent:#ffe34d;--tone:#673294;--button:#191126;--photo:url('assets/battle-comic.png');--radius:0px}
+[data-theme=comic] .hero-photo{background-position:center;animation:none}
+[data-theme=comic] .hero::after{background:linear-gradient(90deg,#130f21 0%,#130f21ed 24%,#130f2160 49%,transparent 80%),linear-gradient(0deg,#130f21 0%,transparent 25%)}
+[data-theme=comic] .stage-lights{display:none}
+[data-theme=comic] .hero h1.battle-title{font-size:clamp(1.6rem,6vw,5.7rem);font-style:italic;text-shadow:3px 4px 0 #130f21}
+[data-theme=comic] .battle-versus{color:var(--ink);text-shadow:2px 2px 0 #130f21}
+[data-theme=comic] .hero-content .intro{max-width:390px;text-shadow:0 2px 4px #130f21}
+[data-theme=comic] .hero-index{display:none}
+.themes{flex-wrap:wrap;border-radius:20px}
+@media(max-width:690px){
+  [data-theme=comic] .hero-photo{background-size:100% auto;background-position:top center;background-repeat:no-repeat}
+  [data-theme=comic] .hero::after{background:linear-gradient(0deg,#130f21 48%,#130f21c9 64%,transparent 84%)}
+  [data-theme=comic] .hero-content{padding-top:clamp(120px,46vw,260px)}
+  .themes button{padding-inline:7px;font-size:.82rem}
+}
+
+@media(min-width:691px){
+  [data-theme=comic] .hero-photo{inset:0 0 0 40%;background-size:contain;background-position:right center;background-repeat:no-repeat}
+  [data-theme=comic] .hero::after{background:linear-gradient(90deg,#130f21 35%,#130f21a0 43%,transparent 60%)}
+}
