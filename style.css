@@ -73,3 +73,5 @@ footer{border-top:1px solid var(--line);padding:20px 0 30px;font-size:.875rem}
 .equalizer i{width:6%;height:100%;display:block;border-radius:999px;background:linear-gradient(0deg,transparent,var(--accent),transparent);transform:scaleY(var(--level));animation:equalize 1.45s var(--delay) ease-in-out infinite alternate}
 @keyframes equalize{to{transform:scaleY(calc(var(--level) * .44));opacity:.63}}
 @media(max-width:690px){.sound{grid-template-columns:1fr}.stage-lights{opacity:.38}}
+
+.hero-power{display:inline-block;margin:20px 0 0;padding:8px 13px;border:1px solid var(--accent);border-radius:var(--radius);background:var(--bg);font-size:.9rem}.hero-power strong{color:var(--accent);margin-right:5px}
