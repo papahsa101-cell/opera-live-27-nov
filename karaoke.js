@@ -2155,6 +2155,13 @@ for (const [control, event] of [[search, 'input'], [language, 'change'], [mood, 
 }
 resetFilters.addEventListener('click', () => {
   for (const filter of filters) filter.value = '';
+  search.value = '';
+  selectedArtist = null;
+  lyricInput.value = '';
+  clearLyrics();
+  lastPick = null;
+  randomPick.hidden = true;
+  randomPick.replaceChildren();
   page = 0;
   renderSongs();
 });
