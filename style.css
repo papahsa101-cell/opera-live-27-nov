@@ -146,3 +146,19 @@ body .hero h1.battle-title{font-size:clamp(1.45rem,7vw,6.4rem);line-height:1.04;
 @media(prefers-reduced-motion:reduce){[data-theme=comic] .comic-burst{animation:none}}
 
 .nearby-shops{display:grid;gap:14px}.nearby-shops ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}.nearby-shops li{display:grid;gap:4px}.nearby-shops a{text-underline-offset:.2em}.nearby-shops li span{color:var(--muted)}
+.karaoke{display:grid;gap:18px;scroll-margin-top:20px}
+.karaoke h2{font-size:clamp(2rem,5vw,4rem)}
+.karaoke-filters{display:grid;grid-template-columns:2fr 1fr 1.35fr;gap:12px}
+.karaoke-filters label{display:grid;gap:6px;font-weight:600;min-width:0}
+.karaoke-filters input,.karaoke-filters select{width:100%;padding:10px 12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;border-radius:var(--radius)}
+.karaoke #song-count{margin:0}
+.song-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.song-list a{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:66px;background:var(--bg);border:1px solid var(--line);padding:10px 12px;text-decoration:none}
+.song-list a:hover strong{text-decoration:underline}
+.song-list small{display:block;font-size:.875rem;color:var(--muted);margin-top:3px}
+.song-action{font-size:.875rem;text-align:right;color:var(--muted)}
+.karaoke #song-more{justify-self:start;cursor:pointer}
+.karaoke #song-more[hidden]{display:none}
+[data-theme=comic] .karaoke{background:#f78fc8}
+[data-theme=comic] .song-list a,[data-theme=comic] .karaoke-filters :is(input,select){border:2px solid var(--ink);background:var(--panel)}
+@media(max-width:690px){.karaoke-filters,.song-list{grid-template-columns:1fr}}

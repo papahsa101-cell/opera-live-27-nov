@@ -7,6 +7,7 @@
 <title>Живой звук — Лофт ОПЕРА</title>
 <link rel="stylesheet" href="style.css">
 <script defer src="site.js"></script>
+<script defer src="karaoke.js"></script>
 </head>
 <body>
 <header class="bar">
@@ -29,7 +30,7 @@
 <p class="hero-power"><strong>2 кВт</strong> пиковой мощности акустики</p>
 <p class="intro">Музыкальный баттл в лофте «ОПЕРА». Кто лучше исполнит любимые песни — караокеры или рокеры с живыми гитарами? Выбирай сторону и пой вместе с нами.</p>
 <div class="hero-actions"><a class="cta telegram-cta" href="https://t.me/+GM4WIfITf4k5NzYy" target="_blank" rel="noopener noreferrer">Вступить в группу в Telegram</a>
-<a class="cta secondary-cta" href="#program">Программа вечера</a></div>
+<a class="cta secondary-cta" href="#program">Программа вечера</a> <a class="cta secondary-cta" href="#karaoke">Каталог караоке</a></div>
 </div>
 <div class="hero-index" aria-hidden="true">27<br>11</div>
 </section>
@@ -85,6 +86,19 @@
 <a class="cta secondary-cta" href="https://papajohns.ru/moscow" target="_blank" rel="noopener noreferrer">Папа Джонс</a>
 <a class="cta secondary-cta" href="https://zotmanpizza.ru/kombo-nabory" target="_blank" rel="noopener noreferrer">Zotman</a>
 </div></section>
+<section class="karaoke route" id="karaoke" aria-labelledby="karaoke-title">
+<div><p class="eyebrow">Караоке</p><h2 id="karaoke-title">Что споём?</h2>
+<p>Найди песню или выбери настроение. Откроется ролик или поиск караоке на YouTube.</p></div>
+<div class="karaoke-filters">
+<label>Песня или исполнитель <input id="song-query" type="search" placeholder="Например, Кино" autocomplete="off"></label>
+<label>Каталог <select id="song-lang"><option value="">Все песни</option><option value="ru">Русское</option><option value="foreign">Иностранное</option></select></label>
+<label>Настроение и жанр <select id="song-mood"><option value="">Любые</option><option>весёлое</option><option>грустное</option><option>лирическое</option><option>народное</option><option>рок</option></select></label>
+</div>
+<p id="song-count" role="status"></p>
+<ul id="song-list" class="song-list"></ul>
+<button type="button" id="song-more" class="cta secondary-cta" hidden>Показать ещё песни</button>
+<noscript><p>Включи JavaScript, чтобы пользоваться каталогом.</p></noscript>
+</section>
 <footer>27 ноября 2026 · Музыкальная вечеринка в «ОПЕРЕ»</footer>
 </div>
 </main>
