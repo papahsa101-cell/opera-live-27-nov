@@ -2206,6 +2206,14 @@ function lyricHash(text) {
 }
 
 function lyricScores(words, postings) {
+  if (words.length === 1) {
+    const word = words[0];
+    const hits = new Map((postings[lyricHash(word)] ?? []).map(id => [id, -2]));
+    for (const entry of indexed) {
+      if (entry.title.split(' ').includes(word)) hits.set(entry.id, -5);
+    }
+    return hits;
+  }
   const result = new Map();
   for (const size of [2, 3]) {
     const hashes = new Set();
@@ -2249,14 +2257,14 @@ lyricForm.addEventListener('submit', async event => {
   event.preventDefault();
   const words = normalize(lyricInput.value).split(' ').filter(Boolean);
   const revision = ++lyricRevision;
-  if (words.length < 2) {
-    lyricStatus.textContent = 'Введи хотя бы два слова.';
+  if (!words.length) {
+    lyricStatus.textContent = 'Введи хотя бы одно слово.';
     return;
   }
   lyricStatus.textContent = 'Ищу похожие строки…';
   lyricClear.hidden = false;
   try {
-    lyricIndexRequest ??= fetch('lyrics-index.json?v=5').then(response => {
+    lyricIndexRequest ??= fetch('lyrics-index.json?v=6').then(response => {
       if (!response.ok) throw new Error('Index unavailable');
       return response.json();
     }).catch(error => {
