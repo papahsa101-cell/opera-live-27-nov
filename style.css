@@ -132,7 +132,6 @@ body .hero h1.battle-title{font-size:clamp(1.45rem,7vw,6.4rem);line-height:1.04;
 [data-theme=comic] .venue{border-top:4px solid var(--ink)}
 [data-theme=comic] .gallery{gap:12px}
 [data-theme=comic] .gallery a{border:3px solid var(--ink);box-shadow:4px 4px var(--ink)}
-[data-theme=comic] .gallery img{filter:saturate(1.2) contrast(1.12)}
 [data-theme=comic] .route{background:#fff8e9}
 [data-theme=comic] .pizza{background:#a8eef2}
 @media(max-width:920px){
@@ -207,3 +206,13 @@ body .hero h1.battle-title{font-size:clamp(1.45rem,7vw,6.4rem);line-height:1.04;
 #song-random:hover .song-die{transform:translateY(-3px) rotate(-16deg)}
 #song-random .song-random-label{padding:8px 12px;font-size:.9rem;line-height:1.35}
 [data-theme=comic] .song-die{background:#ffda36}
+/* Keep the venue recognizable while matching each poster palette. */
+:root[data-theme=neon]{--venue-photo-grade:saturate(1.13) contrast(1.06)}
+:root[data-theme=acoustic]{--venue-photo-grade:sepia(.22) saturate(.83) contrast(.98) brightness(1.04)}
+:root[data-theme=night]{--venue-photo-grade:saturate(1.06) contrast(1.07) brightness(.93)}
+:root[data-theme=comic]{--venue-photo-grade:saturate(1.17) contrast(1.13)}
+.gallery img{filter:var(--venue-photo-grade,none)}
+[data-theme=neon] .gallery a{box-shadow:inset 0 0 0 1px #ff667555}
+[data-theme=acoustic] .gallery a{background:#43301d}
+[data-theme=night] .gallery a{background:#211635}
+[data-theme=night] .gallery img{opacity:.95}
