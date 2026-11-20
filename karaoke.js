@@ -1951,7 +1951,8 @@ const songs = [
   {"artist":"Татьяна Анциферова","title":"Ищу тебя","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1978},
   {"artist":"Виктор Салтыков","title":"Улетели листья","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1985},
   {"artist":"Виктор Салтыков","title":"Островок","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1985},
-  {"artist":"Виктор Салтыков","title":"Белая ночь","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1984}
+  {"artist":"Виктор Салтыков","title":"Белая ночь","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1984},
+  {"artist":"Женя Белоусов","title":"Девчонка-девчоночка","lang":"ru","tags":["весёлое"],"video":"_hqRm1zXEIk","genres":["поп"],"year":1993}
 ];
 const search = document.querySelector('#song-query');
 const language = document.querySelector('#song-lang');
@@ -1974,6 +1975,7 @@ let selectedArtist = null;
 let lyricMatches = null;
 
 const aliases = {
+  'женя белоусов': ['евгений белоусов', 'genya belousov'],
   'чиж & co': ['чиж', 'чиж и ко', 'чиж со', 'чиж ко', 'chizh', 'сергей чиграков'],
   'наутилус помпилиус': ['нау', 'наутилус', 'бутусов'],
   'воскресение': ['воскресенье', 'романов'],
@@ -2254,7 +2256,7 @@ lyricForm.addEventListener('submit', async event => {
   lyricStatus.textContent = 'Ищу похожие строки…';
   lyricClear.hidden = false;
   try {
-    lyricIndexRequest ??= fetch('lyrics-index.json?v=2').then(response => {
+    lyricIndexRequest ??= fetch('lyrics-index.json?v=3').then(response => {
       if (!response.ok) throw new Error('Index unavailable');
       return response.json();
     }).catch(error => {
