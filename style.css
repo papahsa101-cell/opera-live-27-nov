@@ -144,3 +144,5 @@ body .hero h1.battle-title{font-size:clamp(1.45rem,7vw,6.4rem);line-height:1.04;
 }
 @media(max-width:550px){[data-theme=comic] .setlist{grid-template-columns:1fr}[data-theme=comic] .themes button{padding-inline:7px;font-size:.82rem}[data-theme=comic] .sound h2{gap:.23em}}
 @media(prefers-reduced-motion:reduce){[data-theme=comic] .comic-burst{animation:none}}
+
+.nearby-shops{display:grid;gap:14px}.nearby-shops ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}.nearby-shops li{display:grid;gap:4px}.nearby-shops a{text-underline-offset:.2em}.nearby-shops li span{color:var(--muted)}
