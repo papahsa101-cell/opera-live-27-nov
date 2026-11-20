@@ -7,7 +7,7 @@
 <title>Живой звук — Лофт ОПЕРА</title>
 <link rel="stylesheet" href="style.css?v=10">
 <script defer src="site.js"></script>
-<script defer src="karaoke.js?v=10"></script>
+<script defer src="karaoke.js?v=11"></script>
 </head>
 <body>
 <header class="bar">
@@ -91,22 +91,22 @@
 <p>Найди песню или выбери настроение. Откроется ролик или поиск караоке на YouTube.</p><p class="karaoke-source">Настроение указано ориентировочно. Фильтр по десятилетиям показывает песни с указанным годом. <a href="https://github.com/mrsndmn/data-surfers" target="_blank" rel="noopener noreferrer">Источник части каталога</a>.</p></div>
 <div class="karaoke-filters">
 <label>Песня или исполнитель <input id="song-query" type="search" placeholder="Например, Меладзе, Кино или КиШ" autocomplete="off"></label>
-<label>Каталог <select id="song-lang"><option value="">Все песни</option><option value="ru">Русское</option><option value="foreign">Иностранное</option></select></label>
+<label>Язык <select id="song-lang"><option value="">Все песни</option><option value="ru">RU</option><option value="en">EN</option></select></label>
 <label>Настроение <select id="song-mood"><option value="">Любое</option><option>весёлое</option><option>грустное</option><option>лирическое</option></select></label>
-<label>Жанр <select id="song-genre"><option value="">Все жанры</option><option>поп</option><option>рок</option><option>рэп</option><option>народное</option><option>шансон</option><option>электроника</option><option>джаз и блюз</option><option>регги и ска</option><optgroup label="Кино и мультфильмы"><option value="film">Кинофильмы</option><option value="cartoon">Мультфильмы</option></optgroup></select></label>
+<label>Жанр <select id="song-genre"><option value="">Все жанры</option><option>поп</option><option>эстрада</option><option>рок</option><option>рэп</option><option>народное</option><option>шансон</option><option>электроника</option><option>джаз и блюз</option><option>регги и ска</option><optgroup label="Кино и мультфильмы"><option value="film">Кинофильмы</option><option value="cartoon">Мультфильмы</option></optgroup></select></label>
 <label>Десятилетие <select id="song-era"><option value="">Любое</option><option value="old">До 80-х</option><option value="1980">80-е</option><option value="1990">90-е</option><option value="2000">2000-е</option><option value="2010">2010-е</option><option value="2020">2020-е</option></select></label>
 <button type="button" id="song-reset-filters" class="cta secondary-cta">Сбросить фильтры</button>
 </div>
 <details class="lyric-search">
 <summary>Помню только слова песни</summary>
 <form id="lyric-search">
-<label for="lyric-phrase">Введи несколько слов подряд</label>
-<input id="lyric-phrase" type="search" required maxlength="160" placeholder="Строчка, которую помнишь">
+<label for="lyric-phrase">Введи слова, которые помнишь</label>
+<input id="lyric-phrase" type="search" required maxlength="160" placeholder="Например, Штиль ветер">
 <button type="submit" class="cta secondary-cta">Найти в каталоге</button>
 <button type="button" id="lyric-clear" class="cta secondary-cta" hidden>Сбросить</button>
 </form>
 <p id="lyric-status" role="status"></p>
-<p>Поиск по словам доступен для 163 песен. <a href="https://github.com/mjolnika/RU-PopularMusic-Corpus" target="_blank" rel="noopener noreferrer">Источник текстового индекса</a>.</p>
+<p>Поиск по словам доступен для 333 песен. <a href="https://github.com/mjolnika/RU-PopularMusic-Corpus" target="_blank" rel="noopener noreferrer">Корпус русскоязычных песен</a> и <a href="https://lrclib.net/" target="_blank" rel="noopener noreferrer">LRCLIB</a>.</p>
 </details>
 <div id="song-suggestions" class="song-suggestions" role="group" aria-label="Подсказки поиска" hidden></div>
 <div class="song-random">

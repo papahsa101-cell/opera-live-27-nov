@@ -225,7 +225,7 @@ const songs = [
   {"artist":"Arctic Monkeys","title":"R U Mine?","lang":"foreign","tags":[],"video":"","genres":["рок"],"year":2012},
   {"artist":"Maneskin","title":"Beggin'","lang":"foreign","tags":[],"video":"","genres":["рок"],"year":2017},
   {"artist":"Maneskin","title":"I Wanna Be Your Slave","lang":"foreign","tags":[],"video":"","genres":["рок"],"year":2021},
-  {"artist":"Maneskin","title":"Zitti e buoni","lang":"foreign","tags":[],"video":"","genres":["рок"],"year":2021},
+  {"artist":"Maneskin","title":"Zitti e buoni","lang":"foreign","tags":[],"video":"","genres":["рок"],"year":2021,"nonEnglish":true},
   {"artist":"The Rolling Stones","title":"Angry","lang":"foreign","tags":[],"video":"","genres":["рок"],"year":2023},
   {"artist":"Foo Fighters","title":"Rescued","lang":"foreign","tags":[],"video":"","genres":["рок"],"year":2023},
   {"artist":"Coldplay","title":"Higher Power","lang":"foreign","tags":[],"video":"","genres":["рок"],"year":2021},
@@ -369,8 +369,8 @@ const songs = [
   {"artist":"Комбинация","title":"Два кусочека колбаски","lang":"ru","tags":[],"video":"","genres":["поп"]},
   {"artist":"Комбинация","title":"Russian Girls","lang":"ru","tags":[],"video":"","genres":["поп"]},
   {"artist":"Лика Стар","title":"Одинокая луна","lang":"ru","tags":[],"video":"","genres":["поп"]},
-  {"artist":"Мираж","title":"Музыка нас связала","lang":"ru","tags":["весёлое"],"video":"","genres":["поп"],"year":1989},
-  {"artist":"Мираж","title":"Наступает ночь","lang":"ru","tags":[],"video":"","genres":["поп"],"year":1989},
+  {"artist":"Мираж","title":"Музыка нас связала","lang":"ru","tags":["весёлое"],"video":"","genres":["поп","эстрада"],"year":1989},
+  {"artist":"Мираж","title":"Наступает ночь","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1989},
   {"artist":"Мираж","title":"Новый герой","lang":"ru","tags":[],"video":"","genres":["поп"],"year":1989},
   {"artist":"Татьяна Буланова","title":"Не плачь","lang":"ru","tags":[],"video":"","genres":["поп"]},
   {"artist":"Татьяна Буланова","title":"Мой ненаглядный","lang":"ru","tags":[],"video":"","genres":["поп"]},
@@ -771,13 +771,13 @@ const songs = [
   {"artist":"Блестящие","title":"А я всё летала","lang":"ru","tags":["весёлое"],"video":"","genres":["поп"]},
   {"artist":"t.A.T.u.","title":"Нас не догонят","lang":"ru","tags":["весёлое"],"video":"","genres":["поп"],"year":2001},
   {"artist":"Валерия","title":"Часики","lang":"ru","tags":["грустное"],"video":"","genres":["поп"]},
-  {"artist":"Алла Пугачёва","title":"Миллион алых роз","lang":"ru","tags":["лирическое"],"video":"","genres":["поп"]},
+  {"artist":"Алла Пугачёва","title":"Миллион алых роз","lang":"ru","tags":["лирическое"],"video":"","genres":["поп","эстрада"],"year":1982},
   {"artist":"Алла Пугачёва","title":"Позови меня с собой","lang":"ru","tags":["лирическое","грустное"],"video":"","genres":["поп"]},
   {"artist":"Юрий Шатунов","title":"Белые розы","lang":"ru","tags":["лирическое"],"video":"","genres":["поп"]},
   {"artist":"Татьяна Буланова","title":"Ясный мой свет","lang":"ru","tags":["лирическое","грустное"],"video":"","genres":["поп"]},
   {"artist":"Секрет","title":"Привет","lang":"ru","tags":["весёлое"],"video":"","genres":["поп","рок","рэп"]},
   {"artist":"Машина времени","title":"Поворот","lang":"ru","tags":["весёлое"],"video":"","genres":["рок"],"year":1979},
-  {"artist":"Михаил Боярский","title":"Зеленоглазое такси","lang":"ru","tags":["лирическое"],"video":"","genres":[]},
+  {"artist":"Михаил Боярский","title":"Зеленоглазое такси","lang":"ru","tags":["лирическое"],"video":"","genres":["поп","эстрада"],"year":1987},
   {"artist":"Любэ","title":"Конь","lang":"ru","tags":["лирическое"],"video":"","genres":["поп","рок","шансон"]},
   {"artist":"Браво","title":"Этот город","lang":"ru","tags":["весёлое"],"video":"","genres":["рок"]},
   {"artist":"Народная","title":"Калинка","lang":"ru","tags":["весёлое"],"video":"","genres":["народное"]},
@@ -829,9 +829,9 @@ const songs = [
   {"artist":"Céline Dion","title":"My Heart Will Go On","lang":"foreign","tags":["лирическое","грустное"],"video":"","genres":[]},
   {"artist":"Frank Sinatra","title":"Fly Me to the Moon","lang":"foreign","tags":["лирическое"],"video":"","genres":[]},
   {"artist":"Lana Del Rey","title":"Summertime Sadness","lang":"foreign","tags":["грустное"],"video":"","genres":[]},
-  {"artist":"Ricky Martin","title":"Livin' la Vida Loca","lang":"foreign","tags":["весёлое"],"video":"","genres":[]},
+  {"artist":"Ricky Martin","title":"Livin' la Vida Loca","lang":"foreign","tags":["весёлое"],"video":"","genres":[],"nonEnglish":true},
   {"artist":"Shakira","title":"Waka Waka (This Time for Africa)","lang":"foreign","tags":["весёлое"],"video":"","genres":[]},
-  {"artist":"Traditional","title":"Bella Ciao","lang":"foreign","tags":[],"video":"","genres":["народное"]},
+  {"artist":"Traditional","title":"Bella Ciao","lang":"foreign","tags":[],"video":"","genres":["народное"],"nonEnglish":true},
   {"artist":"Traditional","title":"Auld Lang Syne","lang":"foreign","tags":["лирическое"],"video":"","genres":["народное"]},
   {"artist":"Валерий Меладзе","title":"Сэра","lang":"ru","tags":["лирическое"],"video":"","genres":["поп"],"year":1995},
   {"artist":"Валерий Меладзе","title":"Красиво","lang":"ru","tags":["лирическое"],"video":"","genres":["поп"],"year":1999},
@@ -971,22 +971,22 @@ const songs = [
   {"artist":"Ed Sheeran","title":"Shape of You","lang":"foreign","tags":[],"video":"","genres":[]},
   {"artist":"Ed Sheeran","title":"Perfect","lang":"foreign","tags":[],"video":"","genres":[]},
   {"artist":"Ed Sheeran","title":"Thinking Out Loud","lang":"foreign","tags":[],"video":"","genres":[]},
-  {"artist":"Luis Fonsi feat. Daddy Yankee","title":"Despacito","lang":"foreign","tags":[],"video":"","genres":[]},
-  {"artist":"Stromae","title":"Alors on danse","lang":"foreign","tags":[],"video":"","genres":[]},
-  {"artist":"Stromae","title":"Papaoutai","lang":"foreign","tags":[],"video":"","genres":[]},
-  {"artist":"Zaz","title":"Je veux","lang":"foreign","tags":[],"video":"","genres":[]},
-  {"artist":"Joe Dassin","title":"Les Champs-Élysées","lang":"foreign","tags":[],"video":"","genres":[]},
-  {"artist":"Joe Dassin","title":"Et si tu n'existais pas","lang":"foreign","tags":[],"video":"","genres":[]},
-  {"artist":"Édith Piaf","title":"La Vie en rose","lang":"foreign","tags":[],"video":"","genres":[]},
-  {"artist":"Édith Piaf","title":"Non, je ne regrette rien","lang":"foreign","tags":[],"video":"","genres":[]},
-  {"artist":"Nena","title":"99 Luftballons","lang":"foreign","tags":[],"video":"","genres":[]},
-  {"artist":"Rammstein","title":"Du hast","lang":"foreign","tags":[],"video":"","genres":["рок"],"year":1997},
-  {"artist":"Rammstein","title":"Sonne","lang":"foreign","tags":[],"video":"","genres":["рок"],"year":2001},
-  {"artist":"Rammstein","title":"Engel","lang":"foreign","tags":[],"video":"","genres":["рок"]},
-  {"artist":"Adriano Celentano","title":"Azzurro","lang":"foreign","tags":[],"video":"","genres":[]},
-  {"artist":"Adriano Celentano","title":"Susanna","lang":"foreign","tags":[],"video":"","genres":[]},
-  {"artist":"Eros Ramazzotti","title":"Più bella cosa","lang":"foreign","tags":[],"video":"","genres":[]},
-  {"artist":"Domenico Modugno","title":"Nel blu dipinto di blu (Volare)","lang":"foreign","tags":[],"video":"","genres":[]},
+  {"artist":"Luis Fonsi feat. Daddy Yankee","title":"Despacito","lang":"foreign","tags":[],"video":"","genres":[],"nonEnglish":true},
+  {"artist":"Stromae","title":"Alors on danse","lang":"foreign","tags":[],"video":"","genres":[],"nonEnglish":true},
+  {"artist":"Stromae","title":"Papaoutai","lang":"foreign","tags":[],"video":"","genres":[],"nonEnglish":true},
+  {"artist":"Zaz","title":"Je veux","lang":"foreign","tags":[],"video":"","genres":[],"nonEnglish":true},
+  {"artist":"Joe Dassin","title":"Les Champs-Élysées","lang":"foreign","tags":[],"video":"","genres":[],"nonEnglish":true},
+  {"artist":"Joe Dassin","title":"Et si tu n'existais pas","lang":"foreign","tags":[],"video":"","genres":[],"nonEnglish":true},
+  {"artist":"Édith Piaf","title":"La Vie en rose","lang":"foreign","tags":[],"video":"","genres":[],"nonEnglish":true},
+  {"artist":"Édith Piaf","title":"Non, je ne regrette rien","lang":"foreign","tags":[],"video":"","genres":[],"nonEnglish":true},
+  {"artist":"Nena","title":"99 Luftballons","lang":"foreign","tags":[],"video":"","genres":[],"nonEnglish":true},
+  {"artist":"Rammstein","title":"Du hast","lang":"foreign","tags":[],"video":"","genres":["рок"],"year":1997,"nonEnglish":true},
+  {"artist":"Rammstein","title":"Sonne","lang":"foreign","tags":[],"video":"","genres":["рок"],"year":2001,"nonEnglish":true},
+  {"artist":"Rammstein","title":"Engel","lang":"foreign","tags":[],"video":"","genres":["рок"],"nonEnglish":true},
+  {"artist":"Adriano Celentano","title":"Azzurro","lang":"foreign","tags":[],"video":"","genres":[],"nonEnglish":true},
+  {"artist":"Adriano Celentano","title":"Susanna","lang":"foreign","tags":[],"video":"","genres":[],"nonEnglish":true},
+  {"artist":"Eros Ramazzotti","title":"Più bella cosa","lang":"foreign","tags":[],"video":"","genres":[],"nonEnglish":true},
+  {"artist":"Domenico Modugno","title":"Nel blu dipinto di blu (Volare)","lang":"foreign","tags":[],"video":"","genres":[],"nonEnglish":true},
   {"artist":"Кино","title":"Перемен!","lang":"ru","tags":[],"video":"","genres":["рок"]},
   {"artist":"Кино","title":"Восьмиклассница","lang":"ru","tags":[],"video":"","genres":["рок"],"year":1982},
   {"artist":"Кино","title":"Когда твоя девушка больна","lang":"ru","tags":[],"video":"","genres":["рок"]},
@@ -1606,7 +1606,7 @@ const songs = [
   {"artist":"LOBODA","title":"Мира мало","lang":"ru","tags":[],"video":"","genres":["поп"]},
   {"artist":"АнимациЯ","title":"Красиво","lang":"ru","tags":[],"video":"","genres":["рок"]},
   {"artist":"Алиса","title":"Веретено","lang":"ru","tags":["весёлое"],"video":"","genres":["рок"]},
-  {"artist":"Юрий Лоза","title":"Плот","lang":"ru","tags":["лирическое"],"video":"","genres":["поп","шансон"]},
+  {"artist":"Юрий Лоза","title":"Плот","lang":"ru","tags":["лирическое"],"video":"","genres":["поп","шансон","эстрада"],"year":1988},
   {"artist":"Гречка","title":"Твои руки","lang":"ru","tags":[],"video":"","genres":["рэп"]},
   {"artist":"Shortparis","title":"КоКоКо / Cтруктуры не выходят на улицы","lang":"ru","tags":[],"video":"","genres":["рок"]},
   {"artist":"Mirèle","title":"Если бы любовь","lang":"ru","tags":[],"video":"","genres":[]},
@@ -1804,7 +1804,7 @@ const songs = [
   {"artist":"5sta Family","title":"Снова вместе","lang":"ru","tags":["весёлое"],"video":"","genres":["поп","рэп"]},
   {"artist":"Кипелов","title":"Я здесь","lang":"ru","tags":[],"video":"","genres":["рок"]},
   {"artist":"OFFMi","title":"ЭКИПАЖ","lang":"ru","tags":["лирическое"],"video":"","genres":["рэп"]},
-  {"artist":"Владимир Кузьмин","title":"Я не забуду тебя (Сибирские морозы)","lang":"ru","tags":["весёлое"],"video":"","genres":["поп","рок"]},
+  {"artist":"Владимир Кузьмин","title":"Я не забуду тебя (Сибирские морозы)","lang":"ru","tags":["весёлое"],"video":"","genres":["поп","рок","эстрада"],"year":1995},
   {"artist":"Buerak","title":"На старых сидениях кинотеатра","lang":"ru","tags":["весёлое"],"video":"","genres":["рок"]},
   {"artist":"Louna","title":"Кто мы?","lang":"ru","tags":[],"video":"","genres":["рок"]},
   {"artist":"Louna","title":"Станем стеной","lang":"ru","tags":[],"video":"","genres":["рок"]},
@@ -1839,7 +1839,119 @@ const songs = [
   {"artist":"playingtheangel","title":"Бедная юность","lang":"ru","tags":[],"video":"","genres":["рэп"]},
   {"artist":"Отава Ё","title":"Ой, Дуся, ой, Маруся (казачья лезгинка)","lang":"ru","tags":["весёлое"],"video":"","genres":["народное"]},
   {"artist":"May Wave$","title":"Заново 2","lang":"ru","tags":[],"video":"","genres":["рэп"]},
-  {"artist":"May Wave$","title":"Агари","lang":"ru","tags":["грустное"],"video":"","genres":["рэп"]}
+  {"artist":"May Wave$","title":"Агари","lang":"ru","tags":["грустное"],"video":"","genres":["рэп"]},
+  {"artist":"Валерий Леонтьев","title":"Дельтаплан","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1982},
+  {"artist":"Валерий Леонтьев","title":"Исчезли солнечные дни","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1985},
+  {"artist":"Валерий Леонтьев","title":"Куда уехал цирк","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1981},
+  {"artist":"Валерий Леонтьев","title":"Там, в сентябре","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1986},
+  {"artist":"Валерий Леонтьев","title":"Маргарита","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1989},
+  {"artist":"Валерий Леонтьев","title":"Казанова","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"]},
+  {"artist":"Валерий Леонтьев","title":"Ярмарка красок","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1985},
+  {"artist":"Валерий Леонтьев","title":"Память","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"]},
+  {"artist":"Валерий Леонтьев","title":"Танго белых ночей","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1986},
+  {"artist":"Валерий Леонтьев","title":"Кленовый лист","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1984},
+  {"artist":"Валерий Леонтьев","title":"Три минуты","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1988},
+  {"artist":"Валерий Леонтьев","title":"Полёт на воздушном шаре","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"]},
+  {"artist":"Валерий Леонтьев","title":"Зелёный свет","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1983},
+  {"artist":"Валерий Леонтьев","title":"Ненаглядная сторона","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"]},
+  {"artist":"Владимир Кузьмин","title":"Моя любовь","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1985},
+  {"artist":"Владимир Кузьмин","title":"Симона","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1986},
+  {"artist":"Владимир Кузьмин","title":"Две звезды","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1986},
+  {"artist":"Владимир Кузьмин","title":"Пока не пришёл понедельник","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1986},
+  {"artist":"Владимир Кузьмин","title":"Когда меня ты позовёшь","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1986},
+  {"artist":"Владимир Кузьмин","title":"Мячик","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1982},
+  {"artist":"Владимир Кузьмин","title":"Музыканты","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1982},
+  {"artist":"Владимир Кузьмин","title":"Спортлото","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1982},
+  {"artist":"Владимир Кузьмин","title":"Всё ещё впереди","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1982},
+  {"artist":"Владимир Кузьмин","title":"Голос","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1988},
+  {"artist":"Владимир Кузьмин","title":"Ромео и Джульетта","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1987},
+  {"artist":"Владимир Кузьмин","title":"Я не Казанова","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1995},
+  {"artist":"Владимир Кузьмин","title":"Душа","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1990},
+  {"artist":"Владимир Кузьмин","title":"Семь морей","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1996},
+  {"artist":"Владимир Кузьмин","title":"Эй, красотка","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1995},
+  {"artist":"Юрий Антонов","title":"Крыша дома твоего","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1983},
+  {"artist":"Юрий Антонов","title":"Мечта сбывается","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1981},
+  {"artist":"Юрий Антонов","title":"От печали до радости","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1986},
+  {"artist":"Юрий Антонов","title":"Море","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1981},
+  {"artist":"Юрий Антонов","title":"Поверь в мечту","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1985},
+  {"artist":"Юрий Антонов","title":"На улице Каштановой","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1986},
+  {"artist":"Юрий Антонов","title":"Двадцать лет спустя","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1981},
+  {"artist":"Юрий Антонов","title":"Зеркало","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1981},
+  {"artist":"Юрий Антонов","title":"Не забывай","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1981},
+  {"artist":"Юрий Антонов","title":"Летящей походкой","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1986},
+  {"artist":"Юрий Антонов","title":"Снегири","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1983},
+  {"artist":"Юрий Антонов","title":"На высоком берегу","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1986},
+  {"artist":"София Ротару","title":"Лаванда","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1985},
+  {"artist":"София Ротару","title":"Луна, луна","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1986},
+  {"artist":"София Ротару","title":"Было, но прошло","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1987},
+  {"artist":"София Ротару","title":"Только этого мало","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1988},
+  {"artist":"София Ротару","title":"Золотое сердце","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1988},
+  {"artist":"София Ротару","title":"Я ж его любила","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1983},
+  {"artist":"София Ротару","title":"Красная стрела","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1982},
+  {"artist":"София Ротару","title":"Меланколие","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1982},
+  {"artist":"София Ротару","title":"Червона рута","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1971},
+  {"artist":"Алла Пугачёва","title":"Айсберг","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1983},
+  {"artist":"Алла Пугачёва","title":"Паромщик","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1985},
+  {"artist":"Алла Пугачёва","title":"Маэстро","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1980},
+  {"artist":"Алла Пугачёва","title":"Старинные часы","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1981},
+  {"artist":"Алла Пугачёва","title":"Поздно","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1980},
+  {"artist":"Алла Пугачёва","title":"Знаешь, всё ещё будет","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1982},
+  {"artist":"Алла Пугачёва","title":"Без меня","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1984},
+  {"artist":"Алла Пугачёва","title":"Балет","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1985},
+  {"artist":"Алла Пугачёва","title":"Делу время","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1984},
+  {"artist":"Алла Пугачёва","title":"Надо же","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1986},
+  {"artist":"Алла Пугачёва","title":"Белая дверь","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1984},
+  {"artist":"Алла Пугачёва","title":"Этот мир","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1980},
+  {"artist":"Игорь Николаев","title":"Мельница","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1986},
+  {"artist":"Игорь Николаев","title":"Такси, такси","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1987},
+  {"artist":"Игорь Скляр","title":"Комарово","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1985},
+  {"artist":"Игорь Скляр","title":"Суббота есть суббота","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1986},
+  {"artist":"Анне Вески","title":"Позади крутой поворот","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1983},
+  {"artist":"Анне Вески","title":"Радоваться жизни","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1984},
+  {"artist":"Яак Йоала","title":"Я тебя рисую","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1980},
+  {"artist":"Яак Йоала","title":"Подберу музыку","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1979},
+  {"artist":"Яак Йоала","title":"Любовь нас выбирает","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1980},
+  {"artist":"Александр Серов","title":"Мадонна","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1987},
+  {"artist":"Александр Серов","title":"Ты меня любишь","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1988},
+  {"artist":"Александр Серов","title":"Музыка венчальная","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1988},
+  {"artist":"Михаил Боярский","title":"Городские цветы","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1986},
+  {"artist":"Михаил Боярский","title":"Спасибо, родная","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1982},
+  {"artist":"Владимир Маркин","title":"Сиреневый туман","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1989},
+  {"artist":"Владимир Маркин","title":"Я готов целовать песок","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1988},
+  {"artist":"Владимир Маркин","title":"Белая черёмуха","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"]},
+  {"artist":"Юрий Лоза","title":"Девочка в баре","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1983},
+  {"artist":"Юрий Лоза","title":"Сто часов","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1988},
+  {"artist":"Юрий Лоза","title":"Зима","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1989},
+  {"artist":"Ласковый май","title":"Белые розы","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1988},
+  {"artist":"Ласковый май","title":"Седая ночь","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1988},
+  {"artist":"Ласковый май","title":"Розовый вечер","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1988},
+  {"artist":"Ласковый май","title":"Тающий снег","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1989},
+  {"artist":"Мираж","title":"Видео","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1987},
+  {"artist":"Мираж","title":"Звёзды нас ждут","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1987},
+  {"artist":"Мираж","title":"Я больше не прошу","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1989},
+  {"artist":"Электроклуб","title":"Кони в яблоках","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1988},
+  {"artist":"Электроклуб","title":"Тёмная лошадка","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1988},
+  {"artist":"Электроклуб","title":"Ты замуж за него не выходи","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1988},
+  {"artist":"Электроклуб","title":"Чистые пруды","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1987},
+  {"artist":"Александр Барыкин","title":"Букет","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1987},
+  {"artist":"Александр Барыкин","title":"Аэропорт","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1986},
+  {"artist":"Александр Барыкин","title":"Программа телепередач на завтра","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1985},
+  {"artist":"Вячеслав Малежик","title":"Провинциалка","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1987},
+  {"artist":"Вячеслав Малежик","title":"Мозаика","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1987},
+  {"artist":"Вячеслав Малежик","title":"В островах","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1987},
+  {"artist":"Ольга Зарубина","title":"На теплоходе музыка играет","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1987},
+  {"artist":"Ольга Зарубина","title":"Разлучница","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1986},
+  {"artist":"Лариса Долина","title":"Три белых коня","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1982},
+  {"artist":"Лариса Долина","title":"Льдинка","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1988},
+  {"artist":"Крис Кельми и Рок-ателье","title":"Ночное рандеву","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1989},
+  {"artist":"Крис Кельми","title":"Замыкая круг","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1987},
+  {"artist":"Жанна Агузарова","title":"Верю я","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1987},
+  {"artist":"Александр Градский","title":"Как молоды мы были","lang":"ru","tags":[],"video":"","genres":["поп","рок","эстрада"],"year":1975},
+  {"artist":"Татьяна Анциферова","title":"Мир без любимого","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1978},
+  {"artist":"Татьяна Анциферова","title":"Ищу тебя","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1978},
+  {"artist":"Виктор Салтыков","title":"Улетели листья","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1985},
+  {"artist":"Виктор Салтыков","title":"Островок","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1985},
+  {"artist":"Виктор Салтыков","title":"Белая ночь","lang":"ru","tags":[],"video":"","genres":["поп","эстрада"],"year":1984}
 ];
 const search = document.querySelector('#song-query');
 const language = document.querySelector('#song-lang');
@@ -1950,7 +2062,8 @@ function getMatches() {
   const query = normalize(search.value);
   const matches = indexed
     .filter(({song}) => (!selectedArtist || song.artist === selectedArtist)
-      && (!language.value || song.lang === language.value)
+      && (!language.value || (language.value === 'en'
+        ? song.lang === 'foreign' && !song.nonEnglish : song.lang === 'ru'))
       && (!mood.value || song.tags.includes(mood.value))
       && (!genre.value || song.genres.includes(genre.value) || song.screen === genre.value)
       && (!era.value || (song.year && (era.value === 'old'
@@ -2096,6 +2209,14 @@ function lyricScores(words, postings) {
       eligible.set(id, -(score.triples * 5 + score.pairs));
     }
   }
+  // A remembered title can be followed by words from elsewhere in the song.
+  for (const entry of indexed) {
+    const titleWords = entry.title.split(' ');
+    if (!titleWords.every(word => words.includes(word))) continue;
+    const rest = words.filter(word => !titleWords.includes(word));
+    if (!rest.length || !rest.every(word => postings[lyricHash(word)]?.includes(entry.id))) continue;
+    eligible.set(entry.id, (eligible.get(entry.id) ?? 0) - 3);
+  }
   return eligible;
 }
 
@@ -2111,13 +2232,13 @@ lyricForm.addEventListener('submit', async event => {
   const words = normalize(lyricInput.value).split(' ').filter(Boolean);
   const revision = ++lyricRevision;
   if (words.length < 2) {
-    lyricStatus.textContent = 'Введи хотя бы два слова подряд.';
+    lyricStatus.textContent = 'Введи хотя бы два слова.';
     return;
   }
   lyricStatus.textContent = 'Ищу похожие строки…';
   lyricClear.hidden = false;
   try {
-    lyricIndexRequest ??= fetch('lyrics-index.json?v=1').then(response => {
+    lyricIndexRequest ??= fetch('lyrics-index.json?v=2').then(response => {
       if (!response.ok) throw new Error('Index unavailable');
       return response.json();
     }).catch(error => {
@@ -2127,6 +2248,7 @@ lyricForm.addEventListener('submit', async event => {
     const {coverage, postings} = await lyricIndexRequest;
     if (revision !== lyricRevision) return;
     lyricMatches = lyricScores(words, postings);
+    for (const filter of filters) filter.value = '';
     selectedArtist = null;
     search.value = '';
     page = 0;
