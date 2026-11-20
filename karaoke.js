@@ -749,7 +749,7 @@ const songs = [
   {"artist":"Ляпис Трубецкой","title":"Капитал","lang":"ru","tags":["весёлое"],"video":"","genres":["рок"]},
   {"artist":"Король и Шут","title":"Кукла колдуна","lang":"ru","tags":[],"video":"","genres":["рок"],"chords":"https://www.amdm.ru/akkordi/korol_i_shut/165350/kukla_kolduna/","year":1999},
   {"artist":"Король и Шут","title":"Лесник","lang":"ru","tags":["весёлое"],"video":"","genres":["рок"],"year":1997},
-  {"artist":"Ария","title":"Беспечный ангел","lang":"ru","tags":["лирическое"],"video":"","genres":["рок"]},
+  {"artist":"Ария","title":"Беспечный ангел","lang":"ru","tags":["лирическое"],"video":"lQoKNgrWl9c","genres":["рок"],"year":1999},
   {"artist":"Кипелов","title":"Я свободен","lang":"ru","tags":["лирическое"],"video":"","genres":["рок"]},
   {"artist":"Наутилус Помпилиус","title":"Я хочу быть с тобой","lang":"ru","tags":["лирическое","грустное"],"video":"","genres":["рок"]},
   {"artist":"ДДТ","title":"Что такое осень","lang":"ru","tags":["лирическое"],"video":"","genres":["поп","рок"]},
@@ -2264,7 +2264,7 @@ lyricForm.addEventListener('submit', async event => {
   lyricStatus.textContent = 'Ищу похожие строки…';
   lyricClear.hidden = false;
   try {
-    lyricIndexRequest ??= fetch('lyrics-index.json?v=6').then(response => {
+    lyricIndexRequest ??= fetch('lyrics-index.json?v=7').then(response => {
       if (!response.ok) throw new Error('Index unavailable');
       return response.json();
     }).catch(error => {
