@@ -206,13 +206,23 @@ body .hero h1.battle-title{font-size:clamp(1.45rem,7vw,6.4rem);line-height:1.04;
 #song-random:hover .song-die{transform:translateY(-3px) rotate(-16deg)}
 #song-random .song-random-label{padding:8px 12px;font-size:.9rem;line-height:1.35}
 [data-theme=comic] .song-die{background:#ffda36}
-/* Keep the venue recognizable while matching each poster palette. */
-:root[data-theme=neon]{--venue-photo-grade:saturate(1.13) contrast(1.06)}
-:root[data-theme=acoustic]{--venue-photo-grade:sepia(.22) saturate(.83) contrast(.98) brightness(1.04)}
-:root[data-theme=night]{--venue-photo-grade:saturate(1.06) contrast(1.07) brightness(.93)}
-:root[data-theme=comic]{--venue-photo-grade:saturate(1.17) contrast(1.13)}
-.gallery img{filter:var(--venue-photo-grade,none)}
-[data-theme=neon] .gallery a{box-shadow:inset 0 0 0 1px #ff667555}
-[data-theme=acoustic] .gallery a{background:#43301d}
-[data-theme=night] .gallery a{background:#211635}
-[data-theme=night] .gallery img{opacity:.95}
+/* Four illustrated venue sheets. Each gallery link shows one panel and opens the original photo. */
+:root[data-theme=neon]{--venue-art:url('assets/venue-neon.png')}
+:root[data-theme=acoustic]{--venue-art:url('assets/venue-acoustic.png')}
+:root[data-theme=night]{--venue-art:url('assets/venue-night.png')}
+:root[data-theme=comic]{--venue-art:url('assets/venue-comic.png')}
+.gallery a{position:relative;container-type:size}
+.gallery a:nth-child(1){--venue-panel:0% 0%}
+.gallery a:nth-child(2){--venue-panel:100% 0%}
+.gallery a:nth-child(3){--venue-panel:0% 100%}
+.gallery a::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:var(--venue-art);background-repeat:no-repeat;
+  background-size:200% 200%;background-position:var(--venue-panel);
+}
+@supports(width:1cqw){
+  .gallery a::after{
+    inset:auto;top:50%;left:50%;width:max(100cqw,150cqh);height:max(100cqh,66.667cqw);
+    translate:-50% -50%;
+  }
+}
