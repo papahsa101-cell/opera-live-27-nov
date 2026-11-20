@@ -1857,6 +1857,7 @@ const next = document.querySelector('#song-next');
 const pageSize = 12;
 let page = 0;
 let selectedArtist = null;
+let lyricMatches = null;
 
 const aliases = {
   'чиж & co': ['чиж', 'чиж и ко', 'чиж со', 'чиж ко', 'chizh', 'сергей чиграков'],
@@ -1903,11 +1904,11 @@ for (const song of songs) {
   artistCounts.set(song.artist, (artistCounts.get(song.artist) ?? 0) + 1);
 }
 
-const indexed = songs.map(song => {
+const indexed = songs.map((song, id) => {
   const artist = normalize(song.artist);
   const title = normalize(song.title);
   const names = [artist, title, ...(aliasesByArtist.get(artist) ?? [])];
-  return { song, artist, title, names, words: names.join(' ').split(' ') };
+  return { song, id, artist, title, names, words: names.join(' ').split(' ') };
 });
 
 function rank(entry, query) {
@@ -1952,7 +1953,8 @@ function getMatches() {
       && (!genre.value || song.genres.includes(genre.value) || song.screen === genre.value)
       && (!era.value || (song.year && (era.value === 'old'
         ? song.year < 1980 : Math.floor(song.year / 10) * 10 === Number(era.value)))))
-    .map(entry => ({entry, score: selectedArtist ? 0 : rank(entry, query)}))
+    .map(entry => ({entry, score: lyricMatches
+      ? lyricMatches.get(entry.id) ?? Infinity : selectedArtist ? 0 : rank(entry, query)}))
     .filter(match => Number.isFinite(match.score))
     .sort((a, b) => a.score - b.score);
   return {matches, query};
@@ -1983,6 +1985,7 @@ function songRow(song) {
       artist.type = 'button';
       artist.setAttribute('aria-label', 'Все песни исполнителя ' + song.artist);
       artist.addEventListener('click', () => {
+        clearLyrics();
         selectedArtist = song.artist;
         search.value = song.artist;
         for (const filter of [language, mood, genre, era]) filter.value = '';
@@ -2013,7 +2016,7 @@ function songRow(song) {
 
 function renderSongs() {
   const {matches, query} = getMatches();
-  renderSuggestions(matches, selectedArtist ? "" : query);
+  renderSuggestions(matches, selectedArtist || lyricMatches ? "" : query);
   const start = page * pageSize;
   const rows = matches.slice(start, start + pageSize).map(({entry}) => songRow(entry.song));
   list.replaceChildren(...rows);
@@ -2027,7 +2030,10 @@ function renderSongs() {
 
 for (const [control, event] of [[search, 'input'], [language, 'change'], [mood, 'change'], [genre, 'change'], [era, 'change']]) {
   control.addEventListener(event, () => {
-    if (control === search) selectedArtist = null;
+    if (control === search) {
+      clearLyrics();
+      selectedArtist = null;
+    }
     page = 0;
     renderSongs();
   });
@@ -2049,11 +2055,87 @@ randomButton.addEventListener('click', () => {
 renderSongs();
 
 const lyricForm = document.querySelector('#lyric-search');
-lyricForm.addEventListener('submit', event => {
-  const phrase = document.querySelector('#lyric-phrase').value.trim().replace(/["«»]/g, '').trim();
-  if (!phrase) {
-    event.preventDefault();
+const lyricInput = document.querySelector('#lyric-phrase');
+const lyricStatus = document.querySelector('#lyric-status');
+const lyricClear = document.querySelector('#lyric-clear');
+let lyricIndexRequest;
+let lyricRevision = 0;
+
+function lyricHash(text) {
+  let value = 2166136261;
+  for (const char of text) value = Math.imul(value ^ char.codePointAt(0), 16777619);
+  return String(value >>> 0);
+}
+
+function lyricScores(words, postings) {
+  const result = new Map();
+  for (const size of [2, 3]) {
+    const hashes = new Set();
+    for (let start = 0; start + size <= words.length; start++) {
+      hashes.add(lyricHash(words.slice(start, start + size).join(' ')));
+    }
+    for (const hash of hashes) {
+      for (const id of postings[hash] ?? []) {
+        const score = result.get(id) ?? {pairs: 0, triples: 0};
+        if (size === 2) score.pairs++;
+        else score.triples++;
+        result.set(id, score);
+      }
+    }
+  }
+  const eligible = new Map();
+  for (const [id, score] of result) {
+    if (words.length === 2 || score.triples || score.pairs >= Math.max(2, Math.ceil((words.length - 1) / 2))) {
+      eligible.set(id, -(score.triples * 5 + score.pairs));
+    }
+  }
+  return eligible;
+}
+
+function clearLyrics() {
+  lyricRevision++;
+  lyricMatches = null;
+  lyricStatus.textContent = '';
+  lyricClear.hidden = true;
+}
+
+lyricForm.addEventListener('submit', async event => {
+  event.preventDefault();
+  const words = normalize(lyricInput.value).split(' ').filter(Boolean);
+  const revision = ++lyricRevision;
+  if (words.length < 2) {
+    lyricStatus.textContent = 'Введи хотя бы два слова подряд.';
     return;
   }
-  document.querySelector('#lyric-query').value = '"' + phrase + '" текст песни';
+  lyricStatus.textContent = 'Ищу похожие строки…';
+  lyricClear.hidden = false;
+  try {
+    lyricIndexRequest ??= fetch('lyrics-index.json?v=1').then(response => {
+      if (!response.ok) throw new Error('Index unavailable');
+      return response.json();
+    }).catch(error => {
+      lyricIndexRequest = null;
+      throw error;
+    });
+    const {coverage, postings} = await lyricIndexRequest;
+    if (revision !== lyricRevision) return;
+    lyricMatches = lyricScores(words, postings);
+    selectedArtist = null;
+    search.value = '';
+    page = 0;
+    renderSongs();
+    lyricStatus.textContent = lyricMatches.size
+      ? 'Найдено по словам: ' + lyricMatches.size + '. Ниже — песни с учётом выбранных фильтров.'
+      : 'Совпадений нет среди ' + coverage + ' песен с индексом текста. Попробуй другую фразу.';
+  } catch {
+    if (revision === lyricRevision) lyricStatus.textContent = 'Индекс текстов не загрузился. Попробуй ещё раз.';
+  }
+});
+
+lyricClear.addEventListener('click', () => {
+  lyricInput.value = '';
+  clearLyrics();
+  page = 0;
+  renderSongs();
+  lyricInput.focus();
 });
