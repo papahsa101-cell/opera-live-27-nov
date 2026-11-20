@@ -1856,6 +1856,7 @@ const prev = document.querySelector('#song-prev');
 const next = document.querySelector('#song-next');
 const pageSize = 12;
 let page = 0;
+let selectedArtist = null;
 
 const aliases = {
   'чиж & co': ['чиж', 'чиж и ко', 'чиж со', 'чиж ко', 'chizh', 'сергей чиграков'],
@@ -1897,6 +1898,11 @@ function oneEditAway(a, b) {
 const aliasesByArtist = new Map(Object.entries(aliases).map(([name, variants]) =>
   [normalize(name), variants.map(normalize)]));
 
+const artistCounts = new Map();
+for (const song of songs) {
+  artistCounts.set(song.artist, (artistCounts.get(song.artist) ?? 0) + 1);
+}
+
 const indexed = songs.map(song => {
   const artist = normalize(song.artist);
   const title = normalize(song.title);
@@ -1926,6 +1932,7 @@ function renderSuggestions(matches, query) {
     button.type = 'button';
     button.textContent = label;
     button.addEventListener('click', () => {
+      selectedArtist = null;
       search.value = label;
       page = 0;
       renderSongs();
@@ -1939,12 +1946,13 @@ function renderSuggestions(matches, query) {
 function getMatches() {
   const query = normalize(search.value);
   const matches = indexed
-    .filter(({song}) => (!language.value || song.lang === language.value)
+    .filter(({song}) => (!selectedArtist || song.artist === selectedArtist)
+      && (!language.value || song.lang === language.value)
       && (!mood.value || song.tags.includes(mood.value))
       && (!genre.value || song.genres.includes(genre.value) || song.screen === genre.value)
       && (!era.value || (song.year && (era.value === 'old'
         ? song.year < 1980 : Math.floor(song.year / 10) * 10 === Number(era.value)))))
-    .map(entry => ({entry, score: rank(entry, query)}))
+    .map(entry => ({entry, score: selectedArtist ? 0 : rank(entry, query)}))
     .filter(match => Number.isFinite(match.score))
     .sort((a, b) => a.score - b.score);
   return {matches, query};
@@ -1955,7 +1963,11 @@ function songRow(song) {
     const link = document.createElement('a');
     const label = document.createElement('span');
     const title = document.createElement('strong');
-    const artist = document.createElement('small');
+    const byline = document.createElement('div');
+    byline.className = 'song-byline';
+    const canBrowseArtist = artistCounts.get(song.artist) > 1
+      && !song.screen && song.artist !== 'Народная' && song.artist !== 'Traditional';
+    const artist = document.createElement(canBrowseArtist ? 'button' : 'span');
     const action = document.createElement('span');
     const query = song.artist === 'Народная' || song.artist === 'Traditional'
       ? song.title : song.artist + ' ' + song.title;
@@ -1966,10 +1978,24 @@ function songRow(song) {
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
     title.textContent = song.title;
-    artist.textContent = song.artist + (song.year ? ' · ' + song.year : '');
+    artist.textContent = song.artist;
+    if (canBrowseArtist) {
+      artist.type = 'button';
+      artist.setAttribute('aria-label', 'Все песни исполнителя ' + song.artist);
+      artist.addEventListener('click', () => {
+        selectedArtist = song.artist;
+        search.value = song.artist;
+        for (const filter of [language, mood, genre, era]) filter.value = '';
+        page = 0;
+        renderSongs();
+        search.focus();
+      });
+    }
+    byline.append(artist);
+    if (song.year) byline.append(' · ' + song.year);
     action.className = 'song-action';
     action.textContent = song.video ? 'Ролик YouTube' : 'Поиск YouTube';
-    label.append(title, artist);
+    label.append(title);
     link.append(label, action);
     const guitar = document.createElement('details');
     const summary = document.createElement('summary');
@@ -1981,13 +2007,13 @@ function songRow(song) {
     chordLink.rel = 'noopener noreferrer';
     chordLink.textContent = song.chords ? 'Открыть разбор на AmDm' : 'Найти разбор для гитары';
     guitar.append(summary, chordLink);
-    row.append(link, guitar);
+    row.append(link, byline, guitar);
     return row;
 }
 
 function renderSongs() {
   const {matches, query} = getMatches();
-  renderSuggestions(matches, query);
+  renderSuggestions(matches, selectedArtist ? "" : query);
   const start = page * pageSize;
   const rows = matches.slice(start, start + pageSize).map(({entry}) => songRow(entry.song));
   list.replaceChildren(...rows);
@@ -2001,6 +2027,7 @@ function renderSongs() {
 
 for (const [control, event] of [[search, 'input'], [language, 'change'], [mood, 'change'], [genre, 'change'], [era, 'change']]) {
   control.addEventListener(event, () => {
+    if (control === search) selectedArtist = null;
     page = 0;
     renderSongs();
   });

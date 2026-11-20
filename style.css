@@ -187,3 +187,8 @@ body .hero h1.battle-title{font-size:clamp(1.45rem,7vw,6.4rem);line-height:1.04;
 #song-random-pick{grid-template-columns:minmax(0,1fr);width:min(100%,560px)}
 #song-random-pick[hidden]{display:none}
 @media(max-width:900px){.karaoke-filters{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.song-list>li>a{min-height:46px}
+.song-byline{background:var(--bg);border:1px solid var(--line);border-top:0;padding:5px 12px;color:var(--muted);font-size:.875rem}
+.song-byline button{border:0;background:none;padding:4px 0;color:var(--ink);text-decoration:underline;text-underline-offset:.2em;cursor:pointer}
+[data-theme=comic] .song-byline{background:var(--panel);border-color:var(--ink)}
