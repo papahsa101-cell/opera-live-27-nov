@@ -2256,7 +2256,7 @@ lyricForm.addEventListener('submit', async event => {
   lyricStatus.textContent = 'Ищу похожие строки…';
   lyricClear.hidden = false;
   try {
-    lyricIndexRequest ??= fetch('lyrics-index.json?v=3').then(response => {
+    lyricIndexRequest ??= fetch('lyrics-index.json?v=4').then(response => {
       if (!response.ok) throw new Error('Index unavailable');
       return response.json();
     }).catch(error => {
