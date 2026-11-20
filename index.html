@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Музыкальная вечеринка 27 ноября в лофте ОПЕРА на Красном Октябре. Живые гитары, песни, караоке и танцы.">
 <title>Живой звук — Лофт ОПЕРА</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2">
 <script defer src="site.js"></script>
-<script defer src="karaoke.js"></script>
+<script defer src="karaoke.js?v=2"></script>
 </head>
 <body>
 <header class="bar">
@@ -90,13 +90,14 @@
 <div><p class="eyebrow">Караоке</p><h2 id="karaoke-title">Что споём?</h2>
 <p>Найди песню или выбери настроение. Откроется ролик или поиск караоке на YouTube.</p></div>
 <div class="karaoke-filters">
-<label>Песня или исполнитель <input id="song-query" type="search" placeholder="Например, Кино" autocomplete="off"></label>
+<label>Песня или исполнитель <input id="song-query" type="search" placeholder="Например, Меладзе, Кино или КиШ" autocomplete="off"></label>
 <label>Каталог <select id="song-lang"><option value="">Все песни</option><option value="ru">Русское</option><option value="foreign">Иностранное</option></select></label>
 <label>Настроение и жанр <select id="song-mood"><option value="">Любые</option><option>весёлое</option><option>грустное</option><option>лирическое</option><option>народное</option><option>рок</option></select></label>
 </div>
+<div id="song-suggestions" class="song-suggestions" role="group" aria-label="Подсказки поиска" hidden></div>
 <p id="song-count" role="status"></p>
 <ul id="song-list" class="song-list"></ul>
-<button type="button" id="song-more" class="cta secondary-cta" hidden>Показать ещё песни</button>
+<nav class="song-pages" aria-label="Страницы каталога"><button type="button" id="song-prev" class="cta secondary-cta">Назад</button><button type="button" id="song-next" class="cta secondary-cta">Дальше</button></nav>
 <noscript><p>Включи JavaScript, чтобы пользоваться каталогом.</p></noscript>
 </section>
 <footer>27 ноября 2026 · Музыкальная вечеринка в «ОПЕРЕ»</footer>

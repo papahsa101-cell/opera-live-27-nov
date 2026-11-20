@@ -989,32 +989,180 @@ const songs = [
       "народное"
     ],
     "video": ""
+  },
+  {
+    "artist": "Валерий Меладзе",
+    "title": "Сэра",
+    "lang": "ru",
+    "tags": [
+      "лирическое"
+    ],
+    "video": ""
+  },
+  {
+    "artist": "Валерий Меладзе",
+    "title": "Красиво",
+    "lang": "ru",
+    "tags": [
+      "лирическое"
+    ],
+    "video": ""
+  },
+  {
+    "artist": "Валерий Меладзе",
+    "title": "Самба белого мотылька",
+    "lang": "ru",
+    "tags": [
+      "весёлое"
+    ],
+    "video": ""
+  },
+  {
+    "artist": "Валерий Меладзе",
+    "title": "Небеса",
+    "lang": "ru",
+    "tags": [
+      "лирическое",
+      "грустное"
+    ],
+    "video": ""
+  },
+  {
+    "artist": "Валерий Меладзе",
+    "title": "Притяженья больше нет",
+    "lang": "ru",
+    "tags": [
+      "лирическое"
+    ],
+    "video": ""
+  },
+  {
+    "artist": "Валерий Меладзе",
+    "title": "Текила-любовь",
+    "lang": "ru",
+    "tags": [
+      "весёлое"
+    ],
+    "video": ""
+  },
+  {
+    "artist": "Валерий Меладзе",
+    "title": "Девушки из высшего общества",
+    "lang": "ru",
+    "tags": [
+      "весёлое"
+    ],
+    "video": ""
+  },
+  {
+    "artist": "Валерий Меладзе",
+    "title": "Обернитесь",
+    "lang": "ru",
+    "tags": [
+      "лирическое",
+      "грустное"
+    ],
+    "video": ""
   }
 ];
 const search = document.querySelector('#song-query');
 const language = document.querySelector('#song-lang');
 const mood = document.querySelector('#song-mood');
+const suggestions = document.querySelector('#song-suggestions');
 const list = document.querySelector('#song-list');
 const count = document.querySelector('#song-count');
-const more = document.querySelector('#song-more');
-const pageSize = 18;
-let limit = pageSize;
+const prev = document.querySelector('#song-prev');
+const next = document.querySelector('#song-next');
+const pageSize = 12;
+let page = 0;
+
+const aliases = {
+  'король и шут': ['киш', 'кишъ', 'шкиш', 'korol i shut', 'горшок'],
+  'валерий меладзе': ['меладзе', 'meladze', 'валера меладзе'],
+  'кино': ['kino', 'цой', 'виктор цой', 'tsoi'],
+  'би 2': ['би2', 'bi2', 'bi 2'],
+  'руки вверх': ['рукивверх', 'жуков', 'сергей жуков'],
+  'макsим': ['максим', 'максим певица', 'maksim'],
+  'abba': ['абба'],
+  'queen': ['квин'],
+  'the beatles': ['битлз', 'битлс'],
+};
 
 function normalize(text) {
   return text.toLocaleLowerCase('ru').normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+    .replace(/\p{Diacritic}/gu, '').replace(/[ьъ]/g, '')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+}
+
+function oneEditAway(a, b) {
+  if (Math.abs(a.length - b.length) > 1) return false;
+  let i = 0, j = 0, edits = 0;
+  while (i < a.length && j < b.length) {
+    if (a[i] === b[j]) { i++; j++; continue; }
+    if (++edits > 1) return false;
+    if (a.length === b.length && a[i] === b[j + 1] && a[i + 1] === b[j]) {
+      i += 2; j += 2; continue;
+    }
+    if (a.length >= b.length) i++;
+    if (b.length >= a.length) j++;
+  }
+  return edits + (a.length - i) + (b.length - j) <= 1;
+}
+
+const aliasesByArtist = new Map(Object.entries(aliases).map(([name, variants]) =>
+  [normalize(name), variants.map(normalize)]));
+
+const indexed = songs.map(song => {
+  const artist = normalize(song.artist);
+  const title = normalize(song.title);
+  const names = [artist, title, ...(aliasesByArtist.get(artist) ?? [])];
+  return { song, artist, title, names, words: names.join(' ').split(' ') };
+});
+
+function rank(entry, query) {
+  if (!query) return 0;
+  if (entry.names.includes(query)) return 0;
+  if (entry.names.some(name => name.startsWith(query))) return 1;
+  const terms = query.split(' ');
+  if (terms.every(term => entry.words.some(word => word.startsWith(term)))) return 2;
+  if (terms.every(term => entry.names.some(name => name.includes(term)))) return 3;
+  if (terms.every(term => entry.words.some(word => word.startsWith(term)
+    || (term.length >= 4 && oneEditAway(term, word.slice(0, term.length)))))) return 4;
+  return Infinity;
+}
+
+function renderSuggestions(matches, query) {
+  const labels = query.length < 2 ? [] : [...new Set(matches.flatMap(({entry}) =>
+    entry.artist.includes(query) || entry.names.slice(2).some(name => name.startsWith(query))
+      ? [entry.song.artist, entry.song.title] : [entry.song.title, entry.song.artist]
+  ))].slice(0, 6);
+  suggestions.replaceChildren(...labels.map(label => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = label;
+    button.addEventListener('click', () => {
+      search.value = label;
+      page = 0;
+      renderSongs();
+      search.focus();
+    });
+    return button;
+  }));
+  suggestions.hidden = labels.length === 0;
 }
 
 function renderSongs() {
-  const terms = normalize(search.value).split(' ').filter(Boolean);
-  const matches = songs.filter(song => {
-    const name = normalize(song.title + ' ' + song.artist);
-    return (!language.value || song.lang === language.value)
-      && (!mood.value || song.tags.includes(mood.value))
-      && terms.every(term => name.includes(term));
-  });
+  const query = normalize(search.value);
+  const matches = indexed
+    .filter(({song}) => (!language.value || song.lang === language.value)
+      && (!mood.value || song.tags.includes(mood.value)))
+    .map(entry => ({entry, score: rank(entry, query)}))
+    .filter(match => Number.isFinite(match.score))
+    .sort((a, b) => a.score - b.score);
+  renderSuggestions(matches, query);
 
-  const rows = matches.slice(0, limit).map(song => {
+  const start = page * pageSize;
+  const rows = matches.slice(start, start + pageSize).map(({entry: {song}}) => {
     const row = document.createElement('li');
     const link = document.createElement('a');
     const label = document.createElement('span');
@@ -1038,24 +1186,26 @@ function renderSongs() {
     row.append(link);
     return row;
   });
-
   list.replaceChildren(...rows);
   count.textContent = matches.length
-    ? 'Показано ' + rows.length + ' из ' + matches.length
+    ? 'Песни ' + (start + 1) + '–' + (start + rows.length) + ' из ' + matches.length
     : 'Песен по этому запросу нет. Попробуй другой запрос или сбрось фильтры.';
-  more.hidden = rows.length >= matches.length;
+  prev.disabled = page === 0;
+  next.disabled = start + pageSize >= matches.length;
+  prev.parentElement.hidden = matches.length <= pageSize;
 }
 
 for (const [control, event] of [[search, 'input'], [language, 'change'], [mood, 'change']]) {
   control.addEventListener(event, () => {
-    limit = pageSize;
+    page = 0;
     renderSongs();
   });
 }
-more.addEventListener('click', () => {
-  const previousLimit = limit;
-  limit += pageSize;
-  renderSongs();
-  list.children[previousLimit]?.querySelector('a').focus();
-});
+for (const [button, step] of [[prev, -1], [next, 1]]) {
+  button.addEventListener('click', () => {
+    page += step;
+    renderSongs();
+    list.querySelector('a')?.focus();
+  });
+}
 renderSongs();

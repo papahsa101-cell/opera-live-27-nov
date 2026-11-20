@@ -157,8 +157,12 @@ body .hero h1.battle-title{font-size:clamp(1.45rem,7vw,6.4rem);line-height:1.04;
 .song-list a:hover strong{text-decoration:underline}
 .song-list small{display:block;font-size:.875rem;color:var(--muted);margin-top:3px}
 .song-action{font-size:.875rem;text-align:right;color:var(--muted)}
-.karaoke #song-more{justify-self:start;cursor:pointer}
-.karaoke #song-more[hidden]{display:none}
 [data-theme=comic] .karaoke{background:#f78fc8}
 [data-theme=comic] .song-list a,[data-theme=comic] .karaoke-filters :is(input,select){border:2px solid var(--ink);background:var(--panel)}
 @media(max-width:690px){.karaoke-filters,.song-list{grid-template-columns:1fr}}
+.song-suggestions,.song-pages{display:flex;flex-wrap:wrap;gap:8px}
+.song-suggestions[hidden],.song-pages[hidden]{display:none}
+.song-suggestions button{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:6px 10px;font:inherit;cursor:pointer}
+.song-suggestions button:hover{text-decoration:underline}
+.song-pages button{cursor:pointer}
+.song-pages button:disabled{opacity:.5;cursor:default}
