@@ -179,7 +179,7 @@ body .hero h1.battle-title{font-size:clamp(1.45rem,7vw,6.4rem);line-height:1.04;
 [data-theme=comic] .song-list details a{border:0}
 @media(max-width:900px){.karaoke-filters{grid-template-columns:1fr 1fr}.karaoke-filters label:first-child{grid-column:1/-1}}
 
-.karaoke-filters{grid-template-columns:repeat(5,minmax(0,1fr))}
+.karaoke-filters{grid-template-columns:repeat(4,minmax(0,1fr))}
 .karaoke-filters label:first-child{grid-column:1/-1}
 .song-random{display:grid;gap:12px;justify-items:start}
 .song-random button{cursor:pointer}

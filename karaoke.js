@@ -1845,7 +1845,6 @@ const search = document.querySelector('#song-query');
 const language = document.querySelector('#song-lang');
 const mood = document.querySelector('#song-mood');
 const genre = document.querySelector('#song-genre');
-const screen = document.querySelector('#song-screen');
 const era = document.querySelector('#song-era');
 const randomButton = document.querySelector('#song-random');
 const randomPick = document.querySelector('#song-random-pick');
@@ -1942,8 +1941,7 @@ function getMatches() {
   const matches = indexed
     .filter(({song}) => (!language.value || song.lang === language.value)
       && (!mood.value || song.tags.includes(mood.value))
-      && (!genre.value || song.genres.includes(genre.value))
-      && (!screen.value || song.screen === screen.value)
+      && (!genre.value || song.genres.includes(genre.value) || song.screen === genre.value)
       && (!era.value || (song.year && (era.value === 'old'
         ? song.year < 1980 : Math.floor(song.year / 10) * 10 === Number(era.value)))))
     .map(entry => ({entry, score: rank(entry, query)}))
@@ -2001,7 +1999,7 @@ function renderSongs() {
   prev.parentElement.hidden = matches.length <= pageSize;
 }
 
-for (const [control, event] of [[search, 'input'], [language, 'change'], [mood, 'change'], [genre, 'change'], [screen, 'change'], [era, 'change']]) {
+for (const [control, event] of [[search, 'input'], [language, 'change'], [mood, 'change'], [genre, 'change'], [era, 'change']]) {
   control.addEventListener(event, () => {
     page = 0;
     renderSongs();
