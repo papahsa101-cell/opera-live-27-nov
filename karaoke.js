@@ -1,1069 +1,1114 @@
 const songs = [
-  {
-    "artist": "Кино",
-    "title": "Звезда по имени Солнце",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": "yqiAO8UJuBM"
-  },
-  {
-    "artist": "Кино",
-    "title": "Группа крови",
-    "lang": "ru",
-    "tags": [
-      "грустное",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Кино",
-    "title": "Пачка сигарет",
-    "lang": "ru",
-    "tags": [
-      "грустное",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Кино",
-    "title": "Кукушка",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "грустное",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Агата Кристи",
-    "title": "Как на войне",
-    "lang": "ru",
-    "tags": [
-      "грустное",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Агата Кристи",
-    "title": "Сказочная тайга",
-    "lang": "ru",
-    "tags": [
-      "весёлое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Сплин",
-    "title": "Выхода нет",
-    "lang": "ru",
-    "tags": [
-      "грустное",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Сплин",
-    "title": "Орбит без сахара",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Би-2",
-    "title": "Полковнику никто не пишет",
-    "lang": "ru",
-    "tags": [
-      "грустное",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Би-2",
-    "title": "Мой рок-н-ролл",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Земфира",
-    "title": "Хочешь?",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "грустное",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Земфира",
-    "title": "Искала",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Мумий Тролль",
-    "title": "Владивосток 2000",
-    "lang": "ru",
-    "tags": [
-      "весёлое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Мумий Тролль",
-    "title": "Медведица",
-    "lang": "ru",
-    "tags": [
-      "весёлое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Чайф",
-    "title": "Оранжевое настроение",
-    "lang": "ru",
-    "tags": [
-      "весёлое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Чайф",
-    "title": "Никто не услышит (Ой-йо)",
-    "lang": "ru",
-    "tags": [
-      "грустное",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Ляпис Трубецкой",
-    "title": "Капитал",
-    "lang": "ru",
-    "tags": [
-      "весёлое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Король и Шут",
-    "title": "Кукла колдуна",
-    "lang": "ru",
-    "tags": [
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Король и Шут",
-    "title": "Лесник",
-    "lang": "ru",
-    "tags": [
-      "весёлое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Ария",
-    "title": "Беспечный ангел",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Кипелов",
-    "title": "Я свободен",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Наутилус Помпилиус",
-    "title": "Я хочу быть с тобой",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "грустное",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "ДДТ",
-    "title": "Что такое осень",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Сектор Газа",
-    "title": "Лирика",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Смысловые Галлюцинации",
-    "title": "Вечно молодой",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Звери",
-    "title": "Районы-кварталы",
-    "lang": "ru",
-    "tags": [
-      "весёлое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Звери",
-    "title": "До скорой встречи",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Город 312",
-    "title": "Останусь",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "грустное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "МакSим",
-    "title": "Знаешь ли ты",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "грустное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "МакSим",
-    "title": "Мой рай",
-    "lang": "ru",
-    "tags": [
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Руки Вверх!",
-    "title": "18 мне уже",
-    "lang": "ru",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Руки Вверх!",
-    "title": "Крошка моя",
-    "lang": "ru",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Руки Вверх!",
-    "title": "Он тебя целует",
-    "lang": "ru",
-    "tags": [
-      "грустное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Иванушки International",
-    "title": "Тополиный пух",
-    "lang": "ru",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Иванушки International",
-    "title": "Тучи",
-    "lang": "ru",
-    "tags": [
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Вирус!",
-    "title": "Ручки",
-    "lang": "ru",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Демо",
-    "title": "Солнышко",
-    "lang": "ru",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Гости из будущего",
-    "title": "Зима в сердце",
-    "lang": "ru",
-    "tags": [
-      "грустное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Блестящие",
-    "title": "А я всё летала",
-    "lang": "ru",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "t.A.T.u.",
-    "title": "Нас не догонят",
-    "lang": "ru",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Валерия",
-    "title": "Часики",
-    "lang": "ru",
-    "tags": [
-      "грустное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Алла Пугачёва",
-    "title": "Миллион алых роз",
-    "lang": "ru",
-    "tags": [
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Алла Пугачёва",
-    "title": "Позови меня с собой",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "грустное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Юрий Шатунов",
-    "title": "Белые розы",
-    "lang": "ru",
-    "tags": [
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Татьяна Буланова",
-    "title": "Ясный мой свет",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "грустное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Секрет",
-    "title": "Привет",
-    "lang": "ru",
-    "tags": [
-      "весёлое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Машина времени",
-    "title": "Поворот",
-    "lang": "ru",
-    "tags": [
-      "весёлое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Михаил Боярский",
-    "title": "Зеленоглазое такси",
-    "lang": "ru",
-    "tags": [
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Любэ",
-    "title": "Конь",
-    "lang": "ru",
-    "tags": [
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Браво",
-    "title": "Этот город",
-    "lang": "ru",
-    "tags": [
-      "весёлое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Народная",
-    "title": "Калинка",
-    "lang": "ru",
-    "tags": [
-      "весёлое",
-      "народное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Народная",
-    "title": "Ой, мороз, мороз",
-    "lang": "ru",
-    "tags": [
-      "народное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Народная",
-    "title": "Во поле берёза стояла",
-    "lang": "ru",
-    "tags": [
-      "народное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Народная",
-    "title": "Ой, то не вечер",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "народное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Народная",
-    "title": "Валенки",
-    "lang": "ru",
-    "tags": [
-      "весёлое",
-      "народное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Народная",
-    "title": "Барыня",
-    "lang": "ru",
-    "tags": [
-      "весёлое",
-      "народное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Народная",
-    "title": "По Дону гуляет",
-    "lang": "ru",
-    "tags": [
-      "грустное",
-      "народное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Народная",
-    "title": "Вдоль по Питерской",
-    "lang": "ru",
-    "tags": [
-      "весёлое",
-      "народное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Ансамбль им. Александрова",
-    "title": "Катюша",
-    "lang": "ru",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Марк Бернес",
-    "title": "Тёмная ночь",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "грустное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "ABBA",
-    "title": "Dancing Queen",
-    "lang": "foreign",
-    "tags": [
-      "весёлое"
-    ],
-    "video": "WHayJZ3eMcE"
-  },
-  {
-    "artist": "ABBA",
-    "title": "Mamma Mia",
-    "lang": "foreign",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "ABBA",
-    "title": "The Winner Takes It All",
-    "lang": "foreign",
-    "tags": [
-      "грустное",
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Gloria Gaynor",
-    "title": "I Will Survive",
-    "lang": "foreign",
-    "tags": [
-      "весёлое"
-    ],
-    "video": "FsUa8P-L2Ag"
-  },
-  {
-    "artist": "Queen",
-    "title": "We Will Rock You",
-    "lang": "foreign",
-    "tags": [
-      "весёлое",
-      "рок"
-    ],
-    "video": "j8Mkv84V9mY"
-  },
-  {
-    "artist": "Queen",
-    "title": "Bohemian Rhapsody",
-    "lang": "foreign",
-    "tags": [
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Queen",
-    "title": "Don't Stop Me Now",
-    "lang": "foreign",
-    "tags": [
-      "весёлое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Queen",
-    "title": "We Are the Champions",
-    "lang": "foreign",
-    "tags": [
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "The Beatles",
-    "title": "Hey Jude",
-    "lang": "foreign",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "The Beatles",
-    "title": "Let It Be",
-    "lang": "foreign",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "The Beatles",
-    "title": "Yesterday",
-    "lang": "foreign",
-    "tags": [
-      "грустное",
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Bon Jovi",
-    "title": "Livin' on a Prayer",
-    "lang": "foreign",
-    "tags": [
-      "весёлое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Bryan Adams",
-    "title": "Summer of '69",
-    "lang": "foreign",
-    "tags": [
-      "весёлое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Europe",
-    "title": "The Final Countdown",
-    "lang": "foreign",
-    "tags": [
-      "весёлое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Nirvana",
-    "title": "Smells Like Teen Spirit",
-    "lang": "foreign",
-    "tags": [
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "The Cranberries",
-    "title": "Zombie",
-    "lang": "foreign",
-    "tags": [
-      "грустное",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Oasis",
-    "title": "Wonderwall",
-    "lang": "foreign",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Radiohead",
-    "title": "Creep",
-    "lang": "foreign",
-    "tags": [
-      "грустное",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "R.E.M.",
-    "title": "Losing My Religion",
-    "lang": "foreign",
-    "tags": [
-      "грустное",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Scorpions",
-    "title": "Wind of Change",
-    "lang": "foreign",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Eagles",
-    "title": "Hotel California",
-    "lang": "foreign",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "The Killers",
-    "title": "Mr. Brightside",
-    "lang": "foreign",
-    "tags": [
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Pink Floyd",
-    "title": "Wish You Were Here",
-    "lang": "foreign",
-    "tags": [
-      "лирическое",
-      "грустное",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Metallica",
-    "title": "Nothing Else Matters",
-    "lang": "foreign",
-    "tags": [
-      "лирическое",
-      "рок"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Depeche Mode",
-    "title": "Enjoy the Silence",
-    "lang": "foreign",
-    "tags": [
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Adele",
-    "title": "Someone Like You",
-    "lang": "foreign",
-    "tags": [
-      "грустное",
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Adele",
-    "title": "Rolling in the Deep",
-    "lang": "foreign",
-    "tags": [
-      "грустное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Amy Winehouse",
-    "title": "Back to Black",
-    "lang": "foreign",
-    "tags": [
-      "грустное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Amy Winehouse",
-    "title": "Valerie",
-    "lang": "foreign",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Britney Spears",
-    "title": "Toxic",
-    "lang": "foreign",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Spice Girls",
-    "title": "Wannabe",
-    "lang": "foreign",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Lady Gaga & Bradley Cooper",
-    "title": "Shallow",
-    "lang": "foreign",
-    "tags": [
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Dua Lipa",
-    "title": "Levitating",
-    "lang": "foreign",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "a-ha",
-    "title": "Take On Me",
-    "lang": "foreign",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Backstreet Boys",
-    "title": "I Want It That Way",
-    "lang": "foreign",
-    "tags": [
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Whitney Houston",
-    "title": "I Wanna Dance with Somebody",
-    "lang": "foreign",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "My Heart Will Go On",
-    "lang": "foreign",
-    "tags": [
-      "лирическое",
-      "грустное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Frank Sinatra",
-    "title": "Fly Me to the Moon",
-    "lang": "foreign",
-    "tags": [
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Lana Del Rey",
-    "title": "Summertime Sadness",
-    "lang": "foreign",
-    "tags": [
-      "грустное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Ricky Martin",
-    "title": "Livin' la Vida Loca",
-    "lang": "foreign",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Shakira",
-    "title": "Waka Waka (This Time for Africa)",
-    "lang": "foreign",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Traditional",
-    "title": "Bella Ciao",
-    "lang": "foreign",
-    "tags": [
-      "народное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Traditional",
-    "title": "Auld Lang Syne",
-    "lang": "foreign",
-    "tags": [
-      "лирическое",
-      "народное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Валерий Меладзе",
-    "title": "Сэра",
-    "lang": "ru",
-    "tags": [
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Валерий Меладзе",
-    "title": "Красиво",
-    "lang": "ru",
-    "tags": [
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Валерий Меладзе",
-    "title": "Самба белого мотылька",
-    "lang": "ru",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Валерий Меладзе",
-    "title": "Небеса",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "грустное"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Валерий Меладзе",
-    "title": "Притяженья больше нет",
-    "lang": "ru",
-    "tags": [
-      "лирическое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Валерий Меладзе",
-    "title": "Текила-любовь",
-    "lang": "ru",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Валерий Меладзе",
-    "title": "Девушки из высшего общества",
-    "lang": "ru",
-    "tags": [
-      "весёлое"
-    ],
-    "video": ""
-  },
-  {
-    "artist": "Валерий Меладзе",
-    "title": "Обернитесь",
-    "lang": "ru",
-    "tags": [
-      "лирическое",
-      "грустное"
-    ],
-    "video": ""
-  }
+  {"artist":"Кино","title":"Звезда по имени Солнце","lang":"ru","tags":["лирическое","рок"],"video":"yqiAO8UJuBM"},
+  {"artist":"Кино","title":"Группа крови","lang":"ru","tags":["грустное","рок"],"video":""},
+  {"artist":"Кино","title":"Пачка сигарет","lang":"ru","tags":["грустное","рок"],"video":""},
+  {"artist":"Кино","title":"Кукушка","lang":"ru","tags":["лирическое","грустное","рок"],"video":""},
+  {"artist":"Агата Кристи","title":"Как на войне","lang":"ru","tags":["грустное","рок"],"video":""},
+  {"artist":"Агата Кристи","title":"Сказочная тайга","lang":"ru","tags":["весёлое","рок"],"video":""},
+  {"artist":"Сплин","title":"Выхода нет","lang":"ru","tags":["грустное","рок"],"video":""},
+  {"artist":"Сплин","title":"Орбит без сахара","lang":"ru","tags":["лирическое","рок"],"video":""},
+  {"artist":"Би-2","title":"Полковнику никто не пишет","lang":"ru","tags":["грустное","рок"],"video":""},
+  {"artist":"Би-2","title":"Мой рок-н-ролл","lang":"ru","tags":["лирическое","рок"],"video":""},
+  {"artist":"Земфира","title":"Хочешь?","lang":"ru","tags":["лирическое","грустное","рок"],"video":""},
+  {"artist":"Земфира","title":"Искала","lang":"ru","tags":["лирическое","рок"],"video":""},
+  {"artist":"Мумий Тролль","title":"Владивосток 2000","lang":"ru","tags":["весёлое","рок"],"video":""},
+  {"artist":"Мумий Тролль","title":"Медведица","lang":"ru","tags":["весёлое","рок"],"video":""},
+  {"artist":"Чайф","title":"Оранжевое настроение","lang":"ru","tags":["весёлое","рок"],"video":""},
+  {"artist":"Чайф","title":"Никто не услышит (Ой-йо)","lang":"ru","tags":["грустное","рок"],"video":""},
+  {"artist":"Ляпис Трубецкой","title":"Капитал","lang":"ru","tags":["весёлое","рок"],"video":""},
+  {"artist":"Король и Шут","title":"Кукла колдуна","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Король и Шут","title":"Лесник","lang":"ru","tags":["весёлое","рок"],"video":""},
+  {"artist":"Ария","title":"Беспечный ангел","lang":"ru","tags":["лирическое","рок"],"video":""},
+  {"artist":"Кипелов","title":"Я свободен","lang":"ru","tags":["лирическое","рок"],"video":""},
+  {"artist":"Наутилус Помпилиус","title":"Я хочу быть с тобой","lang":"ru","tags":["лирическое","грустное","рок"],"video":""},
+  {"artist":"ДДТ","title":"Что такое осень","lang":"ru","tags":["лирическое","рок"],"video":""},
+  {"artist":"Сектор Газа","title":"Лирика","lang":"ru","tags":["лирическое","рок"],"video":""},
+  {"artist":"Смысловые Галлюцинации","title":"Вечно молодой","lang":"ru","tags":["лирическое","рок"],"video":""},
+  {"artist":"Звери","title":"Районы-кварталы","lang":"ru","tags":["весёлое","рок"],"video":""},
+  {"artist":"Звери","title":"До скорой встречи","lang":"ru","tags":["лирическое","рок"],"video":""},
+  {"artist":"Город 312","title":"Останусь","lang":"ru","tags":["лирическое","грустное"],"video":""},
+  {"artist":"МакSим","title":"Знаешь ли ты","lang":"ru","tags":["лирическое","грустное"],"video":""},
+  {"artist":"МакSим","title":"Мой рай","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Руки Вверх!","title":"18 мне уже","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Руки Вверх!","title":"Крошка моя","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Руки Вверх!","title":"Он тебя целует","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Иванушки International","title":"Тополиный пух","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Иванушки International","title":"Тучи","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Вирус!","title":"Ручки","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Демо","title":"Солнышко","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Гости из будущего","title":"Зима в сердце","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Блестящие","title":"А я всё летала","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"t.A.T.u.","title":"Нас не догонят","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Валерия","title":"Часики","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Алла Пугачёва","title":"Миллион алых роз","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Алла Пугачёва","title":"Позови меня с собой","lang":"ru","tags":["лирическое","грустное"],"video":""},
+  {"artist":"Юрий Шатунов","title":"Белые розы","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Татьяна Буланова","title":"Ясный мой свет","lang":"ru","tags":["лирическое","грустное"],"video":""},
+  {"artist":"Секрет","title":"Привет","lang":"ru","tags":["весёлое","рок"],"video":""},
+  {"artist":"Машина времени","title":"Поворот","lang":"ru","tags":["весёлое","рок"],"video":""},
+  {"artist":"Михаил Боярский","title":"Зеленоглазое такси","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Любэ","title":"Конь","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Браво","title":"Этот город","lang":"ru","tags":["весёлое","рок"],"video":""},
+  {"artist":"Народная","title":"Калинка","lang":"ru","tags":["весёлое","народное"],"video":""},
+  {"artist":"Народная","title":"Ой, мороз, мороз","lang":"ru","tags":["народное"],"video":""},
+  {"artist":"Народная","title":"Во поле берёза стояла","lang":"ru","tags":["народное"],"video":""},
+  {"artist":"Народная","title":"Ой, то не вечер","lang":"ru","tags":["лирическое","народное"],"video":""},
+  {"artist":"Народная","title":"Валенки","lang":"ru","tags":["весёлое","народное"],"video":""},
+  {"artist":"Народная","title":"Барыня","lang":"ru","tags":["весёлое","народное"],"video":""},
+  {"artist":"Народная","title":"По Дону гуляет","lang":"ru","tags":["грустное","народное"],"video":""},
+  {"artist":"Народная","title":"Вдоль по Питерской","lang":"ru","tags":["весёлое","народное"],"video":""},
+  {"artist":"Ансамбль им. Александрова","title":"Катюша","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Марк Бернес","title":"Тёмная ночь","lang":"ru","tags":["лирическое","грустное"],"video":""},
+  {"artist":"ABBA","title":"Dancing Queen","lang":"foreign","tags":["весёлое"],"video":"WHayJZ3eMcE"},
+  {"artist":"ABBA","title":"Mamma Mia","lang":"foreign","tags":["весёлое"],"video":""},
+  {"artist":"ABBA","title":"The Winner Takes It All","lang":"foreign","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Gloria Gaynor","title":"I Will Survive","lang":"foreign","tags":["весёлое"],"video":"FsUa8P-L2Ag"},
+  {"artist":"Queen","title":"We Will Rock You","lang":"foreign","tags":["весёлое","рок"],"video":"j8Mkv84V9mY"},
+  {"artist":"Queen","title":"Bohemian Rhapsody","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Queen","title":"Don't Stop Me Now","lang":"foreign","tags":["весёлое","рок"],"video":""},
+  {"artist":"Queen","title":"We Are the Champions","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"The Beatles","title":"Hey Jude","lang":"foreign","tags":["лирическое","рок"],"video":""},
+  {"artist":"The Beatles","title":"Let It Be","lang":"foreign","tags":["лирическое","рок"],"video":""},
+  {"artist":"The Beatles","title":"Yesterday","lang":"foreign","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Bon Jovi","title":"Livin' on a Prayer","lang":"foreign","tags":["весёлое","рок"],"video":""},
+  {"artist":"Bryan Adams","title":"Summer of '69","lang":"foreign","tags":["весёлое","рок"],"video":""},
+  {"artist":"Europe","title":"The Final Countdown","lang":"foreign","tags":["весёлое","рок"],"video":""},
+  {"artist":"Nirvana","title":"Smells Like Teen Spirit","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"The Cranberries","title":"Zombie","lang":"foreign","tags":["грустное","рок"],"video":""},
+  {"artist":"Oasis","title":"Wonderwall","lang":"foreign","tags":["лирическое","рок"],"video":""},
+  {"artist":"Radiohead","title":"Creep","lang":"foreign","tags":["грустное","рок"],"video":""},
+  {"artist":"R.E.M.","title":"Losing My Religion","lang":"foreign","tags":["грустное","рок"],"video":""},
+  {"artist":"Scorpions","title":"Wind of Change","lang":"foreign","tags":["лирическое","рок"],"video":""},
+  {"artist":"Eagles","title":"Hotel California","lang":"foreign","tags":["лирическое","рок"],"video":""},
+  {"artist":"The Killers","title":"Mr. Brightside","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Pink Floyd","title":"Wish You Were Here","lang":"foreign","tags":["лирическое","грустное","рок"],"video":""},
+  {"artist":"Metallica","title":"Nothing Else Matters","lang":"foreign","tags":["лирическое","рок"],"video":""},
+  {"artist":"Depeche Mode","title":"Enjoy the Silence","lang":"foreign","tags":["лирическое"],"video":""},
+  {"artist":"Adele","title":"Someone Like You","lang":"foreign","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Adele","title":"Rolling in the Deep","lang":"foreign","tags":["грустное"],"video":""},
+  {"artist":"Amy Winehouse","title":"Back to Black","lang":"foreign","tags":["грустное"],"video":""},
+  {"artist":"Amy Winehouse","title":"Valerie","lang":"foreign","tags":["весёлое"],"video":""},
+  {"artist":"Britney Spears","title":"Toxic","lang":"foreign","tags":["весёлое"],"video":""},
+  {"artist":"Spice Girls","title":"Wannabe","lang":"foreign","tags":["весёлое"],"video":""},
+  {"artist":"Lady Gaga & Bradley Cooper","title":"Shallow","lang":"foreign","tags":["лирическое"],"video":""},
+  {"artist":"Dua Lipa","title":"Levitating","lang":"foreign","tags":["весёлое"],"video":""},
+  {"artist":"a-ha","title":"Take On Me","lang":"foreign","tags":["весёлое"],"video":""},
+  {"artist":"Backstreet Boys","title":"I Want It That Way","lang":"foreign","tags":["лирическое"],"video":""},
+  {"artist":"Whitney Houston","title":"I Wanna Dance with Somebody","lang":"foreign","tags":["весёлое"],"video":""},
+  {"artist":"Céline Dion","title":"My Heart Will Go On","lang":"foreign","tags":["лирическое","грустное"],"video":""},
+  {"artist":"Frank Sinatra","title":"Fly Me to the Moon","lang":"foreign","tags":["лирическое"],"video":""},
+  {"artist":"Lana Del Rey","title":"Summertime Sadness","lang":"foreign","tags":["грустное"],"video":""},
+  {"artist":"Ricky Martin","title":"Livin' la Vida Loca","lang":"foreign","tags":["весёлое"],"video":""},
+  {"artist":"Shakira","title":"Waka Waka (This Time for Africa)","lang":"foreign","tags":["весёлое"],"video":""},
+  {"artist":"Traditional","title":"Bella Ciao","lang":"foreign","tags":["народное"],"video":""},
+  {"artist":"Traditional","title":"Auld Lang Syne","lang":"foreign","tags":["лирическое","народное"],"video":""},
+  {"artist":"Валерий Меладзе","title":"Сэра","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Валерий Меладзе","title":"Красиво","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Валерий Меладзе","title":"Самба белого мотылька","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Валерий Меладзе","title":"Небеса","lang":"ru","tags":["лирическое","грустное"],"video":""},
+  {"artist":"Валерий Меладзе","title":"Притяженья больше нет","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Валерий Меладзе","title":"Текила-любовь","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Валерий Меладзе","title":"Девушки из высшего общества","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Валерий Меладзе","title":"Обернитесь","lang":"ru","tags":["лирическое","грустное"],"video":""},
+  {"artist":"ABBA","title":"Waterloo","lang":"foreign","tags":[],"video":""},
+  {"artist":"ABBA","title":"Knowing Me, Knowing You","lang":"foreign","tags":[],"video":""},
+  {"artist":"ABBA","title":"Take a Chance on Me","lang":"foreign","tags":[],"video":""},
+  {"artist":"ABBA","title":"Super Trouper","lang":"foreign","tags":[],"video":""},
+  {"artist":"ABBA","title":"Gimme! Gimme! Gimme! (A Man After Midnight)","lang":"foreign","tags":[],"video":""},
+  {"artist":"ABBA","title":"Lay All Your Love on Me","lang":"foreign","tags":[],"video":""},
+  {"artist":"ABBA","title":"Thank You for the Music","lang":"foreign","tags":[],"video":""},
+  {"artist":"Queen","title":"Another One Bites the Dust","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Queen","title":"I Want to Break Free","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Queen","title":"Somebody to Love","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Queen","title":"Crazy Little Thing Called Love","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Queen","title":"Radio Ga Ga","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Queen","title":"The Show Must Go On","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Queen","title":"Under Pressure","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"The Beatles","title":"Come Together","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"The Beatles","title":"Here Comes the Sun","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"The Beatles","title":"All You Need Is Love","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"The Beatles","title":"Twist and Shout","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"The Beatles","title":"A Hard Day's Night","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"The Beatles","title":"Help!","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"The Beatles","title":"Yellow Submarine","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Elton John","title":"Rocket Man","lang":"foreign","tags":[],"video":""},
+  {"artist":"Elton John","title":"Your Song","lang":"foreign","tags":[],"video":""},
+  {"artist":"Elton John","title":"I'm Still Standing","lang":"foreign","tags":[],"video":""},
+  {"artist":"Elton John","title":"Tiny Dancer","lang":"foreign","tags":[],"video":""},
+  {"artist":"Elton John","title":"Candle in the Wind","lang":"foreign","tags":[],"video":""},
+  {"artist":"Elvis Presley","title":"Can't Help Falling in Love","lang":"foreign","tags":[],"video":""},
+  {"artist":"Elvis Presley","title":"Jailhouse Rock","lang":"foreign","tags":[],"video":""},
+  {"artist":"Elvis Presley","title":"Suspicious Minds","lang":"foreign","tags":[],"video":""},
+  {"artist":"Elvis Presley","title":"Hound Dog","lang":"foreign","tags":[],"video":""},
+  {"artist":"Michael Jackson","title":"Billie Jean","lang":"foreign","tags":[],"video":""},
+  {"artist":"Michael Jackson","title":"Beat It","lang":"foreign","tags":[],"video":""},
+  {"artist":"Michael Jackson","title":"Thriller","lang":"foreign","tags":[],"video":""},
+  {"artist":"Michael Jackson","title":"Man in the Mirror","lang":"foreign","tags":[],"video":""},
+  {"artist":"Michael Jackson","title":"Smooth Criminal","lang":"foreign","tags":[],"video":""},
+  {"artist":"Madonna","title":"Like a Prayer","lang":"foreign","tags":[],"video":""},
+  {"artist":"Madonna","title":"Like a Virgin","lang":"foreign","tags":[],"video":""},
+  {"artist":"Madonna","title":"Material Girl","lang":"foreign","tags":[],"video":""},
+  {"artist":"Madonna","title":"La Isla Bonita","lang":"foreign","tags":[],"video":""},
+  {"artist":"Madonna","title":"Vogue","lang":"foreign","tags":[],"video":""},
+  {"artist":"George Michael","title":"Careless Whisper","lang":"foreign","tags":[],"video":""},
+  {"artist":"George Michael","title":"Faith","lang":"foreign","tags":[],"video":""},
+  {"artist":"George Michael","title":"Freedom! '90","lang":"foreign","tags":[],"video":""},
+  {"artist":"Wham!","title":"Wake Me Up Before You Go-Go","lang":"foreign","tags":[],"video":""},
+  {"artist":"Wham!","title":"Last Christmas","lang":"foreign","tags":[],"video":""},
+  {"artist":"Tina Turner","title":"The Best","lang":"foreign","tags":[],"video":""},
+  {"artist":"Tina Turner","title":"What's Love Got to Do with It","lang":"foreign","tags":[],"video":""},
+  {"artist":"Tina Turner","title":"Proud Mary","lang":"foreign","tags":[],"video":""},
+  {"artist":"Cher","title":"Believe","lang":"foreign","tags":[],"video":""},
+  {"artist":"Cher","title":"If I Could Turn Back Time","lang":"foreign","tags":[],"video":""},
+  {"artist":"Cyndi Lauper","title":"Girls Just Want to Have Fun","lang":"foreign","tags":[],"video":""},
+  {"artist":"Cyndi Lauper","title":"Time After Time","lang":"foreign","tags":[],"video":""},
+  {"artist":"Bonnie Tyler","title":"Total Eclipse of the Heart","lang":"foreign","tags":[],"video":""},
+  {"artist":"Bonnie Tyler","title":"Holding Out for a Hero","lang":"foreign","tags":[],"video":""},
+  {"artist":"Whitney Houston","title":"I Will Always Love You","lang":"foreign","tags":[],"video":""},
+  {"artist":"Whitney Houston","title":"I Have Nothing","lang":"foreign","tags":[],"video":""},
+  {"artist":"Whitney Houston","title":"Greatest Love of All","lang":"foreign","tags":[],"video":""},
+  {"artist":"Adele","title":"Hello","lang":"foreign","tags":[],"video":""},
+  {"artist":"Adele","title":"Set Fire to the Rain","lang":"foreign","tags":[],"video":""},
+  {"artist":"Adele","title":"Easy on Me","lang":"foreign","tags":[],"video":""},
+  {"artist":"Adele","title":"Skyfall","lang":"foreign","tags":[],"video":""},
+  {"artist":"Lady Gaga","title":"Bad Romance","lang":"foreign","tags":[],"video":""},
+  {"artist":"Lady Gaga","title":"Poker Face","lang":"foreign","tags":[],"video":""},
+  {"artist":"Lady Gaga","title":"Born This Way","lang":"foreign","tags":[],"video":""},
+  {"artist":"Robbie Williams","title":"Angels","lang":"foreign","tags":[],"video":""},
+  {"artist":"Robbie Williams","title":"Feel","lang":"foreign","tags":[],"video":""},
+  {"artist":"Robbie Williams","title":"Let Me Entertain You","lang":"foreign","tags":[],"video":""},
+  {"artist":"Coldplay","title":"Yellow","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Coldplay","title":"Fix You","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Coldplay","title":"Viva la Vida","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Coldplay","title":"The Scientist","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Keane","title":"Somewhere Only We Know","lang":"foreign","tags":[],"video":""},
+  {"artist":"Keane","title":"Everybody's Changing","lang":"foreign","tags":[],"video":""},
+  {"artist":"Linkin Park","title":"Numb","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Linkin Park","title":"In the End","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Linkin Park","title":"What I've Done","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Green Day","title":"Basket Case","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Green Day","title":"Boulevard of Broken Dreams","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Green Day","title":"Wake Me Up When September Ends","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"AC/DC","title":"Highway to Hell","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"AC/DC","title":"Back in Black","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"AC/DC","title":"Thunderstruck","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Guns N' Roses","title":"Sweet Child o' Mine","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Guns N' Roses","title":"Paradise City","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Guns N' Roses","title":"November Rain","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Aerosmith","title":"Dream On","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Aerosmith","title":"I Don't Want to Miss a Thing","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Red Hot Chili Peppers","title":"Californication","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Red Hot Chili Peppers","title":"Otherside","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Red Hot Chili Peppers","title":"Under the Bridge","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"The White Stripes","title":"Seven Nation Army","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Muse","title":"Starlight","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Muse","title":"Uprising","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Muse","title":"Time Is Running Out","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Toto","title":"Africa","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Toto","title":"Hold the Line","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Journey","title":"Don't Stop Believin'","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Journey","title":"Separate Ways (Worlds Apart)","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Boney M.","title":"Rasputin","lang":"foreign","tags":[],"video":""},
+  {"artist":"Boney M.","title":"Daddy Cool","lang":"foreign","tags":[],"video":""},
+  {"artist":"Boney M.","title":"Sunny","lang":"foreign","tags":[],"video":""},
+  {"artist":"Aqua","title":"Barbie Girl","lang":"foreign","tags":[],"video":""},
+  {"artist":"Aqua","title":"Doctor Jones","lang":"foreign","tags":[],"video":""},
+  {"artist":"Rihanna","title":"Umbrella","lang":"foreign","tags":[],"video":""},
+  {"artist":"Rihanna","title":"Diamonds","lang":"foreign","tags":[],"video":""},
+  {"artist":"Rihanna","title":"We Found Love","lang":"foreign","tags":[],"video":""},
+  {"artist":"Katy Perry","title":"Firework","lang":"foreign","tags":[],"video":""},
+  {"artist":"Katy Perry","title":"Roar","lang":"foreign","tags":[],"video":""},
+  {"artist":"Katy Perry","title":"Hot N Cold","lang":"foreign","tags":[],"video":""},
+  {"artist":"Taylor Swift","title":"Shake It Off","lang":"foreign","tags":[],"video":""},
+  {"artist":"Taylor Swift","title":"Love Story","lang":"foreign","tags":[],"video":""},
+  {"artist":"Taylor Swift","title":"Blank Space","lang":"foreign","tags":[],"video":""},
+  {"artist":"The Weeknd","title":"Blinding Lights","lang":"foreign","tags":[],"video":""},
+  {"artist":"The Weeknd","title":"Save Your Tears","lang":"foreign","tags":[],"video":""},
+  {"artist":"Billie Eilish","title":"bad guy","lang":"foreign","tags":[],"video":""},
+  {"artist":"Billie Eilish","title":"Birds of a Feather","lang":"foreign","tags":[],"video":""},
+  {"artist":"Billie Eilish","title":"lovely","lang":"foreign","tags":[],"video":""},
+  {"artist":"Imagine Dragons","title":"Believer","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Imagine Dragons","title":"Demons","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Imagine Dragons","title":"Radioactive","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Daft Punk","title":"Get Lucky","lang":"foreign","tags":[],"video":""},
+  {"artist":"Daft Punk","title":"One More Time","lang":"foreign","tags":[],"video":""},
+  {"artist":"Pharrell Williams","title":"Happy","lang":"foreign","tags":[],"video":""},
+  {"artist":"Mark Ronson feat. Bruno Mars","title":"Uptown Funk","lang":"foreign","tags":[],"video":""},
+  {"artist":"Bruno Mars","title":"Just the Way You Are","lang":"foreign","tags":[],"video":""},
+  {"artist":"Bruno Mars","title":"Locked Out of Heaven","lang":"foreign","tags":[],"video":""},
+  {"artist":"Bruno Mars","title":"Grenade","lang":"foreign","tags":[],"video":""},
+  {"artist":"Ed Sheeran","title":"Shape of You","lang":"foreign","tags":[],"video":""},
+  {"artist":"Ed Sheeran","title":"Perfect","lang":"foreign","tags":[],"video":""},
+  {"artist":"Ed Sheeran","title":"Thinking Out Loud","lang":"foreign","tags":[],"video":""},
+  {"artist":"Luis Fonsi feat. Daddy Yankee","title":"Despacito","lang":"foreign","tags":[],"video":""},
+  {"artist":"Stromae","title":"Alors on danse","lang":"foreign","tags":[],"video":""},
+  {"artist":"Stromae","title":"Papaoutai","lang":"foreign","tags":[],"video":""},
+  {"artist":"Zaz","title":"Je veux","lang":"foreign","tags":[],"video":""},
+  {"artist":"Joe Dassin","title":"Les Champs-Élysées","lang":"foreign","tags":[],"video":""},
+  {"artist":"Joe Dassin","title":"Et si tu n'existais pas","lang":"foreign","tags":[],"video":""},
+  {"artist":"Édith Piaf","title":"La Vie en rose","lang":"foreign","tags":[],"video":""},
+  {"artist":"Édith Piaf","title":"Non, je ne regrette rien","lang":"foreign","tags":[],"video":""},
+  {"artist":"Nena","title":"99 Luftballons","lang":"foreign","tags":[],"video":""},
+  {"artist":"Rammstein","title":"Du hast","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Rammstein","title":"Sonne","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Rammstein","title":"Engel","lang":"foreign","tags":["рок"],"video":""},
+  {"artist":"Adriano Celentano","title":"Azzurro","lang":"foreign","tags":[],"video":""},
+  {"artist":"Adriano Celentano","title":"Susanna","lang":"foreign","tags":[],"video":""},
+  {"artist":"Eros Ramazzotti","title":"Più bella cosa","lang":"foreign","tags":[],"video":""},
+  {"artist":"Domenico Modugno","title":"Nel blu dipinto di blu (Volare)","lang":"foreign","tags":[],"video":""},
+  {"artist":"Кино","title":"Перемен!","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Кино","title":"Восьмиклассница","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Кино","title":"Когда твоя девушка больна","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Кино","title":"Алюминиевые огурцы","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Кино","title":"Мама, мы все тяжело больны","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Кино","title":"Последний герой","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Кино","title":"Место для шага вперёд","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Кино","title":"Закрой за мной дверь, я ухожу","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Народная","title":"Ах вы, сени, мои сени","lang":"ru","tags":["народное"],"video":""},
+  {"artist":"Народная","title":"Камаринская","lang":"ru","tags":["народное"],"video":""},
+  {"artist":"Народная","title":"Порушка-Параня","lang":"ru","tags":["народное"],"video":""},
+  {"artist":"Народная","title":"Ой, при лужку, при лужке","lang":"ru","tags":["народное"],"video":""},
+  {"artist":"Народная","title":"Как у наших у ворот","lang":"ru","tags":["народное"],"video":""},
+  {"artist":"Народная","title":"Ой, вставала я ранёшенько","lang":"ru","tags":["народное"],"video":""},
+  {"artist":"Народная","title":"Уж ты, сад","lang":"ru","tags":["народное"],"video":""},
+  {"artist":"Народная","title":"Тонкая рябина","lang":"ru","tags":["народное"],"video":""},
+  {"artist":"Rauf & Faik","title":"Детство","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Dzham","title":"Ты мой кайф","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Rauf & Faik","title":"это ли счастье?","lang":"ru","tags":[],"video":""},
+  {"artist":"Rauf & Faik","title":"Если тебе будет грустно","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"JONY","title":"Без тебя я не я","lang":"ru","tags":[],"video":""},
+  {"artist":"Rauf & Faik","title":"Я люблю тебя","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Mnogoznaal","title":"Колхозник","lang":"ru","tags":[],"video":""},
+  {"artist":"Клава Кока","title":"Краш","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"JONY","title":"Лали","lang":"ru","tags":[],"video":""},
+  {"artist":"ANIKV","title":"Меня не будет","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Витя АК","title":"РАТАТАТАТА","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"DJ Smash","title":"БЕГИ feat. Poët","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Zivert","title":"неболей","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Платина","title":"На грязном (Диана)","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Rauf & Faik","title":"я люблю тебя давно","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"GAYAZOV$ BROTHER$","title":"Увезите меня на Дип-хаус","lang":"ru","tags":[],"video":""},
+  {"artist":"JONY","title":"Комета","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Dzham","title":"Королева танцпола","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Miyagi & Эндшпиль","title":"Люби меня","lang":"ru","tags":[],"video":""},
+  {"artist":"Rauf & Faik","title":"колыбельная","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Клава Кока","title":"Покинула чат","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"JONY","title":"Мадам","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"RASA","title":"Фиолетово","lang":"ru","tags":[],"video":""},
+  {"artist":"Николай Басков","title":"Дико тусим","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Artik & Asti","title":"Девочка танцуй","lang":"ru","tags":[],"video":""},
+  {"artist":"Artik & Asti","title":"Грустный дэнс (feat. Артем Качер)","lang":"ru","tags":[],"video":""},
+  {"artist":"Миша Марвин","title":"Французский поцелуй","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Элджей","title":"Sayonara детка","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Cream Soda","title":"Плачу на техно","lang":"ru","tags":[],"video":""},
+  {"artist":"Pharaoh","title":"Без ключа","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Клава Кока","title":"Мне пох","lang":"ru","tags":[],"video":""},
+  {"artist":"Zivert","title":"ЯТЛ","lang":"ru","tags":[],"video":""},
+  {"artist":"JONY","title":"Ты беспощадна","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"MARKUL","title":"Конфеты","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Артур Пирожков","title":"Зацепила","lang":"ru","tags":[],"video":""},
+  {"artist":"kis-kis","title":"молчи","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"RASA","title":"Пчеловод","lang":"ru","tags":[],"video":""},
+  {"artist":"МУККА","title":"ДЕВОЧКА С КАРЕ","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"HammAli & Navai","title":"Девочка-война","lang":"ru","tags":[],"video":""},
+  {"artist":"HammAli & Navai","title":"А если это любовь?","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Элджей","title":"Розовое вино","lang":"ru","tags":[],"video":""},
+  {"artist":"Mnogoznaal","title":"Антигерой","lang":"ru","tags":[],"video":""},
+  {"artist":"JONY","title":"Ты пари","lang":"ru","tags":[],"video":""},
+  {"artist":"Егор Крид","title":"Девочка с картинки","lang":"ru","tags":[],"video":""},
+  {"artist":"Dzham","title":"Таблетка","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"FEDUK","title":"Краски","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"MARKUL","title":"Серпантин","lang":"ru","tags":[],"video":""},
+  {"artist":"THRILL PILL","title":"Грустная Песня (feat. Егор Крид & MORGENSHTERN)","lang":"ru","tags":[],"video":""},
+  {"artist":"МУККА","title":"Не Киряй","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"МУККА","title":"Днями-ночами","lang":"ru","tags":[],"video":""},
+  {"artist":"The Limba","title":"СМУЗИ","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Rauf & Faik","title":"Вечера","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Mnogoznaal","title":"Гостиница Космос","lang":"ru","tags":[],"video":""},
+  {"artist":"Pharaoh","title":"Не по пути","lang":"ru","tags":[],"video":""},
+  {"artist":"JONY","title":"Мир сошёл с ума","lang":"ru","tags":[],"video":""},
+  {"artist":"JONY","title":"Аллея","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"104","title":"НЕ ЖАЛЬ","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Платина","title":"Бандана","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"HammAli & Navai","title":"Прятки","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"HammAli & Navai","title":"Пустите меня на танцпол","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"9 Грамм","title":"Рапапам (feat. Miyagi & Эндшпиль)","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Artik & Asti","title":"Под гипнозом","lang":"ru","tags":[],"video":""},
+  {"artist":"Мари Краймбрери","title":"Пряталась в ванной","lang":"ru","tags":[],"video":""},
+  {"artist":"масло черного тмина","title":"что для тебя красота","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"СКАзка","title":"ПЛАКАЛА","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Витас","title":"7 элемент","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Кучера","title":"По щекам слёзы","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"GAYAZOV$ BROTHER$","title":"Я, ТЫ и МОРЕ","lang":"ru","tags":[],"video":""},
+  {"artist":"OG BUDA","title":"Трафик","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Zivert","title":"Зелёные волны","lang":"ru","tags":[],"video":""},
+  {"artist":"#2Маши","title":"Мама, я танцую","lang":"ru","tags":[],"video":""},
+  {"artist":"Егор Крид","title":"Веселая песня","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"T-Killah","title":"Люби меня люби","lang":"ru","tags":[],"video":""},
+  {"artist":"Би-2","title":"Пора возвращаться домой","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"MARKUL","title":"Больше бед","lang":"ru","tags":[],"video":""},
+  {"artist":"MARKUL","title":"Худший друг","lang":"ru","tags":[],"video":""},
+  {"artist":"МЫ","title":"Остров","lang":"ru","tags":[],"video":""},
+  {"artist":"Платина","title":"Бэнтли, Бенз и Бумер","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Мари Краймбрери","title":"Океан","lang":"ru","tags":[],"video":""},
+  {"artist":"Каспийский груз","title":"Табор уходит в небо","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"MATRANG","title":"Медуза","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Элджей","title":"Рваные джинсы","lang":"ru","tags":[],"video":""},
+  {"artist":"Cream Soda","title":"Никаких Больше Вечеринок","lang":"ru","tags":[],"video":""},
+  {"artist":"Король и Шут","title":"Прыгну со скалы","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"GAYAZOV$ BROTHER$","title":"До встречи на танцполе","lang":"ru","tags":[],"video":""},
+  {"artist":"Pharaoh","title":"Дико, например","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Pharaoh","title":"Мой кайф","lang":"ru","tags":[],"video":""},
+  {"artist":"OG BUDA","title":"Групи","lang":"ru","tags":[],"video":""},
+  {"artist":"Егор Крид","title":"Цвет настроения чёрный","lang":"ru","tags":[],"video":""},
+  {"artist":"Егор Крид","title":"Мне всё Монро","lang":"ru","tags":[],"video":""},
+  {"artist":"lil krystalll","title":"Каждый день","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Мэйби Бэйби","title":"Ахегао","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"GRIVINA","title":"Я хочу","lang":"ru","tags":[],"video":""},
+  {"artist":"MAYOT","title":"Ауди [prod. by Sqweezey]","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"MARKUL","title":"2 минуты","lang":"ru","tags":[],"video":""},
+  {"artist":"МЫ","title":"Возможно","lang":"ru","tags":[],"video":""},
+  {"artist":"Тимати","title":"Звездопад","lang":"ru","tags":[],"video":""},
+  {"artist":"Платина","title":"Санта Клаус","lang":"ru","tags":["весёлое","лирическое"],"video":""},
+  {"artist":"RASA","title":"Под фонарём","lang":"ru","tags":[],"video":""},
+  {"artist":"Artik & Asti","title":"Все мимо","lang":"ru","tags":[],"video":""},
+  {"artist":"Gruppa Skryptonite","title":"КПСП","lang":"ru","tags":["весёлое","лирическое"],"video":""},
+  {"artist":"Мохито","title":"В жизни так бывает - Многоточие Remake","lang":"ru","tags":[],"video":""},
+  {"artist":"масло черного тмина","title":"Убей меня","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Noize MC","title":"чайлдфри","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Miyagi & Эндшпиль","title":"Самая","lang":"ru","tags":[],"video":""},
+  {"artist":"HammAli & Navai","title":"Ноты","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Дети","title":"ТУРБО ПУШКА","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Элджей","title":"Минимал","lang":"ru","tags":[],"video":""},
+  {"artist":"Rauf & Faik","title":"5 минут","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Король и Шут","title":"Проклятый старый дом","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Нервы","title":"Батареи","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Pharaoh","title":"На луне","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Pharaoh","title":"5 минут назад","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"OG BUDA","title":"Диибо","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Егор Крид","title":"Самая самая","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Егор Крид","title":"Потрачу","lang":"ru","tags":[],"video":""},
+  {"artist":"lil krystalll","title":"Тик так","lang":"ru","tags":[],"video":""},
+  {"artist":"FEDUK","title":"Останься (feat. BMB SpaceKid)","lang":"ru","tags":[],"video":""},
+  {"artist":"Артур Пирожков","title":"#Алкоголичка","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"kis-kis","title":"лбтд","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Artik & Asti","title":"Чувства","lang":"ru","tags":[],"video":""},
+  {"artist":"Мари Краймбрери","title":"Мне так хорошо","lang":"ru","tags":[],"video":""},
+  {"artist":"масло черного тмина","title":"аппарат президента 2","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Гречка","title":"Люби меня люби","lang":"ru","tags":[],"video":""},
+  {"artist":"Егор Натс","title":"Хочу к тебе","lang":"ru","tags":["весёлое","лирическое"],"video":""},
+  {"artist":"Серёга","title":"Чёрный бумер","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Элджей","title":"Дисконнект","lang":"ru","tags":[],"video":""},
+  {"artist":"Витя АК","title":"Не раз убивало","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Rauf & Faik","title":"закат и рассвет","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Король и Шут","title":"Танец злобного гения","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"GAYAZOV$ BROTHER$","title":"Кредо","lang":"ru","tags":[],"video":""},
+  {"artist":"Нервы","title":"Самый дорогой человек","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Дима Билан","title":"Молния","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Pharaoh","title":"Амнезия","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Pharaoh","title":"Порнозвезда","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"OG BUDA","title":"Бандит","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Клава Кока","title":"Зая","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"#2Маши","title":"Босая","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"T1One","title":"Почему так больно","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"lil krystalll","title":"7 дней","lang":"ru","tags":[],"video":""},
+  {"artist":"Anacondaz","title":"Пусть они умрут","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Anacondaz","title":"Дубак","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Мэйби Бэйби","title":"Не исправлюсь","lang":"ru","tags":[],"video":""},
+  {"artist":"Би-2","title":"Пекло","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Стас Михайлов","title":"Возьми мою руку","lang":"ru","tags":[],"video":""},
+  {"artist":"RASA","title":"Баловать","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Мохито","title":"Руки прочь","lang":"ru","tags":[],"video":""},
+  {"artist":"Noize MC","title":"Вселенная бесконечна?","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Ногу Свело!","title":"Наши юные смешные голоса","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Miyagi & Эндшпиль","title":"Половина моя","lang":"ru","tags":[],"video":""},
+  {"artist":"N1NT3ND0","title":"Криминал","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"25/17","title":"Патрон","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"The Limba","title":"СИНИЕ ФИАЛКИ","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"MATRANG","title":"Привет","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Руки Вверх!","title":"Москва не верит слезам","lang":"ru","tags":[],"video":""},
+  {"artist":"GAYAZOV$ BROTHER$","title":"ТЫ КРУЧЕ, ЧЕМ...","lang":"ru","tags":[],"video":""},
+  {"artist":"Клава Кока","title":"Костёр","lang":"ru","tags":[],"video":""},
+  {"artist":"Клава Кока","title":"Сошла с ума","lang":"ru","tags":[],"video":""},
+  {"artist":"Вышел покурить","title":"Аутсайдер","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Zivert","title":"Ещё хочу","lang":"ru","tags":[],"video":""},
+  {"artist":"Zivert","title":"Паруса","lang":"ru","tags":[],"video":""},
+  {"artist":"Егор Крид","title":"Миллион алых роз","lang":"ru","tags":[],"video":""},
+  {"artist":"Зара","title":"Бензопила","lang":"ru","tags":[],"video":""},
+  {"artist":"lil krystalll","title":"Патек","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Anacondaz","title":"Твоему новому парню","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"MAYOT","title":"Лилия (prod. by DooMee)","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Би-2","title":"Варвара","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Би-2","title":"Компромисс","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Артур Пирожков","title":"#ПеретанцуйМеня","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Тимати","title":"Хавчик","lang":"ru","tags":[],"video":""},
+  {"artist":"RASA","title":"Кукла","lang":"ru","tags":[],"video":""},
+  {"artist":"RASA","title":"Витамин","lang":"ru","tags":[],"video":""},
+  {"artist":"ANIKV","title":"Было или нет?","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Artik & Asti","title":"Номер 1","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Artik & Asti","title":"Последний поцелуй","lang":"ru","tags":[],"video":""},
+  {"artist":"LOBODA","title":"Мой","lang":"ru","tags":[],"video":""},
+  {"artist":"LOBODA","title":"Твои глаза","lang":"ru","tags":[],"video":""},
+  {"artist":"Мурат Тхагалегов","title":"На дискотеку!","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Noize MC","title":"Иордан","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"HammAli & Navai","title":"Я закохався","lang":"ru","tags":[],"video":""},
+  {"artist":"Миша Марвин","title":"Спой","lang":"ru","tags":[],"video":""},
+  {"artist":"Миша Марвин","title":"Не надо быть сильной","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Дети","title":"УРЫЛ 0$","lang":"ru","tags":[],"video":""},
+  {"artist":"25/17","title":"Северная страна","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"MATRANG","title":"От луны до Марса","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Lumen","title":"Гореть","lang":"ru","tags":["рок","грустное","лирическое"],"video":""},
+  {"artist":"Stigmata","title":"Сентябрь","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Руки Вверх!","title":"Ай-яй-яй","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Король и Шут","title":"Мёртвый анархист","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"МакSим","title":"Трудный возраст","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Нервы","title":"Кофе мой друг","lang":"ru","tags":["рок","грустное","лирическое"],"video":""},
+  {"artist":"Mnogoznaal","title":"Много Лиц","lang":"ru","tags":[],"video":""},
+  {"artist":"Pharaoh","title":"Лаллипап","lang":"ru","tags":[],"video":""},
+  {"artist":"Клава Кока","title":"Химия","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Вышел покурить","title":"беспредел","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Егор Крид","title":"Голубые глаза","lang":"ru","tags":[],"video":""},
+  {"artist":"Buerak","title":"Страсть к курению","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Ленинград","title":"Вояж","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"lil krystalll","title":"Факбой","lang":"ru","tags":[],"video":""},
+  {"artist":"Электрофорез","title":"Русская принцесса","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"T-Killah","title":"Мама не в курсе","lang":"ru","tags":[],"video":""},
+  {"artist":"Burito","title":"Возьми мое сердце","lang":"ru","tags":[],"video":""},
+  {"artist":"FEDUK","title":"Закрывай глаза","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"MAYOT","title":"Море","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"MAYOT","title":"Джинсы [prod. by Sqweezey]","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Полина Гагарина","title":"Смотри","lang":"ru","tags":[],"video":""},
+  {"artist":"Би-2","title":"Чёрное солнце","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Артур Пирожков","title":"Чика","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Тимати","title":"Гучи","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"THRILL PILL","title":"Аристократ Флоу","lang":"ru","tags":[],"video":""},
+  {"artist":"Nautilus Pompilius","title":"Крылья","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"7Б","title":"Молодые ветра","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"StaFFорд63","title":"Дым - мой круговорот","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Платина","title":"Это не любовь","lang":"ru","tags":[],"video":""},
+  {"artist":"LOBODA","title":"Новый Рим","lang":"ru","tags":[],"video":""},
+  {"artist":"АнимациЯ","title":"Родина","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Noize MC","title":"В темноте","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Noize MC","title":"Грабли","lang":"ru","tags":["рок","грустное"],"video":""},
+  {"artist":"Miyagi & Эндшпиль","title":"Санавабич","lang":"ru","tags":[],"video":""},
+  {"artist":"Кристина Орбакайте","title":"Пьяная вишня","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"МУККА","title":"Таблетка","lang":"ru","tags":[],"video":""},
+  {"artist":"Сплин","title":"Линия жизни","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"The Limba","title":"Обманула","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"MATRANG","title":"Фас","lang":"ru","tags":[],"video":""},
+  {"artist":"Сява","title":"Без повода","lang":"ru","tags":[],"video":""},
+  {"artist":"Король и Шут","title":"Камнем по голове","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Король и Шут","title":"Ром","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"GAYAZOV$ BROTHER$","title":"ХЕДШОТ","lang":"ru","tags":[],"video":""},
+  {"artist":"GAYAZOV$ BROTHER$","title":"Пьяный туман","lang":"ru","tags":[],"video":""},
+  {"artist":"Нервы","title":"Слишком влюблён","lang":"ru","tags":["рок","грустное","лирическое"],"video":""},
+  {"artist":"Mnogoznaal","title":"Дуга","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Винтаж","title":"Ева","lang":"ru","tags":[],"video":""},
+  {"artist":"Bumble Beezy","title":"Дайджест","lang":"ru","tags":[],"video":""},
+  {"artist":"Anacondaz","title":"Мама, я люблю","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"FEDUK","title":"Моряк","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Полина Гагарина","title":"Обезоружена","lang":"ru","tags":[],"video":""},
+  {"artist":"104","title":"Проблемы","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"MARKUL","title":"Скалы","lang":"ru","tags":[],"video":""},
+  {"artist":"Тимати","title":"Где ты, где я","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"THRILL PILL","title":"Фотографии","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Жуки","title":"Батарейка","lang":"ru","tags":["рок","грустное","лирическое"],"video":""},
+  {"artist":"Вячеслав Бутусов","title":"Девушка по городу","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Платина","title":"У тебя большая жопа я влюблён","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Платина","title":"Навсегда","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Платина","title":"Валентина","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Сектор Газа","title":"Туман","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Artik & Asti","title":"Неделимы","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Мари Краймбрери","title":"Золото","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Сплин","title":"Моё сердце","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Егор Летов","title":"Все идет по плану","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"LIL MORTY","title":"Бессонница","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"LIL MORTY","title":"Я пиздатый","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Нервы","title":"Вороны","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"White Punk","title":"Крестный","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"OG BUDA","title":"Млечный путь","lang":"ru","tags":[],"video":""},
+  {"artist":"Клава Кока","title":"Бабы","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"5sta Family","title":"Я буду","lang":"ru","tags":[],"video":""},
+  {"artist":"Louna","title":"Штурмуя небеса","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Bahh Tee","title":"Тобой дышу","lang":"ru","tags":[],"video":""},
+  {"artist":"Тараканы!","title":"Самый счастливый человек на земле (feat. Anacondaz)","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Би-2","title":"Вечная призрачная встречная","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Блестящие","title":"Восточная сказка","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Звонкий","title":"Голоса","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Градусы","title":"Режиссер","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Виктор Цой","title":"Остаться с тобой","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"kis-kis","title":"трахаюсь","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"kis-kis","title":"танцуй","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Loc-Dog","title":"Карие Глаза","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Мохито","title":"Такси","lang":"ru","tags":[],"video":""},
+  {"artist":"Каста","title":"Вокруг Шум","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Fila","title":"Лирика (feat. Masha)","lang":"ru","tags":[],"video":""},
+  {"artist":"Джиган","title":"На восьмом этаже","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Мурат Тхагалегов","title":"Калым","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Mujuice","title":"Юность","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Гречка","title":"здесь были","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Пикник","title":"У шамана три руки","lang":"ru","tags":["рок","весёлое","лирическое"],"video":""},
+  {"artist":"Noize MC","title":"Лига легенд","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Noize MC","title":"Всё как у людей - Bonus Track","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Noize MC","title":"Детка, послушай","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Miyagi & Эндшпиль","title":"Райзап","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Антоха МС","title":"Бросай табак","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"МУККА","title":"Не та","lang":"ru","tags":[],"video":""},
+  {"artist":"HammAli & Navai","title":"Ты моя химия","lang":"ru","tags":[],"video":""},
+  {"artist":"Земфира","title":"Ромашки","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Земфира","title":"П. М. М. Л.","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Земфира","title":"Ариведерчи","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"CAKEBOY","title":"ИДУ К МЕЧТЕ","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Мумий Тролль","title":"Кутить (feat. Скриптонит)","lang":"ru","tags":["рок","весёлое","лирическое"],"video":""},
+  {"artist":"Сплин","title":"Феллини","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Танцы Минус","title":"Город","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Танцы Минус","title":"Половинка","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Егор Летов","title":"Моя оборона","lang":"ru","tags":["рок","грустное","лирическое"],"video":""},
+  {"artist":"MATRANG","title":"Взаперти","lang":"ru","tags":[],"video":""},
+  {"artist":"АукцЫон","title":"Дорога","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"ДДТ","title":"Это всё","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"ГОРНъ","title":"Ой мама","lang":"ru","tags":[],"video":""},
+  {"artist":"Король и Шут","title":"Марионетки","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Король и Шут","title":"Ели мясо мужики","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Mnogoznaal","title":"Ты тупой","lang":"ru","tags":[],"video":""},
+  {"artist":"Mnogoznaal","title":"Ветра","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Дима Билан","title":"Держи","lang":"ru","tags":[],"video":""},
+  {"artist":"Вышел покурить","title":"кладбище","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"5sta Family","title":"Зачем","lang":"ru","tags":[],"video":""},
+  {"artist":"Buerak","title":"Танцы по расчёту","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Ленинград","title":"В Питере — пить","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Ленинград","title":"Кабриолет","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"lil krystalll","title":"Скам","lang":"ru","tags":[],"video":""},
+  {"artist":"lil krystalll","title":"Кукла","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Anacondaz","title":"Все хорошо","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"FEDUK","title":"Хлопья летят наверх","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Би-2","title":"Лайки","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Артур Пирожков","title":"Она решила сдаться","lang":"ru","tags":[],"video":""},
+  {"artist":"Стас Михайлов","title":"Золотое сердце","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Стас Михайлов","title":"Все для тебя","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Нюша","title":"Выше","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Михаил Круг","title":"Владимирский централ","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Lx24","title":"Цепи","lang":"ru","tags":[],"video":""},
+  {"artist":"kis-kis","title":"подруга","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Мозги","title":"Аябо","lang":"ru","tags":[],"video":""},
+  {"artist":"LOBODA","title":"Пуля-дура","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Лолита","title":"Пошлю его на…","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Джиган","title":"ДНК (feat. Артем Качер)","lang":"ru","tags":[],"video":""},
+  {"artist":"Юрий Шатунов","title":"Седая ночь","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"МУККА","title":"АЛИСА","lang":"ru","tags":[],"video":""},
+  {"artist":"HammAli & Navai","title":"Ну почему?","lang":"ru","tags":[],"video":""},
+  {"artist":"Земфира","title":"Знак бесконечность","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Сплин","title":"Передайте Это Гарри Поттеру, Если Вдруг Его Встретите","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Миша Марвин","title":"Усни","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Миша Марвин","title":"Ты одна","lang":"ru","tags":[],"video":""},
+  {"artist":"Миша Марвин","title":"Ухожу","lang":"ru","tags":[],"video":""},
+  {"artist":"Дети","title":"ЛЮБИ","lang":"ru","tags":[],"video":""},
+  {"artist":"Чичерина","title":"Ту-лу-ла","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Юлианна Караулова","title":"Градусы","lang":"ru","tags":[],"video":""},
+  {"artist":"Самое Большое Простое Число","title":"Злой","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Ария","title":"Осколок Льда","lang":"ru","tags":["рок","грустное"],"video":""},
+  {"artist":"Руки Вверх!","title":"Полечу за тобою","lang":"ru","tags":[],"video":""},
+  {"artist":"ДДТ","title":"В последнюю осень","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Звери","title":"Просто такая сильная любовь","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Звери","title":"Дожди-пистолеты","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Непара","title":"Другая причина","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Дима Билан","title":"Про белые розы","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"SEREBRO","title":"Мало тебя","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"#2Маши","title":"Инея","lang":"ru","tags":[],"video":""},
+  {"artist":"Ленинград","title":"Экспонат","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"lil krystalll","title":"Дикий Запад","lang":"ru","tags":[],"video":""},
+  {"artist":"Григорий Лепс","title":"Зеркала","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Григорий Лепс","title":"Рюмка водки на столе","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Dzham","title":"Ай ай ай","lang":"ru","tags":[],"video":""},
+  {"artist":"Bahh Tee","title":"Не приму и даром","lang":"ru","tags":[],"video":""},
+  {"artist":"GRIVINA","title":"Сама по себе","lang":"ru","tags":[],"video":""},
+  {"artist":"Михаил Шуфутинский","title":"Mardzhandzha (Марджанджа)","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"MAYOT","title":"Дождь (prod. by DooMee)","lang":"ru","tags":[],"video":""},
+  {"artist":"Полина Гагарина","title":"Драмы больше нет","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Полина Гагарина","title":"На расстоянии","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Полина Гагарина","title":"Небо в глазах","lang":"ru","tags":[],"video":""},
+  {"artist":"Elvira T","title":"Девочка на рейве","lang":"ru","tags":[],"video":""},
+  {"artist":"104","title":"Сафари","lang":"ru","tags":[],"video":""},
+  {"artist":"Lx24","title":"Танцы под луной","lang":"ru","tags":[],"video":""},
+  {"artist":"Сектор Газа","title":"Бомж","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"kis-kis","title":"мелочь","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"kis-kis","title":"не учи","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"kis-kis","title":"мальчик","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"kis-kis","title":"игрушка","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"kis-kis","title":"грязь","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"RASA","title":"Эликсир","lang":"ru","tags":[],"video":""},
+  {"artist":"Мари Краймбрери","title":"Полюби меня пьяную","lang":"ru","tags":[],"video":""},
+  {"artist":"Мохито","title":"Разрывай танцпол","lang":"ru","tags":[],"video":""},
+  {"artist":"Лолита","title":"На Титанике","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Чиж & Co","title":"О любви","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Джиган","title":"Дни и ночи","lang":"ru","tags":[],"video":""},
+  {"artist":"Каспийский груз","title":"Доедешь пиши","lang":"ru","tags":[],"video":""},
+  {"artist":"Алиса","title":"Небо славян","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Алиса","title":"Трасса Е-95","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Кукрыниксы","title":"По раскрашенной душе","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Animal ДжаZ","title":"Чувства","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Гречка","title":"Картина","lang":"ru","tags":[],"video":""},
+  {"artist":"Антоха МС","title":"Время ток","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"МУККА","title":"ПОТРАХАТЬСЯ И СДОХНУТЬ","lang":"ru","tags":[],"video":""},
+  {"artist":"Земфира","title":"Жить в твоей голове","lang":"ru","tags":["рок","грустное","лирическое"],"video":""},
+  {"artist":"Егор Натс","title":"белые ночи","lang":"ru","tags":[],"video":""},
+  {"artist":"Егор Натс","title":"Ты красивая, как осень","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Дети","title":"ТАНЦЕВАТЬ","lang":"ru","tags":["весёлое","лирическое"],"video":""},
+  {"artist":"Бьянка","title":"Были танцы","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Комиссар","title":"Ты уйдёшь","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"The Limba","title":"СКАНДАЛ","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Серёга","title":"Возле дома твоего","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"ФРИК ПАТИ","title":"Влюбиться и плакать","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Витас","title":"Опера #2","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"ДДТ","title":"Просвистела","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"ДДТ","title":"Родина","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Нервы","title":"Так как надо","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Нервы","title":"Нервы","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Нервы","title":"Глупая","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Mnogoznaal","title":"Просто Элемент","lang":"ru","tags":[],"video":""},
+  {"artist":"White Punk","title":"Шипы","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"OG BUDA","title":"Легенды Зельды","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Вышел покурить","title":"вопрос","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"5sta Family","title":"Первый снег","lang":"ru","tags":[],"video":""},
+  {"artist":"#2Маши","title":"Я забираю твою подругу","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Bumble Beezy","title":"Вась","lang":"ru","tags":[],"video":""},
+  {"artist":"T1One","title":"Тапочка","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Ночные Снайперы","title":"катастрофически","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Дискотека Авария","title":"Фантазёр","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Дискотека Авария","title":"Малинки","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"t.A.T.u.","title":"Я сошла с ума","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Ленинград","title":"Жу-Жу (feat. ST)","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Валерий Меладзе","title":"Салют, Вера!","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"GRIVINA","title":"Девочку несёт","lang":"ru","tags":[],"video":""},
+  {"artist":"Валерия","title":"Тысячи историй","lang":"ru","tags":[],"video":""},
+  {"artist":"MAYOT","title":"Торчи [prod. by Sqweezey]","lang":"ru","tags":[],"video":""},
+  {"artist":"MAYOT","title":"Звезда упала","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"MAYOT","title":"Сон (prod. by TonySouljah)","lang":"ru","tags":[],"video":""},
+  {"artist":"MAYOT","title":"Чипсы [prod. by VisaGangBeatz]","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"MAYOT","title":"Тигр (prod. by Sqweezey)","lang":"ru","tags":[],"video":""},
+  {"artist":"МЫ","title":"Полярная звезда","lang":"ru","tags":[],"video":""},
+  {"artist":"Ирина Круг","title":"Букет белых роз","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"THRILL PILL","title":"Бентли","lang":"ru","tags":[],"video":""},
+  {"artist":"MARCO-9","title":"Трэп Аллигатор","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Nautilus Pompilius","title":"Последнее письмо (Гудбай Америка)","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Смысловые Галлюцинации","title":"Зачем топтать мою любовь","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Градусы","title":"Голая","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Сектор Газа","title":"30 лет","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Сектор Газа","title":"Пора домой","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Любэ","title":"Давай за...","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Виктор Цой","title":"Пачка сигарет","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Виктор Цой","title":"Следи за собой","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Мари Краймбрери","title":"Успей вернуться","lang":"ru","tags":[],"video":""},
+  {"artist":"LOBODA","title":"случайная","lang":"ru","tags":[],"video":""},
+  {"artist":"Лолита","title":"Ориентация Север","lang":"ru","tags":[],"video":""},
+  {"artist":"Каспийский груз","title":"Черная Волга","lang":"ru","tags":[],"video":""},
+  {"artist":"Animal ДжаZ","title":"Три полоски","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"масло черного тмина","title":"что ты скажешь мусорам, Даник","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Сергей Шнуров","title":"Свобода [Из к/ф \"Бумер. Фильм второй\"]","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"МУККА","title":"Жулик","lang":"ru","tags":[],"video":""},
+  {"artist":"Земфира","title":"Крым","lang":"ru","tags":["рок","грустное","лирическое"],"video":""},
+  {"artist":"Сплин","title":"Романс","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Миша Марвин","title":"Вдвоём","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"невиди́мка","title":"Звезда","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"25/17","title":"Жду чуда","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Ноггано","title":"Стволок за поясок","lang":"ru","tags":["рок","грустное"],"video":""},
+  {"artist":"Жак Энтони","title":"Делай как надо","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Юлианна Караулова","title":"ДИКАЯ ПУМА","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Юлианна Караулова","title":"Тем, кто рядом","lang":"ru","tags":[],"video":""},
+  {"artist":"Руки Вверх!","title":"Слэмятся пацаны","lang":"ru","tags":[],"video":""},
+  {"artist":"Непара","title":"Плачь и смотри","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"МакSим","title":"Ветром стать","lang":"ru","tags":[],"video":""},
+  {"artist":"Нервы","title":"Зажигалки","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Хлеб","title":"Шашлындос","lang":"ru","tags":[],"video":""},
+  {"artist":"Хлеб","title":"Плачу на техно","lang":"ru","tags":[],"video":""},
+  {"artist":"OG BUDA","title":"ОПГ сити","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Винтаж","title":"Плохая девочка (feat. Елена Корикова)","lang":"ru","tags":[],"video":""},
+  {"artist":"АК-47","title":"Тем кто с нами","lang":"ru","tags":["весёлое","лирическое"],"video":""},
+  {"artist":"Вышел покурить","title":"кино","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Вышел покурить","title":"архив","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Ирина Аллегрова","title":"Угонщица","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Аигел","title":"Татарин","lang":"ru","tags":[],"video":""},
+  {"artist":"Louna","title":"Бойцовский клуб","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"lil krystalll","title":"Пачки","lang":"ru","tags":[],"video":""},
+  {"artist":"Anacondaz","title":"Спаси, но не сохраняй","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Anacondaz","title":"Ни капли не больно","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Григорий Лепс","title":"Я тебе не верю","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Григорий Лепс","title":"Самый лучший день","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"T-Killah","title":"Звездопад","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Bahh Tee","title":"Неужели ты моя","lang":"ru","tags":[],"video":""},
+  {"artist":"Михаил Шуфутинский","title":"3 сентября","lang":"ru","tags":["рок","грустное"],"video":""},
+  {"artist":"Amatory","title":"Первый","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Отпетые мошенники","title":"Люби меня люби","lang":"ru","tags":[],"video":""},
+  {"artist":"Полина Гагарина","title":"Спектакль окончен","lang":"ru","tags":[],"video":""},
+  {"artist":"104","title":"Я знаю какая ты","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Тимати","title":"Баклажан","lang":"ru","tags":[],"video":""},
+  {"artist":"Nautilus Pompilius","title":"Черные птицы","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Сектор Газа","title":"Демобилизация","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"RASA","title":"Кошка","lang":"ru","tags":[],"video":""},
+  {"artist":"Мари Краймбрери","title":"31 февраля","lang":"ru","tags":[],"video":""},
+  {"artist":"Gruppa Skryptonite","title":"Жизнь не любит","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Fila","title":"Чилить","lang":"ru","tags":[],"video":""},
+  {"artist":"Джиган","title":"Таких не бывает","lang":"ru","tags":[],"video":""},
+  {"artist":"May Wave$","title":"Гай Юлий","lang":"ru","tags":[],"video":""},
+  {"artist":"Кукрыниксы","title":"Не беда","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Пикник","title":"Египтянин","lang":"ru","tags":["рок","грустное","лирическое"],"video":""},
+  {"artist":"Пикник","title":"Королевство Кривых","lang":"ru","tags":["рок","весёлое","лирическое"],"video":""},
+  {"artist":"Антоха МС","title":"Ритм сердца","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Елена Темникова","title":"Как Барби в поисках Кена","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Земфира","title":"Прогулка","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Сплин","title":"За семью печатями","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Сплин","title":"Танцуй!","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"СКАзка","title":"Пісня Сміливих Дівчат","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Танцы Минус","title":"Цветы (Цветут цветы)","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Егор Натс","title":"Соврал","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Миша Марвин","title":"Ай-яй-яй","lang":"ru","tags":[],"video":""},
+  {"artist":"Дети","title":"НА КИЕВСКОМ ДИНАМО","lang":"ru","tags":[],"video":""},
+  {"artist":"The Limba","title":"ИНТЕРЕС","lang":"ru","tags":["весёлое","лирическое"],"video":""},
+  {"artist":"Ноггано","title":"Ролексы","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Ария","title":"Штиль","lang":"ru","tags":["рок","грустное"],"video":""},
+  {"artist":"Ария","title":"Встань, страх преодолей","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Звери","title":"Все, что тебя касается","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Faktor-2","title":"Красавица","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Непара","title":"Бог тебя выдумал","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"White Punk","title":"Ягами","lang":"ru","tags":[],"video":""},
+  {"artist":"Хлеб","title":"Ну ты понял","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Хлеб","title":"БАМБАЛЕЙЛА","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"OG BUDA","title":"Лил мами","lang":"ru","tags":[],"video":""},
+  {"artist":"OG BUDA","title":"Биг бой","lang":"ru","tags":[],"video":""},
+  {"artist":"SEREBRO","title":"Между нами любовь","lang":"ru","tags":[],"video":""},
+  {"artist":"SEREBRO","title":"Сломана","lang":"ru","tags":[],"video":""},
+  {"artist":"Аигел","title":"Снег","lang":"ru","tags":[],"video":""},
+  {"artist":"Аигел","title":"Чудовище","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"ФРЕНДЗОНА","title":"Неидеальные Люди","lang":"ru","tags":[],"video":""},
+  {"artist":"#2Маши","title":"Лето у виска","lang":"ru","tags":[],"video":""},
+  {"artist":"Bumble Beezy","title":"Остап Бендер","lang":"ru","tags":[],"video":""},
+  {"artist":"Алексей Воробьёв","title":"Сумасшедшая","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Чайф","title":"Аргентина-Ямайка - 5:0","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Buerak","title":"Корень имбиря (Remastered)","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Банд'Эрос","title":"Про красивую жизнь","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Anacondaz","title":"Ангел","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Григорий Лепс","title":"Орлы или вороны","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Пропаганда","title":"Мелом","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Мэйби Бэйби","title":"Тамагочи","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"T-Killah","title":"Гречка мартини","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"T-Killah","title":"Это нормально","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Филипп Киркоров","title":"Жестокая любовь","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Полина Гагарина","title":"Меланхолия","lang":"ru","tags":[],"video":""},
+  {"artist":"Полина Гагарина","title":"Выше головы","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"104","title":"ТРУБКИ","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"МЫ","title":"Думай о море","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Дмитрий Маликов","title":"Ты одна, ты такая","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Рок-острова","title":"Ничего не говори","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Стас Михайлов","title":"Не зови, не слышу","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"OPIUM project","title":"Губы шепчут - Club Mix Version","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"7Б","title":"Некрещёная луна","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Вячеслав Бутусов","title":"Песня идущего домой","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Любэ","title":"Позови меня тихо по имени","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Любэ","title":"Комбат","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Виктор Цой","title":"Хочу перемен","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Мозги","title":"Вылюби","lang":"ru","tags":[],"video":""},
+  {"artist":"RASA","title":"Супермодель","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Трофим","title":"Город Сочи","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"LOBODA","title":"Парень","lang":"ru","tags":[],"video":""},
+  {"artist":"Надежда Кадышева","title":"Широка река","lang":"ru","tags":[],"video":""},
+  {"artist":"АнимациЯ","title":"Спички","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Нейромонах Феофан","title":"Притоптать","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Чиж & Co","title":"Вечная молодость","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Пневмослон","title":"Пошло всё в жопу, сяду на коня","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Карандаш","title":"Мечтать и любить","lang":"ru","tags":[],"video":""},
+  {"artist":"Гречка","title":"Исчезнуть","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Ирина Дубцова","title":"Факт","lang":"ru","tags":[],"video":""},
+  {"artist":"Крематорий","title":"Катманду","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"N1NT3ND0","title":"Ран Вася Ран","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"МУККА","title":"ОТ ЛУНЫ И ДО НЕБА","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Елена Темникова","title":"Как на фантиках Love Is","lang":"ru","tags":[],"video":""},
+  {"artist":"Елена Темникова","title":"Не модные","lang":"ru","tags":[],"video":""},
+  {"artist":"Сплин","title":"Дочь самурая","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Егор Натс","title":"Я женюсь на девочке из аниме","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Дети","title":"Дворовые рейвы","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Бьянка","title":"А чё чё","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"MATRANG","title":"Драма","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Lumen","title":"Три пути","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Руки Вверх!","title":"Чужие губы","lang":"ru","tags":[],"video":""},
+  {"artist":"ДДТ","title":"Метель","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"ДДТ","title":"Дождь","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Олег Газманов","title":"Мои ясные дни","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"GAYAZOV$ BROTHER$","title":"По синей грусти","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"White Punk","title":"СОСА","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"OG BUDA","title":"Выше облаков","lang":"ru","tags":[],"video":""},
+  {"artist":"SEREBRO","title":"Притяженья больше нет","lang":"ru","tags":[],"video":""},
+  {"artist":"Вышел покурить","title":"никто из вас","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Вышел покурить","title":"она не знает","lang":"ru","tags":[],"video":""},
+  {"artist":"Bumble Beezy","title":"Шестерёнка","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"OFFMi","title":"Выход силой","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Ночные Снайперы","title":"31 весна","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Чайф","title":"Ой-йо","lang":"ru","tags":["рок","грустное","лирическое"],"video":""},
+  {"artist":"Банд'Эрос","title":"Коламбия Пикчерз не представляет","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Louna","title":"Мама","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Ленинград","title":"Мне бы в небо","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Ленинград","title":"Свобода","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Ленинград","title":"Ч.П.Х.","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Anacondaz","title":"Не норм","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Григорий Лепс","title":"Героям посвящается","lang":"ru","tags":["рок","грустное","лирическое"],"video":""},
+  {"artist":"Валерий Меладзе","title":"Океан и три реки","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Мэйби Бэйби","title":"Аскорбинка","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Bahh Tee","title":"Не любовь","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Bahh Tee","title":"Жить, не думая о тебе","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"GRIVINA","title":"Львица на танцполе","lang":"ru","tags":[],"video":""},
+  {"artist":"Филипп Киркоров","title":"Снег","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Увула","title":"Тайна","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"FEDUK","title":"Исповедь","lang":"ru","tags":[],"video":""},
+  {"artist":"FEDUK","title":"Хорошая акустика","lang":"ru","tags":[],"video":""},
+  {"artist":"Т9","title":"Ода нашей любви (Вдох-Выдох)","lang":"ru","tags":[],"video":""},
+  {"artist":"Amatory","title":"Дыши со мной","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Денис Майданов","title":"Вечная любовь","lang":"ru","tags":[],"video":""},
+  {"artist":"Ирина Круг","title":"Тебе, моя последняя любовь","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Ирина Круг","title":"Заходи ко мне во сне","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Нюша","title":"Выбирать чудо","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Нюша","title":"Цунами","lang":"ru","tags":[],"video":""},
+  {"artist":"Михаил Круг","title":"Приходите в мой дом","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Михаил Круг","title":"Девочка-пай","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Lx24","title":"Ай яй яй","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Виктор Цой","title":"Песня без слов","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Виктор Цой","title":"Группа крови","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Мари Краймбрери","title":"На тату","lang":"ru","tags":[],"video":""},
+  {"artist":"LOBODA","title":"Мира мало","lang":"ru","tags":[],"video":""},
+  {"artist":"АнимациЯ","title":"Красиво","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Алиса","title":"Веретено","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Юрий Лоза","title":"Плот","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Гречка","title":"Твои руки","lang":"ru","tags":[],"video":""},
+  {"artist":"Shortparis","title":"КоКоКо / Cтруктуры не выходят на улицы","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Mirèle","title":"Если бы любовь","lang":"ru","tags":[],"video":""},
+  {"artist":"Ирина Дубцова","title":"Не целуешь","lang":"ru","tags":[],"video":""},
+  {"artist":"Ирина Дубцова","title":"Под дождём","lang":"ru","tags":[],"video":""},
+  {"artist":"Сергей Лазарев","title":"Я не боюсь","lang":"ru","tags":[],"video":""},
+  {"artist":"Ногу Свело!","title":"Идем на восток!","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Юрий Шатунов","title":"Детство","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Найк Борзов","title":"Лошадка","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Кристина Орбакайте","title":"Мой мир","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"УГАДАЙКТО","title":"ЭШ","lang":"ru","tags":[],"video":""},
+  {"artist":"CAKEBOY","title":"БИТЫЕ СТЕКЛА","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"СКАзка","title":"Палала","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Бьянка","title":"Бьянка-музыка","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"25/17","title":"Поколения","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"The Limba","title":"Не одна","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"The Limba","title":"Наивная","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Игорь Корнелюк","title":"Город, которого нет","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Жак Энтони","title":"Люли","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Самое Большое Простое Число","title":"Позови меня","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"источник","title":"когда?","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Руки Вверх!","title":"Она меня целует","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Витя АК","title":"Кайфовать (Scratch by DJ Mixoid)","lang":"ru","tags":[],"video":""},
+  {"artist":"Reflex","title":"Танцы","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Олег Газманов","title":"Морячка","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"GAYAZOV$ BROTHER$","title":"Уедем в Марокко","lang":"ru","tags":[],"video":""},
+  {"artist":"Нервы","title":"Кому ты звонишь","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Хлеб","title":"Капельки","lang":"ru","tags":[],"video":""},
+  {"artist":"Клава Кока","title":"Влюблена в МДК","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Алёна Апина","title":"Электричка","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Технология","title":"Нажми на кнопку","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Ирина Аллегрова","title":"Младший лейтенант","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"ФРЕНДЗОНА","title":"Бойчик","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Ноль","title":"Человек и кошка","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"5sta Family","title":"Вместе мы","lang":"ru","tags":[],"video":""},
+  {"artist":"#2Маши","title":"Красное белое","lang":"ru","tags":[],"video":""},
+  {"artist":"Bumble Beezy","title":"Как перо","lang":"ru","tags":[],"video":""},
+  {"artist":"Bumble Beezy","title":"Зеркало","lang":"ru","tags":[],"video":""},
+  {"artist":"Bumble Beezy","title":"Какой парень","lang":"ru","tags":[],"video":""},
+  {"artist":"T1One","title":"Такси уже близко (prod. by Benad)","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Severnyj Flot","title":"Поднимая знамя","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Несчастный случай","title":"Генералы песчаных карьеров","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Louna","title":"Громче и злей!","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Anacondaz","title":"Ненавижу","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Григорий Лепс","title":"Натали","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Пропаганда","title":"Яй-я - VAM Revox","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Валерий Меладзе","title":"Иностранец","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Dzham","title":"ДамаLove","lang":"ru","tags":[],"video":""},
+  {"artist":"T-Killah","title":"На дискотеку","lang":"ru","tags":[],"video":""},
+  {"artist":"T-Killah","title":"Лей в баре лей","lang":"ru","tags":[],"video":""},
+  {"artist":"GRIVINA","title":"Мало","lang":"ru","tags":[],"video":""},
+  {"artist":"Игорь Тальков","title":"Чистые пруды","lang":"ru","tags":["рок","грустное","лирическое"],"video":""},
+  {"artist":"Филипп Киркоров","title":"Просто подари","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"FEDUK","title":"Околофутбола","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"КняZz","title":"Адель","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Amatory","title":"Нож","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Валерия","title":"Капелькою","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Elvira T","title":"Мрачные небеса","lang":"ru","tags":[],"video":""},
+  {"artist":"Elvira T","title":"На кухне","lang":"ru","tags":[],"video":""},
+  {"artist":"104","title":"Потом и кровью","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"ЩЕНКИ","title":"Уходи если хочешь","lang":"ru","tags":[],"video":""},
+  {"artist":"Артур Пирожков","title":"Летим со мной","lang":"ru","tags":[],"video":""},
+  {"artist":"Тимати","title":"Поколение","lang":"ru","tags":[],"video":""},
+  {"artist":"KURT92","title":"Разъяснения (feat. SALUKI)","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Nautilus Pompilius","title":"Зверь","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Маша Hima","title":"МАМА ОТПУСТИ МЕНЯ","lang":"ru","tags":[],"video":""},
+  {"artist":"Звонкий","title":"Времена не выбрать (Из т/с \"Гости из прошлого\")","lang":"ru","tags":[],"video":""},
+  {"artist":"Вячеслав Бутусов","title":"Гибралтар-лабрадор","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Lx24","title":"Красавица","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Градусы","title":"О тебе думаю","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Градусы","title":"Кто ты","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Сектор Газа","title":"Колхозный панк","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Любэ","title":"Ты неси меня река (Краса)","lang":"ru","tags":["рок","грустное","лирическое"],"video":""},
+  {"artist":"Виктор Цой","title":"Когда твоя девушка больна","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Виктор Цой","title":"Кукушка","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Сати Казанова","title":"До рассвета","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Свидание","title":"Я и твой кот","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Бутырка","title":"Запахло весной","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Drug Твоей Телки","title":"Время уже четыре","lang":"ru","tags":[],"video":""},
+  {"artist":"Каста","title":"Ревность","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Нейромонах Феофан","title":"Древнерусская душа","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Каспийский груз","title":"Сам все знаю","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Кукрыниксы","title":"Никто","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"масло черного тмина","title":"магия","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Гречка","title":"Хватит","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Пикник","title":"Из мышеловки","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Сергей Лазарев","title":"Лови","lang":"ru","tags":[],"video":""},
+  {"artist":"Ольга Бузова","title":"Проблема","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Антоха МС","title":"Бом","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Крематорий","title":"Маленькая девочка","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Смоки Мо","title":"Лёд","lang":"ru","tags":[],"video":""},
+  {"artist":"Елена Темникова","title":"Неон","lang":"ru","tags":[],"video":""},
+  {"artist":"Земфира","title":"Джозеф","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Мумий Тролль","title":"Не целуясь","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Комиссар","title":"Королева Снежная","lang":"ru","tags":[],"video":""},
+  {"artist":"IOWA","title":"#душнодует","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"MATRANG","title":"Круг","lang":"ru","tags":[],"video":""},
+  {"artist":"MATRANG","title":"Мент","lang":"ru","tags":[],"video":""},
+  {"artist":"Слава КПСС","title":"Пацанский флекс","lang":"ru","tags":[],"video":""},
+  {"artist":"Жак Энтони","title":"Бездыханным","lang":"ru","tags":[],"video":""},
+  {"artist":"LIL MORTY","title":"НА КУРОРТЕ","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Аркуда","title":"Молодая и дерзкая","lang":"ru","tags":[],"video":""},
+  {"artist":"Руки Вверх!","title":"К черту эту гордость","lang":"ru","tags":[],"video":""},
+  {"artist":"ДДТ","title":"Осенняя","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Звери","title":"Танцуй","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Звери","title":"Напитки покрепче","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Анжелика Варум","title":"Зимняя Вишня - Новая Версия","lang":"ru","tags":[],"video":""},
+  {"artist":"БумеR","title":"Не плачь","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Reflex","title":"Потому что не было тебя","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"White Punk","title":"Мрачные Тени","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"White Punk","title":"Вне Закона","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"White Punk","title":"1000 Причин","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Винтаж","title":"Роман","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Лера Массква","title":"7 Этаж","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"АК-47","title":"Русский TRAP","lang":"ru","tags":[],"video":""},
+  {"artist":"Технология","title":"Странные танцы","lang":"ru","tags":[],"video":""},
+  {"artist":"ФРЕНДЗОНА","title":"Кокоро","lang":"ru","tags":[],"video":""},
+  {"artist":"Света","title":"Может да, может нет","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"OFFMi","title":"Заебало","lang":"ru","tags":[],"video":""},
+  {"artist":"T1One","title":"Знай","lang":"ru","tags":[],"video":""},
+  {"artist":"Чайф","title":"В её глазах","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Мать Тереза","title":"Память","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Дискотека Авария","title":"Если хочешь остаться","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Дискотека Авария","title":"Малинки-малинки","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Louna","title":"Сигнал в пустоте","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Louna","title":"Молчание ягнят","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"T-Killah","title":"Мария","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"T-Killah","title":"Синяя","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Burito","title":"По волнам","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Bahh Tee","title":"Вытри слезы, дура","lang":"ru","tags":[],"video":""},
+  {"artist":"Bahh Tee","title":"До утра","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"Игорь Тальков","title":"Я вернусь","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Форум","title":"Белая ночь","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Валерия","title":"До предела","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"104","title":"По-своему","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Drummatix","title":"Намасте","lang":"ru","tags":[],"video":""},
+  {"artist":"Артур Пирожков","title":"#КАКЧЕЛЕНТАНО","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Nautilus Pompilius","title":"Одинокая птица","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Nautilus Pompilius","title":"На берегу безымянной реки","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Стас Михайлов","title":"Там, за горизонтом","lang":"ru","tags":[],"video":""},
+  {"artist":"Стекловата","title":"Новый Год","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"StaFFорд63","title":"Брат за брата","lang":"ru","tags":[],"video":""},
+  {"artist":"StaFFорд63","title":"Салам пацанам","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Триада","title":"Свет не горит","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Lx24","title":"Не было печали","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Schokk","title":"То густо, то пусто","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Свидание","title":"Случайная любовь","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Каста","title":"Радиосигналы","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Отава Ё","title":"Сумецкая","lang":"ru","tags":["народное","весёлое"],"video":""},
+  {"artist":"Мурат Тхагалегов","title":"Украдёт и позовёт","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Mujuice","title":"Возвращайся домой","lang":"ru","tags":["рок","весёлое","лирическое"],"video":""},
+  {"artist":"Гречка","title":"гранжстайл","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"Пикник","title":"Фиолетово-черный","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Ирина Дубцова","title":"О нем","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Сергей Лазарев","title":"Это всё она","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Сергей Лазарев","title":"Так красиво","lang":"ru","tags":[],"video":""},
+  {"artist":"Ногу Свело!","title":"Хару мамбуру","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Ivan Valeev","title":"Парадокс","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"ГРОТ","title":"Обитатели рая","lang":"ru","tags":["рок","грустное"],"video":""},
+  {"artist":"Маша и медведи","title":"Любочка","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Маша и медведи","title":"Земля","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Елена Темникова","title":"Импульсы","lang":"ru","tags":[],"video":""},
+  {"artist":"Мумий Тролль","title":"Утекай","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Егор Натс","title":"спасибо","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"25/17","title":"Комната","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"25/17","title":"Я никогда не видел моря","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"IOWA","title":"Улыбайся","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"IOWA","title":"Одно и то же","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"The Limba","title":"Таблетка","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"MATRANG","title":"Вода","lang":"ru","tags":[],"video":""},
+  {"artist":"MATRANG","title":"Со мной","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Rompasso","title":"Револьвер","lang":"ru","tags":[],"video":""},
+  {"artist":"Аффинаж","title":"Котик","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Аффинаж","title":"Герой моих детских грёз","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Ноггано","title":"Дети капитана Гранта","lang":"ru","tags":["рок","лирическое"],"video":""},
+  {"artist":"Юлианна Караулова","title":"Просто так","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Юлианна Караулова","title":"Ты не такой","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Ария","title":"Там высоко","lang":"ru","tags":["рок","грустное","лирическое"],"video":""},
+  {"artist":"Cream Soda","title":"Уйди, но останься","lang":"ru","tags":[],"video":""},
+  {"artist":"Cream Soda","title":"Комета","lang":"ru","tags":["грустное"],"video":""},
+  {"artist":"источник","title":"капли крови","lang":"ru","tags":["рок","грустное"],"video":""},
+  {"artist":"ДДТ","title":"Белая река","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Звери","title":"Все, что касается","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Анжелика Варум","title":"Все в твоих руках","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"МакSим","title":"НАУЧУСЬ ЛЕТАТЬ","lang":"ru","tags":[],"video":""},
+  {"artist":"Белый орёл","title":"Как упоительны в России вечера","lang":"ru","tags":[],"video":""},
+  {"artist":"White Punk","title":"Болен","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Дима Билан","title":"Химия","lang":"ru","tags":[],"video":""},
+  {"artist":"Лица","title":"Осень","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Клава Кока","title":"Девочка-пай","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"SEREBRO","title":"В космосе","lang":"ru","tags":[],"video":""},
+  {"artist":"SEREBRO","title":"Я тебя не отдам","lang":"ru","tags":[],"video":""},
+  {"artist":"Вышел покурить","title":"аннигиляторная пушка","lang":"ru","tags":[],"video":""},
+  {"artist":"ФРЕНДЗОНА","title":"Последний экзамен","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"5sta Family","title":"Снова вместе","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Кипелов","title":"Я здесь","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"OFFMi","title":"ЭКИПАЖ","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Владимир Кузьмин","title":"Я не забуду тебя (Сибирские морозы)","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Buerak","title":"На старых сидениях кинотеатра","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Louna","title":"Кто мы?","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Louna","title":"Станем стеной","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Григорий Лепс","title":"Аминь","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Григорий Лепс","title":"Лондон","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Dzham","title":"Кокос","lang":"ru","tags":[],"video":""},
+  {"artist":"Игорь Николаев","title":"Выпьем за любовь","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Электрофорез","title":"Алкоголь мой враг","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Burito","title":"Нирвана","lang":"ru","tags":[],"video":""},
+  {"artist":"GRIVINA","title":"Мальчик party","lang":"ru","tags":[],"video":""},
+  {"artist":"Наталья Ветлицкая","title":"Посмотри в глаза","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Леонид Агутин","title":"Аэропорты","lang":"ru","tags":[],"video":""},
+  {"artist":"Тараканы!","title":"Я смотрю на них","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Тараканы!","title":"Кто-то из нас двоих","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"Elvira T","title":"Лучше","lang":"ru","tags":[],"video":""},
+  {"artist":"Elvira T","title":"Всё решено","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"МЫ","title":"Зима","lang":"ru","tags":["грустное","лирическое"],"video":""},
+  {"artist":"МЫ","title":"Не отпускай","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Стас Михайлов","title":"Ну, вот и все","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Нюша","title":"Дыши, люби, цени","lang":"ru","tags":[],"video":""},
+  {"artist":"Михаил Круг","title":"Купола","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Звонкий","title":"Ностальжи","lang":"ru","tags":[],"video":""},
+  {"artist":"Александр Серов","title":"Я люблю тебя до слёз","lang":"ru","tags":[],"video":""},
+  {"artist":"Lx24","title":"Уголёк","lang":"ru","tags":[],"video":""},
+  {"artist":"Виктор Цой","title":"Звезда по имени Солнце","lang":"ru","tags":["рок","весёлое"],"video":""},
+  {"artist":"ANIKV","title":"Были мы","lang":"ru","tags":[],"video":""},
+  {"artist":"Лесоповал","title":"Я куплю тебе дом","lang":"ru","tags":["лирическое"],"video":""},
+  {"artist":"Алсу","title":"Зимний сон","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Алсу","title":"Иногда","lang":"ru","tags":["весёлое"],"video":""},
+  {"artist":"Каста","title":"Прошел через","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"Каста","title":"Колокола над кальянной","lang":"ru","tags":["рок"],"video":""},
+  {"artist":"playingtheangel","title":"Бедная юность","lang":"ru","tags":[],"video":""},
+  {"artist":"Отава Ё","title":"Ой, Дуся, ой, Маруся (казачья лезгинка)","lang":"ru","tags":["народное","весёлое"],"video":""},
+  {"artist":"May Wave$","title":"Заново 2","lang":"ru","tags":[],"video":""},
+  {"artist":"May Wave$","title":"Агари","lang":"ru","tags":["грустное"],"video":""}
 ];
 const search = document.querySelector('#song-query');
 const language = document.querySelector('#song-lang');
