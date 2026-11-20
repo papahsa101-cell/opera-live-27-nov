@@ -166,3 +166,24 @@ body .hero h1.battle-title{font-size:clamp(1.45rem,7vw,6.4rem);line-height:1.04;
 .song-suggestions button:hover{text-decoration:underline}
 .song-pages button{cursor:pointer}
 .song-pages button:disabled{opacity:.5;cursor:default}
+
+.karaoke-filters{grid-template-columns:1.55fr repeat(4,minmax(0,1fr))}
+.lyric-search{border:1px solid var(--line);padding:10px 12px;background:var(--bg)}
+.lyric-search summary,.song-list summary{cursor:pointer}
+.lyric-search form{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-top:12px}
+.lyric-search form label{width:100%}
+.lyric-search input[type=search]{flex:1 1 200px;min-width:0;padding:10px 12px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit}
+.song-list details{background:var(--bg);border:1px solid var(--line);border-top:0;padding:6px 12px;font-size:.875rem}
+.song-list details a{display:block;min-height:0;padding:8px 0 3px;border:0;background:none;text-decoration:underline}
+[data-theme=comic] .lyric-search,[data-theme=comic] .song-list details{background:var(--panel)}
+[data-theme=comic] .song-list details a{border:0}
+@media(max-width:900px){.karaoke-filters{grid-template-columns:1fr 1fr}.karaoke-filters label:first-child{grid-column:1/-1}}
+
+.karaoke-filters{grid-template-columns:repeat(5,minmax(0,1fr))}
+.karaoke-filters label:first-child{grid-column:1/-1}
+.song-random{display:grid;gap:12px;justify-items:start}
+.song-random button{cursor:pointer}
+.song-random button:disabled{opacity:.5;cursor:default}
+#song-random-pick{grid-template-columns:minmax(0,1fr);width:min(100%,560px)}
+#song-random-pick[hidden]{display:none}
+@media(max-width:900px){.karaoke-filters{grid-template-columns:repeat(2,minmax(0,1fr))}}
