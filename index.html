@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Музыкальная вечеринка 27 ноября в лофте ОПЕРА на Красном Октябре. Живые гитары, песни, караоке и танцы.">
 <title>Живой звук — Лофт ОПЕРА</title>
-<link rel="stylesheet" href="style.css?v=18">
+<link rel="stylesheet" href="style.css?v=21">
 <script defer src="site.js"></script>
-<script defer src="karaoke.js?v=18"></script>
+<script defer src="karaoke.js?v=22"></script>
 </head>
 <body>
 <header class="bar">
@@ -89,6 +89,10 @@
 <section class="karaoke route" id="karaoke" aria-labelledby="karaoke-title">
 <div><p class="eyebrow">Караоке</p><h2 id="karaoke-title">Что споём?</h2>
 <p>Найди песню или выбери настроение. Откроется ролик или поиск караоке на YouTube.</p><p class="karaoke-source">Настроение указано ориентировочно. Фильтр по десятилетиям показывает песни с указанным годом. <a href="https://github.com/mrsndmn/data-surfers" target="_blank" rel="noopener noreferrer">Источник части каталога</a>.</p></div>
+<div class="song-code-search">
+<label for="song-code">Введите номер песни <input id="song-code" type="search" inputmode="numeric" placeholder="0001" autocomplete="off" aria-describedby="song-code-help"></label>
+<p id="song-code-help">Четыре цифры с ведущими нулями. Поиск по коду работает без фильтров.</p>
+</div>
 <div class="karaoke-filters">
 <label>Песня или исполнитель <input id="song-query" type="search" placeholder="Например, Меладзе, Кино или КиШ" autocomplete="off"></label>
 <label>Язык <select id="song-lang"><option value="">Все песни</option><option value="ru">RU</option><option value="en">EN</option></select></label>
@@ -110,7 +114,7 @@
 </details>
 <div id="song-suggestions" class="song-suggestions" role="group" aria-label="Подсказки поиска" hidden></div>
 <div class="song-random">
-<button type="button" id="song-random" aria-label="Случайная песня из всего каталога">
+<button type="button" id="song-random" aria-label="Случайная песня из текущих результатов">
 <span class="song-die" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
 <span class="cta song-random-label">Случайная песня</span>
 </button>
