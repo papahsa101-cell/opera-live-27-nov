@@ -2,6 +2,11 @@
 <html lang="ru">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="manifest" href="songbook.webmanifest" data-web-app>
+<link rel="icon" href="songbook-icon-192.png" data-web-app>
+<link rel="apple-touch-icon" href="songbook-icon-192.png" data-web-app>
+<meta name="apple-mobile-web-app-capable" content="yes" data-web-app>
+<meta name="theme-color" content="#164e88" data-web-app>
 <title>ОПЕРА · Песенник под гитару</title>
 <style>
 *{box-sizing:border-box} :root{color-scheme:light;--bg:#edf0f6;--paper:#fff;--ink:#253249;--muted:#536279;--line:#cdd6e4;--chord:#1665b5;--accent:#164e88}
@@ -137,9 +142,31 @@ article>.page-nav button:disabled{visibility:hidden}
 article>.page-nav output{color:var(--muted)}
 article>.page-nav[hidden]{display:none!important}
 
+
+#device-toggle{min-height:46px;font-weight:650}
+#device-dialog{position:fixed;inset:clamp(10px,7dvh,70px) 0 auto;margin:0 auto;width:min(480px,calc(100vw - 20px));max-height:calc(100dvh - 80px);padding:14px;border:1px solid var(--line);border-radius:14px;color:var(--ink);background:var(--paper);overflow:auto}
+#device-dialog::backdrop{background:rgb(14 25 43 / .54)}
+#device-list{display:grid;gap:6px;margin:9px 0}
+#device-list button{min-height:48px;text-align:left}
+#device-list button[aria-pressed=true]{border-color:var(--chord);box-shadow:inset 3px 0 var(--chord)}
+#device-list small{display:block}
+#device-close{min-width:44px;min-height:44px;font-size:1.35rem;padding:0}
+#offline-ready{margin:8px 0 0;font-size:.88rem}
+[data-device=ipad-2019] header>.actions,[data-device=honor-x9] header>.actions{gap:6px}
+[data-device=ipad-2019] .song-controls button,[data-device=honor-x9] .song-controls button{min-height:46px}
+[data-device=ipad-2019] .sheet-row,[data-device=honor-x9] .sheet-row{line-height:1.35}
+[data-device=phone] main{padding:0 4px 8px}
+[data-device=phone] article{padding:10px 11px}
+@media(orientation:portrait) and (max-width:860px){
+  [data-device=ipad-2019] main,[data-device=honor-x9] main{padding:0 6px 8px}
+  [data-device=ipad-2019] article,[data-device=honor-x9] article{padding:11px 13px}
+  [data-device=ipad-2019] #title,[data-device=honor-x9] #title{font-size:clamp(25px,4vw,32px)}
+}
+
 </style>
 <header><strong>ОПЕРА · Песенник под гитару</strong><div class="actions noprint">
 <button id="design-toggle" class="design-toggle" type="button" aria-label="Альтернативный дизайн" aria-pressed="false" title="Альтернативный дизайн">A</button>
+<button id="device-toggle" type="button" aria-haspopup="dialog" aria-controls="device-dialog">Устройство</button>
 <button id="catalog-toggle" type="button" aria-controls="catalog" aria-haspopup="dialog" aria-expanded="false">Поиск</button>
 <button id="invert" aria-pressed="false">Тёмная схема</button>
 <button id="download">Сохранить архив HTML</button>
@@ -148,6 +175,11 @@ article>.page-nav[hidden]{display:none!important}
 </div>
 
 </header>
+<dialog id="device-dialog" aria-labelledby="device-title">
+<div class="catalog-heading"><h2 id="device-title">Устройство</h2><button id="device-close" type="button" aria-label="Закрыть выбор устройства">×</button></div>
+<div id="device-list" role="group" aria-label="Профили экрана"></div>
+<p id="offline-ready" class="muted" role="status" hidden></p>
+</dialog>
 <dialog id="catalog" aria-labelledby="catalog-title">
 <div class="catalog-heading"><h2 id="catalog-title">Найти песню</h2><button id="catalog-close" type="button" aria-label="Закрыть поиск">×</button></div>
 <label for="query">Песня или исполнитель</label><input id="query" type="search" autofocus placeholder="Кино, Creep…"><label class="catalog-filter"><input id="word-only" type="checkbox">Только мои подборы</label><p id="count" class="muted" role="status"></p><nav id="list" aria-label="Песни"></nav></dialog>
@@ -221,13 +253,22 @@ try { stored = JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch {}
 const records = Object.assign(Object.create(null), archive.records || {}, stored.records || {});
 const custom = Object.assign(Object.create(null), archive.custom || {}, stored.custom || {});
 let dark = stored.dark ?? archive.dark ?? false;
-let size = stored.size ?? archive.size ?? 18;
+const deviceProfiles = {
+  auto:{label:'Авто',detail:'По размеру окна',type:0},
+  'ipad-2019':{label:'iPad 10,2″ (2019)',detail:'Две колонки и шрифт 20 px',type:20,gap:18,minWidth:510},
+  'honor-x9':{label:'Honor Pad X9',detail:'Компактные поля и две колонки',type:18,gap:16,minWidth:500},
+  phone:{label:'Телефон',detail:'Одна колонка и крупные кнопки',type:19,gap:12},
+  desktop:{label:'Компьютер',detail:'Широкий лист и две колонки',type:19,gap:26,minWidth:570}
+};
+const preference = stored.device ?? archive.device;
+let device = Object.hasOwn(deviceProfiles,preference) ? preference : 'auto';
+let size = stored.size ?? archive.size ?? (deviceProfiles[device].type || 18);
 let current = demo;
 let offset = 0;
 let variant = 0;
 let single = stored.single ?? archive.single ?? false;
 const portraitTablet = matchMedia('(orientation: portrait) and (max-width: 850px)');
-let compactDesign = stored.compactDesign ?? archive.compactDesign ?? portraitTablet.matches;
+let compactDesign = stored.compactDesign ?? archive.compactDesign ?? (device==='auto' ? portraitTablet.matches : device!=='desktop');
 let compactSingle = stored.compactSingle ?? archive.compactSingle ?? false;
 let wordOnly = stored.wordOnly ?? archive.wordOnly ?? false;
 const wordSources = new Set(['Песни для компании.docx','Песенник 2.docx']);
@@ -249,14 +290,52 @@ el('catalog').addEventListener('click',event=>{
       || event.clientY<bounds.top || event.clientY>bounds.bottom) showCatalog(false);
 });
 function setColumns() {
-  const oneColumn = compactDesign ? compactSingle : single;
+  const oneColumn = device==='phone' || (compactDesign ? compactSingle : single);
+  el('columns').disabled = device==='phone';
   const label = oneColumn ? (compactDesign ? 'Две колонки' : 'Автоколонки') : 'Одна колонка';
   el('columns').setAttribute('aria-pressed',String(oneColumn));
   el('columns').querySelector('.button-label').textContent = label;
   el('columns').title = label;
   document.documentElement.toggleAttribute('data-layout-one',oneColumn);
 }
+function renderDevicePicker() {
+  document.documentElement.dataset.device = device;
+  el('device-toggle').title = deviceProfiles[device].label;
+  el('device-list').replaceChildren(...Object.entries(deviceProfiles).map(([key,profile])=>{
+    const button = node('button',profile.label);
+    button.type = 'button';
+    button.append(node('small',profile.detail));
+    button.setAttribute('aria-pressed',String(key===device));
+    button.onclick = ()=>{
+      if (key!==device) {
+        device = key;
+        size = profile.type || 18;
+        compactDesign = key==='auto' ? portraitTablet.matches : key!=='desktop';
+        compactSingle = false;
+        single = false;
+        setDesign();
+        refresh();
+        persist();
+      }
+      el('device-dialog').close();
+    };
+    return button;
+  }));
+}
+el('device-toggle').onclick = ()=>{
+  renderDevicePicker();
+  el('device-dialog').showModal();
+  el('device-list').querySelector('[aria-pressed=true]')?.focus();
+};
+el('device-close').onclick = ()=>el('device-dialog').close();
+el('device-dialog').addEventListener('click',event=>{
+  if (event.target!==el('device-dialog')) return;
+  const r=event.target.getBoundingClientRect();
+  if (event.clientX<r.left || event.clientX>r.right || event.clientY<r.top || event.clientY>r.bottom) event.target.close();
+});
 function setDesign() {
+  document.documentElement.dataset.device = device;
+  el('device-toggle').title = deviceProfiles[device].label;
   document.documentElement.toggleAttribute('data-compact-design',compactDesign);
   el('design-toggle').setAttribute('aria-pressed',String(compactDesign));
   el('design-toggle').title = compactDesign ? 'Вернуться к базовому дизайну' : 'Альтернативный дизайн';
@@ -468,8 +547,11 @@ function paginateSheet() {
   const headerHeight = document.querySelector('header').getBoundingClientRect().height;
   const height = document.documentElement.clientHeight;
   const width = sheet.clientWidth;
-  const gap = portraitTablet.matches ? 16 : 1.35*size;
-  const columns = !(compactDesign ? compactSingle : single) && width >= Math.max(520,24*size+gap) ? 2 : 1;
+  const profile = deviceProfiles[device];
+  const gap = profile.gap ?? (portraitTablet.matches ? 16 : 1.35*size);
+  const columns = device!=='phone' && !(compactDesign ? compactSingle : single)
+    && width >= Math.max(profile.minWidth ?? 520,24*size+gap) ? 2 : 1;
+  sheet.style.setProperty('--sheet-gap',gap+'px');
   const columnWidth = (width - (columns-1)*gap)/columns;
   const chordHeight = el('chord-strip').getBoundingClientRect().height;
   const budget = Math.max(100,height-headerHeight-chordHeight-(compactDesign?28:90));
@@ -725,7 +807,7 @@ function refresh() {
 }
 function persist(message = '') {
   try {
-    localStorage.setItem(storageKey,JSON.stringify({records,custom,dark,size,single,wordOnly,compactDesign,compactSingle}));
+    localStorage.setItem(storageKey,JSON.stringify({records,custom,dark,size,single,wordOnly,compactDesign,compactSingle,device}));
     el('status').textContent = message;
   } catch {
     el('status').textContent = 'Браузер не сохранил изменения на диске. Нажмите «Сохранить архив HTML».';
@@ -849,9 +931,12 @@ el('import').onchange = async event=>{
 el('download').onclick = ()=>{
   const copy = document.documentElement.cloneNode(true);
   copy.querySelector('#archive-data').textContent = JSON.stringify({
-    id:Date.now().toString(36),records,custom,dark,size,single,wordOnly,compactDesign,compactSingle
+    id:Date.now().toString(36),records,custom,dark,size,single,wordOnly,compactDesign,compactSingle,device
   }).replace(/</g,'\\u003c');
   copy.querySelector('#catalog').removeAttribute('open');
+  copy.querySelector('#device-dialog').removeAttribute('open');
+  copy.querySelector('#device-list').replaceChildren();
+  for (const meta of copy.querySelectorAll('[data-web-app]')) meta.remove();
   for (const id of ['list','sheet','sources','title','artist','status','count','body','variants','version-source','chord-cards','song-sections']) copy.querySelector('#'+id).replaceChildren();
   copy.querySelector('#query').removeAttribute('value');
   const url = URL.createObjectURL(new Blob(['<!doctype html>\n'+copy.outerHTML],{type:'text/html;charset=utf-8'}));
@@ -866,5 +951,16 @@ setDesign();
 showCatalog(false);
 el('word-only').checked = wordOnly;
 openSong(wordOnly ? catalogPool()[0] : songs.find(song=>song.title==='Прыгну со скалы'));
+const webApp = document.querySelector('link[rel=manifest][data-web-app]');
+if (webApp && 'serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+  const ready = el('offline-ready');
+  navigator.serviceWorker.register(new URL('songbook-sw.js',webApp.href))
+    .then(()=>navigator.serviceWorker.ready)
+    .then(()=>{
+      ready.textContent = 'Офлайн-доступ готов на этом устройстве.';
+      ready.hidden = false;
+    })
+    .catch(()=>{});
+}
 </script>
 </html>
