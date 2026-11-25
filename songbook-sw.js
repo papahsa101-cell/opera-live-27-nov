@@ -1,5 +1,5 @@
 const prefix = 'opera-songbook-offline-';
-const cacheName = prefix + '1';
+const cacheName = prefix + '2';
 const shell = new URL('./songbook.html', self.location.href);
 const files = [
   shell.href,

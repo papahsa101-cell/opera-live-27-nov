@@ -90,10 +90,10 @@ details{margin-top:18px;padding-top:12px;border-top:1px solid var(--line)}summar
 .catalog-filter{display:flex;align-items:center;gap:9px;min-height:44px;margin:4px 0;cursor:pointer}
 .catalog-filter input{width:20px;height:20px;min-height:0;flex:none;margin:0;accent-color:var(--accent)}
 
-.design-toggle{min-width:45px;min-height:44px;font-weight:750}
+.design-toggle{min-width:45px;min-height:44px;font-weight:750;touch-action:manipulation}
 .design-toggle[aria-pressed=true]{border-color:var(--accent);color:var(--chord)}
 .design-icon,.song-sections{display:none}
-[data-compact-design] .page-nav{display:none}
+[data-compact-design] .page-nav,[data-stas] .page-nav{display:none}
 [data-compact-design] header{justify-content:flex-start}
 [data-compact-design] header>.actions{margin-left:0;order:-1}
 [data-compact-design] .song-controls{gap:6px 12px}
@@ -105,7 +105,7 @@ details{margin-top:18px;padding-top:12px;border-top:1px solid var(--line)}summar
 [data-compact-design] .design-text{font-size:20px;font-weight:750;line-height:22px}
 [data-layout-one] .design-icon .column-divider{visibility:hidden}
 [data-compact-design] #variants{flex-basis:100%;padding-top:4px}
-[data-compact-design] #sheet{display:grid;gap:clamp(12px,2.5vw,26px)}
+[data-compact-design] #sheet,[data-stas] #sheet{display:grid;gap:clamp(12px,2.5vw,26px)}
 [data-compact-design] .sheet-row h2{color:var(--ink);scroll-margin-top:var(--header-space)}
 [data-compact-design] .song-sections:not([hidden]){display:flex;gap:6px;overflow-x:auto;overscroll-behavior-x:contain;margin:9px 0 2px;padding:2px 0 5px}
 .song-sections button{flex:none;min-height:44px;padding:6px 11px}
@@ -270,6 +270,8 @@ let single = stored.single ?? archive.single ?? false;
 const portraitTablet = matchMedia('(orientation: portrait) and (max-width: 850px)');
 let compactDesign = stored.compactDesign ?? archive.compactDesign ?? (device==='auto' ? portraitTablet.matches : device!=='desktop');
 let compactSingle = stored.compactSingle ?? archive.compactSingle ?? false;
+let stas = stored.stas ?? archive.stas ?? false;
+const continuousView = ()=>compactDesign || stas;
 let wordOnly = stored.wordOnly ?? archive.wordOnly ?? false;
 const wordSources = new Set(['Песни для компании.docx','Песенник 2.docx']);
 function wordEdition(song) {
@@ -337,16 +339,33 @@ function setDesign() {
   document.documentElement.dataset.device = device;
   el('device-toggle').title = deviceProfiles[device].label;
   document.documentElement.toggleAttribute('data-compact-design',compactDesign);
+  document.documentElement.toggleAttribute('data-stas',stas);
   el('design-toggle').setAttribute('aria-pressed',String(compactDesign));
   el('design-toggle').title = compactDesign ? 'Вернуться к базовому дизайну' : 'Альтернативный дизайн';
   setColumns();
 }
-el('design-toggle').onclick = ()=>{
-  compactDesign = !compactDesign;
+let designTaps = 0;
+let designTimer;
+function applyDesignChange() {
   setDesign();
   paginateSheet();
   persist();
   window.scrollTo(0,0);
+}
+el('design-toggle').onclick = ()=>{
+  clearTimeout(designTimer);
+  designTaps++;
+  if (designTaps===3) {
+    designTaps = 0;
+    stas = !stas;
+    applyDesignChange();
+    return;
+  }
+  designTimer = setTimeout(()=>{
+    designTaps = 0;
+    compactDesign = !compactDesign;
+    applyDesignChange();
+  },420);
 };
 el('catalog-toggle').onclick = ()=>{
   const open = !el('catalog').open;
@@ -554,7 +573,7 @@ function paginateSheet() {
   sheet.style.setProperty('--sheet-gap',gap+'px');
   const columnWidth = (width - (columns-1)*gap)/columns;
   const chordHeight = el('chord-strip').getBoundingClientRect().height;
-  const budget = Math.max(100,height-headerHeight-chordHeight-(compactDesign?28:90));
+  const budget = Math.max(100,height-headerHeight-chordHeight-(continuousView()?28:90));
   const songControls = sheet.getBoundingClientRect().top - sheet.closest('article').getBoundingClientRect().top;
   const firstBudget = Math.max(100,budget-songControls+chordHeight);
   document.documentElement.style.setProperty('--pinned-header',headerHeight+'px');
@@ -608,7 +627,7 @@ function paginateSheet() {
   sheet.replaceChildren(...sheetPages.map(page=>page.element));
   const next = sheetPages.findIndex((page,i)=>!sheetPages[i+1] || sheetPages[i+1].first>rowAnchor);
   showPage(next);
-  if (compactDesign) sheetPages.forEach(({element})=>{element.hidden=false;});
+  if (continuousView()) sheetPages.forEach(({element})=>{element.hidden=false;});
 }
 function renderSectionLinks() {
   const nav = el('song-sections');
@@ -807,7 +826,7 @@ function refresh() {
 }
 function persist(message = '') {
   try {
-    localStorage.setItem(storageKey,JSON.stringify({records,custom,dark,size,single,wordOnly,compactDesign,compactSingle,device}));
+    localStorage.setItem(storageKey,JSON.stringify({records,custom,dark,size,single,wordOnly,compactDesign,compactSingle,device,stas}));
     el('status').textContent = message;
   } catch {
     el('status').textContent = 'Браузер не сохранил изменения на диске. Нажмите «Сохранить архив HTML».';
@@ -931,7 +950,7 @@ el('import').onchange = async event=>{
 el('download').onclick = ()=>{
   const copy = document.documentElement.cloneNode(true);
   copy.querySelector('#archive-data').textContent = JSON.stringify({
-    id:Date.now().toString(36),records,custom,dark,size,single,wordOnly,compactDesign,compactSingle,device
+    id:Date.now().toString(36),records,custom,dark,size,single,wordOnly,compactDesign,compactSingle,device,stas
   }).replace(/</g,'\\u003c');
   copy.querySelector('#catalog').removeAttribute('open');
   copy.querySelector('#device-dialog').removeAttribute('open');
