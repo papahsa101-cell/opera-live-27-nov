@@ -236,3 +236,17 @@ body .hero h1.battle-title{font-size:clamp(1.45rem,7vw,6.4rem);line-height:1.04;
     translate:-50% -50%;
   }
 }
+
+.catalog-panel{display:grid;gap:18px}
+.catalog-panel[hidden]{display:none}
+.catalog-panel>p{margin:0}
+.catalog-switch{display:flex;flex-wrap:wrap;gap:12px}
+.catalog-switch button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:8px 15px;background:var(--panel);color:var(--ink);border:2px solid var(--line);border-radius:var(--radius);font:inherit;font-weight:700;cursor:pointer}
+.catalog-switch button[aria-pressed=true]{background:var(--accent);color:var(--button);border-color:var(--accent)}
+.catalog-switch button:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.catalog-switch svg{width:28px;height:28px;flex:none}
+[data-theme=comic] .catalog-switch button{border-color:var(--ink)}
+[data-theme=comic] .catalog-switch button[aria-pressed=true]{box-shadow:3px 3px var(--ink)}
+.guitar-list li{display:grid;align-content:center;gap:4px;min-height:66px;padding:10px 12px;background:var(--bg);border:1px solid var(--line);overflow-wrap:anywhere}
+.guitar-list li span{font-size:.875rem;color:var(--muted)}
+[data-theme=comic] .guitar-list li{border:2px solid var(--ink);background:var(--panel)}

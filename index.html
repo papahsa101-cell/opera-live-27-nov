@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Музыкальная вечеринка 27 ноября в лофте ОПЕРА на Красном Октябре. Живые гитары, песни, караоке и танцы.">
 <title>Живой звук — Лофт ОПЕРА</title>
-<link rel="stylesheet" href="style.css?v=21">
+<link rel="stylesheet" href="style.css?v=22">
 <script defer src="site.js"></script>
-<script defer src="karaoke.js?v=22"></script>
+<script defer src="guitar-songs.js"></script>
+<script defer src="karaoke.js?v=23"></script>
 </head>
 <body>
 <header class="bar">
@@ -30,7 +31,7 @@
 <p class="hero-power"><strong>2 кВт</strong> пиковой мощности акустики</p>
 <p class="intro">Музыкальный баттл в лофте «ОПЕРА». Кто лучше исполнит любимые песни — караокеры или рокеры с живыми гитарами? Выбирай сторону и пой вместе с нами.</p>
 <div class="hero-actions"><a class="cta telegram-cta" href="https://t.me/+GM4WIfITf4k5NzYy" target="_blank" rel="noopener noreferrer">Вступить в группу в Telegram</a>
-<a class="cta secondary-cta" href="#program">Программа вечера</a> <a class="cta secondary-cta" href="#karaoke">Каталог караоке</a></div>
+<a class="cta secondary-cta" href="#program">Программа вечера</a> <a class="cta secondary-cta" href="#karaoke">Что споём?</a></div>
 </div>
 <div class="hero-index" aria-hidden="true">27<br>11</div>
 </section>
@@ -87,7 +88,17 @@
 <a class="cta secondary-cta" href="https://zotmanpizza.ru/kombo-nabory" target="_blank" rel="noopener noreferrer">Zotman</a>
 </div></section>
 <section class="karaoke route" id="karaoke" aria-labelledby="karaoke-title">
-<div><p class="eyebrow">Караоке</p><h2 id="karaoke-title">Что споём?</h2>
+<h2 id="karaoke-title">Что споём?</h2>
+<div class="catalog-switch" role="group" aria-label="Каталог песен">
+<button type="button" aria-controls="karaoke-catalog" aria-pressed="true">
+<svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="11" y="3" width="10" height="17" rx="5"/><path d="M7 14v2a9 9 0 0 0 18 0v-2M16 25v4m-5 0h10"/></svg>
+Караоке</button>
+<button type="button" aria-controls="guitar-catalog" aria-pressed="false">
+<svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 9-9 3 3-9 9c2 4 0 5-2 6-1 1-1 3-3 5a6 6 0 0 1-9-9c2-2 4-2 5-3 1-2 2-4 6-2Z"/><circle cx="14" cy="18" r="2"/><path d="m8 21 3 3m13-20 2-2 4 4-2 2"/></svg>
+Под гитару</button>
+</div>
+<div class="catalog-panel" id="karaoke-catalog">
+<div>
 <p>Найди песню или выбери настроение. Откроется ролик или поиск караоке на YouTube.</p><p class="karaoke-source">Настроение указано ориентировочно. Фильтр по десятилетиям показывает песни с указанным годом. <a href="https://github.com/mrsndmn/data-surfers" target="_blank" rel="noopener noreferrer">Источник части каталога</a>.</p></div>
 <div class="song-code-search">
 <label for="song-code">Введите номер песни <input id="song-code" type="search" inputmode="numeric" placeholder="0001" autocomplete="off" aria-describedby="song-code-help"></label>
@@ -123,6 +134,17 @@
 <p id="song-count" role="status"></p>
 <ul id="song-list" class="song-list"></ul>
 <nav class="song-pages" aria-label="Страницы каталога"><button type="button" id="song-prev" class="cta secondary-cta">Назад</button><button type="button" id="song-next" class="cta secondary-cta">Дальше</button></nav>
+</div>
+<div class="catalog-panel" id="guitar-catalog" hidden>
+<p>Эти песни музыканты могут сыграть под гитару.</p>
+<div class="karaoke-filters">
+<label>Песня или исполнитель <input id="guitar-query" type="search" placeholder="Например, Кино, Creep или КиШ" autocomplete="off"></label>
+</div>
+<div id="guitar-suggestions" class="song-suggestions" role="group" aria-label="Подсказки поиска" hidden></div>
+<p id="guitar-count" role="status"></p>
+<ul id="guitar-list" class="song-list guitar-list"></ul>
+<nav class="song-pages" aria-label="Страницы каталога песен под гитару"><button type="button" id="guitar-prev" class="cta secondary-cta">Назад</button><button type="button" id="guitar-next" class="cta secondary-cta">Дальше</button></nav>
+</div>
 <noscript><p>Включи JavaScript, чтобы пользоваться каталогом.</p></noscript>
 </section>
 <footer>27 ноября 2026 · Музыкальная вечеринка в «ОПЕРЕ»</footer>

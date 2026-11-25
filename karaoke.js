@@ -2149,12 +2149,13 @@ for (const song of songs) {
   artistCounts.set(song.artist, (artistCounts.get(song.artist) ?? 0) + 1);
 }
 
-const indexed = songs.map((song, id) => {
+function indexSong(song, id) {
   const artist = normalize(song.artist);
   const title = normalize(song.title);
   const names = [artist, title, ...(aliasesByArtist.get(artist) ?? []), ...(song.aliases ?? []).map(normalize)];
   return { song, id, artist, title, names, words: names.join(' ').split(' ') };
-});
+}
+const indexed = songs.map(indexSong);
 const entriesByCode = new Map(indexed.map(entry => [entry.song.code, entry]));
 
 function rank(entry, query) {
@@ -2169,25 +2170,19 @@ function rank(entry, query) {
   return Infinity;
 }
 
-function renderSuggestions(matches, query) {
+function renderSuggestions(container, matches, query, selectLabel) {
   const labels = query.length < 2 ? [] : [...new Set(matches.flatMap(({entry}) =>
     entry.artist.includes(query) || entry.names.slice(2).some(name => name.startsWith(query))
       ? [entry.song.artist, entry.song.title] : [entry.song.title, entry.song.artist]
   ))].slice(0, 6);
-  suggestions.replaceChildren(...labels.map(label => {
+  container.replaceChildren(...labels.map(label => {
     const button = document.createElement('button');
     button.type = 'button';
     button.textContent = label;
-    button.addEventListener('click', () => {
-      selectedArtist = null;
-      search.value = label;
-      page = 0;
-      renderSongs();
-      search.focus();
-    });
+    button.addEventListener('click', () => selectLabel(label));
     return button;
   }));
-  suggestions.hidden = labels.length === 0;
+  container.hidden = labels.length === 0;
 }
 
 function getMatches() {
@@ -2280,7 +2275,13 @@ function songRow(song) {
 
 function renderSongs() {
   const {matches, query, codeQuery, validCode} = getMatches();
-  renderSuggestions(matches, selectedArtist || lyricMatches ? "" : query);
+  renderSuggestions(suggestions, matches, selectedArtist || lyricMatches ? '' : query, label => {
+    selectedArtist = null;
+    search.value = label;
+    page = 0;
+    renderSongs();
+    search.focus();
+  });
   const start = page * pageSize;
   const rows = matches.slice(start, start + pageSize).map(({entry}) => songRow(entry.song));
   list.replaceChildren(...rows);
@@ -2468,3 +2469,69 @@ lyricClear.addEventListener('click', () => {
   renderSongs();
   lyricInput.focus();
 });
+
+const catalogButtons = [...document.querySelectorAll('.catalog-switch button')];
+for (const button of catalogButtons) {
+  button.addEventListener('click', () => {
+    for (const option of catalogButtons) {
+      const active = option === button;
+      option.setAttribute('aria-pressed', String(active));
+      document.getElementById(option.getAttribute('aria-controls')).hidden = !active;
+    }
+  });
+}
+
+const guitarSearch = document.querySelector('#guitar-query');
+const guitarSuggestions = document.querySelector('#guitar-suggestions');
+const guitarCount = document.querySelector('#guitar-count');
+const guitarList = document.querySelector('#guitar-list');
+const guitarPrev = document.querySelector('#guitar-prev');
+const guitarNext = document.querySelector('#guitar-next');
+const guitarIndex = guitarSongs.map(([artist, title], id) => indexSong({artist, title}, id));
+let guitarPage = 0;
+
+function searchGuitar() {
+  guitarPage = 0;
+  renderGuitar();
+}
+
+function renderGuitar() {
+  const query = normalize(guitarSearch.value);
+  const matches = guitarIndex
+    .map(entry => ({entry, score: rank(entry, query)}))
+    .filter(match => Number.isFinite(match.score))
+    .sort((a, b) => a.score - b.score);
+  renderSuggestions(guitarSuggestions, matches, query, label => {
+    guitarSearch.value = label;
+    searchGuitar();
+    guitarSearch.focus();
+  });
+
+  const start = guitarPage * pageSize;
+  const rows = matches.slice(start, start + pageSize).map(({entry: {song}}) => {
+    const row = document.createElement('li');
+    const title = document.createElement('strong');
+    const artist = document.createElement('span');
+    title.textContent = song.title;
+    artist.textContent = song.artist;
+    row.append(title, artist);
+    return row;
+  });
+  guitarList.replaceChildren(...rows);
+  guitarCount.textContent = matches.length
+    ? 'Песни ' + (start + 1) + '–' + (start + rows.length) + ' из ' + matches.length
+    : 'Совпадений нет. Попробуй другое название или имя исполнителя.';
+  guitarPrev.disabled = guitarPage === 0;
+  guitarNext.disabled = start + pageSize >= matches.length;
+  guitarPrev.parentElement.hidden = matches.length <= pageSize;
+}
+
+guitarSearch.addEventListener('input', searchGuitar);
+for (const [button, step] of [[guitarPrev, -1], [guitarNext, 1]]) {
+  button.addEventListener('click', () => {
+    guitarPage += step;
+    renderGuitar();
+    if (button.disabled) (step > 0 ? guitarPrev : guitarNext).focus();
+  });
+}
+renderGuitar();
