@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>QR-код сайта — Лофт ОПЕРА</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:#000;font-family:Arial,sans-serif}
+body{height:100vh;height:100dvh;display:flex;flex-direction:column;align-items:center;padding:8px 16px 16px;gap:8px}
+.back{flex:none;line-height:24px;color:#000;font-size:14px;text-underline-offset:3px}
+.back:focus-visible{outline:2px solid #000;outline-offset:2px}
+main{flex:1;min-height:0;display:grid;place-items:center;width:100%}
+img{display:block;width:min(calc(100vw - 32px),calc(100vh - 56px));width:min(calc(100vw - 32px),calc(100dvh - 56px));height:auto;aspect-ratio:1}
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← На сайт</a>
+<main aria-label="QR-код для перехода на сайт">
+<img src="assets/site-qr.svg" width="410" height="410" alt="QR-код: https://papahsa101-cell.github.io/opera-live-27-nov/">
+</main>
+</body>
+</html>
